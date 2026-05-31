@@ -6,7 +6,7 @@ export const profile: PortfolioProfile = {
     description:
       "Personal portfolio of Eric, a CS undergraduate at HIT Shenzhen focused on Applied AI, Computer Vision, and Local LLM applications.",
     lastUpdated: "2026-05-31",
-    productionUrl: "TODO: add production URL after Vercel deployment",
+    productionUrl: "https://eric-portfolio-weld.vercel.app/",
     ogImage: "TODO: add production Open Graph image",
   },
   identity: {
@@ -18,7 +18,7 @@ export const profile: PortfolioProfile = {
     focus: ["Applied AI", "Computer Vision", "Local LLM", "End-to-end AI applications"],
     githubUsername: "Fiksy9790707",
     githubUrl: "https://github.com/Fiksy9790707",
-    email: "TODO",
+    email: "14775369722@163.com",
     resumeUrl: null,
     blogUrl: null,
   },
