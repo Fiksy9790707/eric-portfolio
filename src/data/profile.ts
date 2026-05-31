@@ -7,7 +7,7 @@ export const profile: PortfolioProfile = {
       "Personal portfolio of Eric, a CS undergraduate at HIT Shenzhen focused on Applied AI, Computer Vision, and Local LLM applications.",
     lastUpdated: "2026-05-31",
     productionUrl: "https://eric-portfolio-weld.vercel.app/",
-    ogImage: "TODO: add production Open Graph image",
+    ogImage: "https://eric-portfolio-weld.vercel.app/og-image.png",
   },
   identity: {
     name: "Eric",
