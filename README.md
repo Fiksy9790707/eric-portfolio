@@ -186,6 +186,37 @@ vercel --prod
 
 Do not commit `.vercel`, `.env`, `node_modules`, or `dist`.
 
+## Static Mirror on GitHub Pages
+
+This repository also includes a GitHub Actions workflow for a static GitHub Pages mirror.
+
+The mirror is useful when the Vercel `.vercel.app` domain is slow or inaccessible in some regions. It builds the same Vite app with:
+
+```text
+VITE_BASE_PATH=/eric-portfolio/
+```
+
+Expected mirror URL after GitHub Pages is enabled:
+
+```text
+https://Fiksy9790707.github.io/eric-portfolio/
+```
+
+Notes:
+
+- The GitHub Pages mirror is static only.
+- Vercel serverless API routes under `/api/*` do not run on GitHub Pages.
+- The GitHub activity section falls back to bundled public repository data when `/api/github` is unavailable.
+- The contact form can render, but real submission needs Vercel or a later email provider integration.
+
+To enable the mirror:
+
+1. Push this repository to GitHub.
+2. Open the repository on GitHub.
+3. Go to `Settings -> Pages`.
+4. Set `Source` to `GitHub Actions`.
+5. Push to `main` or manually run the `Deploy GitHub Pages mirror` workflow.
+
 ## Public GitHub Source Notes
 
 The first version uses only public information visible from the GitHub profile README and public repositories:
