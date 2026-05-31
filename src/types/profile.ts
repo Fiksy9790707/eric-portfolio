@@ -1,38 +1,45 @@
+export type Language = "en" | "zh";
+
+export type LocalizedString = {
+  en: string;
+  zh: string;
+};
+
 export type ProjectCategory = "AI / ML" | "Local LLM" | "Computer Vision";
 
 export type Project = {
   id: string;
-  name: string;
-  subtitle: string;
-  type: string;
-  status: "Prototype / Building" | "Experimental" | "Building";
-  description: string;
+  name: LocalizedString;
+  subtitle: LocalizedString;
+  type: LocalizedString;
+  status: LocalizedString;
+  description: LocalizedString;
   stack: string[];
   categories: ProjectCategory[];
   githubUrl: string | null;
-  linkLabel: string;
+  linkLabel: LocalizedString;
 };
 
 export type SkillGroup = {
-  title: string;
-  tone: "Learning" | "Building" | "Exploring";
+  title: LocalizedString;
+  tone: LocalizedString;
   items: string[];
 };
 
 export type TimelineItem = {
-  title: string;
-  description: string;
+  title: LocalizedString;
+  description: LocalizedString;
 };
 
 export type BlogPostPreview = {
-  title: string;
+  title: LocalizedString;
   date: string;
   tags: string[];
-  summary: string;
+  summary: LocalizedString;
 };
 
 export type ContactLink = {
-  label: string;
+  label: LocalizedString;
   value: string;
   href: string | null;
 };
@@ -67,23 +74,87 @@ export type PortfolioProfile = {
   identity: {
     name: string;
     chineseName: string;
-    role: string;
-    tagline: string;
-    school: string;
-    focus: string[];
+    role: LocalizedString;
+    tagline: LocalizedString;
+    school: LocalizedString;
+    focus: LocalizedString[];
     githubUsername: string;
     githubUrl: string;
     email: string;
     resumeUrl: string | null;
     blogUrl: string | null;
   };
-  about: string[];
+  about: LocalizedString[];
   projects: Project[];
   skills: SkillGroup[];
   timeline: TimelineItem[];
   blogPosts: BlogPostPreview[];
   contactLinks: ContactLink[];
   github: GitHubSummary;
+  ui: {
+    nav: {
+      about: LocalizedString;
+      projects: LocalizedString;
+      github: LocalizedString;
+      skills: LocalizedString;
+      contact: LocalizedString;
+    };
+    languageToggle: LocalizedString;
+    hero: {
+      eyebrow: LocalizedString;
+      viewProjects: LocalizedString;
+      githubProfile: LocalizedString;
+      currentFocus: LocalizedString;
+      focusTitle: LocalizedString;
+      building: LocalizedString;
+    };
+    sections: {
+      aboutEyebrow: LocalizedString;
+      aboutTitle: LocalizedString;
+      baseLabel: LocalizedString;
+      schoolLine: LocalizedString;
+      projectsEyebrow: LocalizedString;
+      projectsTitle: LocalizedString;
+      githubEyebrow: LocalizedString;
+      githubTitle: LocalizedString;
+      githubDescription: LocalizedString;
+      skillsEyebrow: LocalizedString;
+      skillsTitle: LocalizedString;
+      timelineEyebrow: LocalizedString;
+      timelineTitle: LocalizedString;
+      blogEyebrow: LocalizedString;
+      blogTitle: LocalizedString;
+      contactEyebrow: LocalizedString;
+      contactTitle: LocalizedString;
+    };
+    github: {
+      liveApi: LocalizedString;
+      loading: LocalizedString;
+      fallback: LocalizedString;
+      missingDescription: LocalizedString;
+      updated: LocalizedString;
+    };
+    contact: {
+      linksTitle: LocalizedString;
+      open: LocalizedString;
+      todo: LocalizedString;
+      copyEmail: LocalizedString;
+      emailNotConfigured: LocalizedString;
+      emailCopied: LocalizedString;
+      name: LocalizedString;
+      email: LocalizedString;
+      message: LocalizedString;
+      sendMessage: LocalizedString;
+      sending: LocalizedString;
+      demoReceived: LocalizedString;
+      unavailable: LocalizedString;
+    };
+    footer: {
+      builtWith: LocalizedString;
+      lastUpdated: LocalizedString;
+    };
+    timelineStep: LocalizedString;
+  };
 };
 
 export type GitHubApiResponse = {

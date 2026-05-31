@@ -1,10 +1,12 @@
 import { Copy, Send } from "lucide-react";
 import { type FormEvent, useState } from "react";
 import { sendContactMessage } from "../lib/api";
-import type { ContactPayload, PortfolioProfile } from "../types/profile";
+import { text } from "../lib/i18n";
+import type { ContactPayload, Language, PortfolioProfile } from "../types/profile";
 
 type ContactProps = {
   profile: PortfolioProfile;
+  language: Language;
 };
 
 const initialForm: ContactPayload = {
@@ -13,19 +15,19 @@ const initialForm: ContactPayload = {
   message: "",
 };
 
-export default function Contact({ profile }: ContactProps) {
+export default function Contact({ profile, language }: ContactProps) {
   const [form, setForm] = useState<ContactPayload>(initialForm);
   const [status, setStatus] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const copyEmail = async () => {
     if (profile.identity.email === "TODO") {
-      setStatus("Email not configured yet.");
+      setStatus(text(profile.ui.contact.emailNotConfigured, language));
       return;
     }
 
     await navigator.clipboard.writeText(profile.identity.email);
-    setStatus("Email copied.");
+    setStatus(text(profile.ui.contact.emailCopied, language));
   };
 
   const submitForm = async (event: FormEvent<HTMLFormElement>) => {
@@ -35,12 +37,12 @@ export default function Contact({ profile }: ContactProps) {
 
     try {
       const result = await sendContactMessage(form);
-      setStatus(result.message);
+      setStatus(result.ok ? text(profile.ui.contact.demoReceived, language) : result.message);
       if (result.ok) {
         setForm(initialForm);
       }
     } catch {
-      setStatus("Contact API is unavailable. Please try again later.");
+      setStatus(text(profile.ui.contact.unavailable, language));
     } finally {
       setIsSubmitting(false);
     }
@@ -49,16 +51,21 @@ export default function Contact({ profile }: ContactProps) {
   return (
     <section id="contact" className="border-b border-line">
       <div className="section-shell reveal">
-        <p className="eyebrow">Contact</p>
-        <h2 className="section-title">Open to feedback, collaboration, and practical project ideas.</h2>
+        <p className="eyebrow">{text(profile.ui.sections.contactEyebrow, language)}</p>
+        <h2 className="section-title">{text(profile.ui.sections.contactTitle, language)}</h2>
         <div className="mt-9 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="surface-card p-6">
-            <h3 className="text-xl font-semibold text-mint">Links</h3>
+            <h3 className="text-xl font-semibold text-mint">{text(profile.ui.contact.linksTitle, language)}</h3>
             <div className="mt-6 grid gap-3">
               {profile.contactLinks.map((link) => (
-                <div key={link.label} className="flex items-center justify-between gap-4 rounded-md bg-white/[0.04] p-4">
+                <div
+                  key={text(link.label, language)}
+                  className="flex items-center justify-between gap-4 rounded-md bg-white/[0.04] p-4"
+                >
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">{link.label}</p>
+                    <p className="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">
+                      {text(link.label, language)}
+                    </p>
                     <p className="mt-1 text-sm text-zinc-200">{link.value}</p>
                   </div>
                   {link.href ? (
@@ -68,10 +75,10 @@ export default function Contact({ profile }: ContactProps) {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Open
+                      {text(profile.ui.contact.open, language)}
                     </a>
                   ) : (
-                    <span className="text-sm text-zinc-600">TODO</span>
+                    <span className="text-sm text-zinc-600">{text(profile.ui.contact.todo, language)}</span>
                   )}
                 </div>
               ))}
@@ -82,14 +89,14 @@ export default function Contact({ profile }: ContactProps) {
               onClick={copyEmail}
             >
               <Copy size={16} />
-              Copy email
+              {text(profile.ui.contact.copyEmail, language)}
             </button>
           </div>
 
           <form className="surface-card p-6" onSubmit={submitForm}>
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="grid gap-2 text-sm text-zinc-300">
-                Name
+                {text(profile.ui.contact.name, language)}
                 <input
                   className="focus-ring rounded-md border border-line bg-ink px-4 py-3 text-zinc-100 outline-none"
                   name="name"
@@ -99,7 +106,7 @@ export default function Contact({ profile }: ContactProps) {
                 />
               </label>
               <label className="grid gap-2 text-sm text-zinc-300">
-                Email
+                {text(profile.ui.contact.email, language)}
                 <input
                   className="focus-ring rounded-md border border-line bg-ink px-4 py-3 text-zinc-100 outline-none"
                   name="email"
@@ -111,7 +118,7 @@ export default function Contact({ profile }: ContactProps) {
               </label>
             </div>
             <label className="mt-4 grid gap-2 text-sm text-zinc-300">
-              Message
+              {text(profile.ui.contact.message, language)}
               <textarea
                 className="focus-ring min-h-40 resize-y rounded-md border border-line bg-ink px-4 py-3 text-zinc-100 outline-none"
                 name="message"
@@ -127,7 +134,9 @@ export default function Contact({ profile }: ContactProps) {
                 disabled={isSubmitting}
               >
                 <Send size={16} />
-                {isSubmitting ? "Sending" : "Send message"}
+                {isSubmitting
+                  ? text(profile.ui.contact.sending, language)
+                  : text(profile.ui.contact.sendMessage, language)}
               </button>
               {status ? <p className="text-sm leading-6 text-zinc-300">{status}</p> : null}
             </div>

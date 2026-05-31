@@ -1,10 +1,13 @@
 import { AlertCircle, GitFork, Github, Star } from "lucide-react";
 import { useEffect, useState } from "react";
+import { profile } from "../data/profile";
 import { fetchGitHubActivity } from "../lib/api";
-import type { GitHubApiResponse, PublicRepository } from "../types/profile";
+import { text } from "../lib/i18n";
+import type { GitHubApiResponse, Language, PublicRepository } from "../types/profile";
 
 type GitHubActivityProps = {
   fallbackRepositories: PublicRepository[];
+  language: Language;
 };
 
 const formatDate = (value: string) =>
@@ -14,7 +17,7 @@ const formatDate = (value: string) =>
     day: "2-digit",
   }).format(new Date(value));
 
-export default function GitHubActivity({ fallbackRepositories }: GitHubActivityProps) {
+export default function GitHubActivity({ fallbackRepositories, language }: GitHubActivityProps) {
   const [data, setData] = useState<GitHubApiResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -30,7 +33,7 @@ export default function GitHubActivity({ fallbackRepositories }: GitHubActivityP
           return;
         }
         setData(result);
-        setErrorMessage(result.source === "fallback" ? result.warning ?? "Fallback data loaded." : null);
+        setErrorMessage(result.source === "fallback" ? text(profile.ui.github.fallback, language) : null);
       } catch {
         if (!isMounted) {
           return;
@@ -49,7 +52,7 @@ export default function GitHubActivity({ fallbackRepositories }: GitHubActivityP
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [language]);
 
   const repositories = data?.repositories ?? fallbackRepositories;
   const nonForkRepositories = repositories.filter((repo) => !repo.isFork).slice(0, 6);
@@ -59,17 +62,20 @@ export default function GitHubActivity({ fallbackRepositories }: GitHubActivityP
       <div className="section-shell reveal">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="eyebrow">Public GitHub</p>
-            <h2 className="section-title">Live public repository snapshot.</h2>
+            <p className="eyebrow">{text(profile.ui.sections.githubEyebrow, language)}</p>
+            <h2 className="section-title">{text(profile.ui.sections.githubTitle, language)}</h2>
             <p className="section-copy">
-              This section reads public GitHub data without a token. If GitHub is unavailable, it falls back to bundled
-              public repository metadata.
+              {text(profile.ui.sections.githubDescription, language)}
             </p>
           </div>
           <div className="surface-card flex items-center gap-3 px-4 py-3">
             <Github size={18} className="text-cyan" />
-            <span className="text-sm text-zinc-300">
-              {data?.source === "live" ? "Live API" : isLoading ? "Loading" : "Fallback"}
+              <span className="text-sm text-zinc-300">
+              {data?.source === "live"
+                ? text(profile.ui.github.liveApi, language)
+                : isLoading
+                  ? text(profile.ui.github.loading, language)
+                  : text(profile.ui.github.fallback, language)}
             </span>
           </div>
         </div>
@@ -107,7 +113,7 @@ export default function GitHubActivity({ fallbackRepositories }: GitHubActivityP
                   </span>
                 </div>
                 <p className="mt-4 min-h-14 text-sm leading-6 text-zinc-300">
-                  {repo.description ?? "TODO: add a concise public repository description."}
+                  {repo.description ?? text(profile.ui.github.missingDescription, language)}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {repo.topics.slice(0, 3).map((topic) => (
@@ -117,7 +123,9 @@ export default function GitHubActivity({ fallbackRepositories }: GitHubActivityP
                   ))}
                 </div>
                 <div className="mt-6 flex items-center justify-between gap-4 border-t border-line pt-4 text-xs text-zinc-500">
-                  <span>Updated {formatDate(repo.updatedAt)}</span>
+                  <span>
+                    {text(profile.ui.github.updated, language)} {formatDate(repo.updatedAt)}
+                  </span>
                   <span className="flex items-center gap-3">
                     <span className="inline-flex items-center gap-1">
                       <Star size={13} />

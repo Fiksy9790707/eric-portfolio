@@ -1,16 +1,19 @@
 import { ExternalLink } from "lucide-react";
 import { useMemo, useState } from "react";
-import type { Project, ProjectCategory } from "../types/profile";
+import { profile } from "../data/profile";
+import { text } from "../lib/i18n";
+import type { Language, Project, ProjectCategory } from "../types/profile";
 
 type ProjectsProps = {
   projects: Project[];
+  language: Language;
 };
 
 type Filter = "All" | ProjectCategory;
 
 const filters: Filter[] = ["All", "AI / ML", "Local LLM", "Computer Vision"];
 
-export default function Projects({ projects }: ProjectsProps) {
+export default function Projects({ projects, language }: ProjectsProps) {
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
   const filteredProjects = useMemo(
     () =>
@@ -25,8 +28,8 @@ export default function Projects({ projects }: ProjectsProps) {
       <div className="section-shell reveal">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
-            <p className="eyebrow">Projects</p>
-            <h2 className="section-title">Selected projects with verifiable public context.</h2>
+            <p className="eyebrow">{text(profile.ui.sections.projectsEyebrow, language)}</p>
+            <h2 className="section-title">{text(profile.ui.sections.projectsTitle, language)}</h2>
           </div>
           <div className="flex flex-wrap gap-2" aria-label="Project filters">
             {filters.map((filter) => (
@@ -49,12 +52,14 @@ export default function Projects({ projects }: ProjectsProps) {
           {filteredProjects.map((project) => (
             <article key={project.id} className="surface-card flex min-h-[25rem] flex-col p-6">
               <div className="flex items-start justify-between gap-4">
-                <p className="tag">{project.status}</p>
-                <span className="font-mono text-xs text-zinc-500">{project.type}</span>
+                <p className="tag">{text(project.status, language)}</p>
+                <span className="font-mono text-xs text-zinc-500">{text(project.type, language)}</span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold leading-7 text-mint">{project.name}</h3>
-              <p className="mt-2 text-sm text-amber">{project.subtitle}</p>
-              <p className="mt-5 flex-1 text-sm leading-7 text-zinc-300">{project.description}</p>
+              <h3 className="mt-6 text-xl font-semibold leading-7 text-mint">{text(project.name, language)}</h3>
+              <p className="mt-2 text-sm text-amber">{text(project.subtitle, language)}</p>
+              <p className="mt-5 flex-1 text-sm leading-7 text-zinc-300">
+                {text(project.description, language)}
+              </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {project.stack.map((item) => (
                   <span className="tag" key={item}>
@@ -70,12 +75,12 @@ export default function Projects({ projects }: ProjectsProps) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {project.linkLabel}
+                    {text(project.linkLabel, language)}
                     <ExternalLink size={15} />
                   </a>
                 ) : (
                   <span className="inline-flex rounded-md border border-dashed border-line px-3 py-2 text-sm text-zinc-500">
-                    {project.linkLabel}
+                    {text(project.linkLabel, language)}
                   </span>
                 )}
               </div>

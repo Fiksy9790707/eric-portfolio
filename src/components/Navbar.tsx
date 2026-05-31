@@ -1,16 +1,23 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { profile } from "../data/profile";
+import { text } from "../lib/i18n";
+import type { Language } from "../types/profile";
 
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "GitHub", href: "#github" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-];
+type NavbarProps = {
+  language: Language;
+  onToggleLanguage: () => void;
+};
 
-export default function Navbar() {
+export default function Navbar({ language, onToggleLanguage }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const navItems = [
+    { label: text(profile.ui.nav.about, language), href: "#about" },
+    { label: text(profile.ui.nav.projects, language), href: "#projects" },
+    { label: text(profile.ui.nav.github, language), href: "#github" },
+    { label: text(profile.ui.nav.skills, language), href: "#skills" },
+    { label: text(profile.ui.nav.contact, language), href: "#contact" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-ink/82 backdrop-blur-xl">
@@ -28,16 +35,34 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
+          <button
+            className="focus-ring rounded-md border border-line px-3 py-1.5 font-mono text-xs text-cyan transition hover:border-cyan/50 hover:bg-cyan/10"
+            type="button"
+            onClick={onToggleLanguage}
+            aria-label="Toggle language"
+          >
+            {text(profile.ui.languageToggle, language)}
+          </button>
         </div>
-        <button
-          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-zinc-200 md:hidden"
-          type="button"
-          aria-label="Toggle navigation menu"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((value) => !value)}
-        >
-          {isOpen ? <X size={18} /> : <Menu size={18} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            className="focus-ring rounded-md border border-line px-3 py-2 font-mono text-xs text-cyan"
+            type="button"
+            onClick={onToggleLanguage}
+            aria-label="Toggle language"
+          >
+            {text(profile.ui.languageToggle, language)}
+          </button>
+          <button
+            className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-zinc-200"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen((value) => !value)}
+          >
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </nav>
       {isOpen ? (
         <div className="border-t border-line bg-ink px-5 py-4 md:hidden">
