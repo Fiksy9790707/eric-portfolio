@@ -11,14 +11,25 @@ import Skills from "./components/Skills";
 import Timeline from "./components/Timeline";
 import { profile } from "./data/profile";
 import type { Language } from "./types/profile";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const languageStorageKey = "eric-portfolio-language";
+
+const getInitialLanguage = (): Language => {
+  const savedLanguage = window.localStorage.getItem(languageStorageKey);
+  return savedLanguage === "zh" || savedLanguage === "en" ? savedLanguage : "en";
+};
 
 export default function App() {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>(getInitialLanguage);
 
   const toggleLanguage = () => {
     setLanguage((value) => (value === "en" ? "zh" : "en"));
   };
+
+  useEffect(() => {
+    window.localStorage.setItem(languageStorageKey, language);
+  }, [language]);
 
   return (
     <Layout language={language} onToggleLanguage={toggleLanguage}>
