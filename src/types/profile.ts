@@ -37,6 +37,13 @@ export type CaseStudyFlowStep = {
   detail: LocalizedString;
 };
 
+export type CaseStudyMedia = {
+  src: string;
+  alt: LocalizedString;
+  caption: LocalizedString;
+  kind: LocalizedString;
+};
+
 export type CaseStudy = {
   id: string;
   eyebrow: LocalizedString;
@@ -49,6 +56,7 @@ export type CaseStudy = {
     title: LocalizedString;
     steps: CaseStudyFlowStep[];
   };
+  media?: CaseStudyMedia[];
   sections: CaseStudySection[];
 };
 
@@ -152,6 +160,9 @@ export type PortfolioProfile = {
       aboutTitle: LocalizedString;
       baseLabel: LocalizedString;
       schoolLine: LocalizedString;
+      featuredEyebrow: LocalizedString;
+      featuredTitle: LocalizedString;
+      featuredDescription: LocalizedString;
       nowEyebrow: LocalizedString;
       nowTitle: LocalizedString;
       nowDescription: LocalizedString;

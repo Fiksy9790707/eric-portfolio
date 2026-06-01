@@ -202,6 +202,44 @@ export const profile: PortfolioProfile = {
             },
           ],
         },
+        media: [
+          {
+            src: "project-media/wafer-ui-demo.png",
+            alt: {
+              en: "Smart Chip Detector Streamlit interface with defect boxes on a wafer image",
+              zh: "Smart Chip Detector 的 Streamlit 界面，晶圆图像上显示缺陷检测框",
+            },
+            caption: {
+              en: "Public repository screenshot of the Streamlit-style inspection interface. It shows the intended interaction flow: upload image, tune detection parameters, inspect boxes, and export CSV.",
+              zh: "来自公开仓库的界面截图，展示上传图像、调节检测参数、查看检测框和导出 CSV 的交互流程。",
+            },
+            kind: { en: "Repository screenshot", zh: "仓库截图" },
+          },
+          {
+            src: "project-media/wafer-architecture.png",
+            alt: {
+              en: "Architecture diagram for cloud training, YOLO algorithm, and inspection interface",
+              zh: "云端训练、YOLO 算法和检测界面的架构图",
+            },
+            caption: {
+              en: "Public architecture visual from the project repository, included here as supporting context rather than a performance claim.",
+              zh: "来自项目公开仓库的架构图，用于说明系统上下文，不作为性能指标声明。",
+            },
+            kind: { en: "Architecture visual", zh: "架构图" },
+          },
+          {
+            src: "project-media/wafer-inspection.png",
+            alt: {
+              en: "Wafer inspection visual asset from the public repository",
+              zh: "公开仓库中的晶圆检测视觉素材",
+            },
+            caption: {
+              en: "Additional public visual asset from the repository. It gives visitors a concrete sense of the inspection domain while respecting the NDA boundary.",
+              zh: "来自仓库的补充视觉素材，在不越过保密边界的前提下，让访客更直观理解检测场景。",
+            },
+            kind: { en: "Project visual", zh: "项目视觉" },
+          },
+        ],
         sections: [
           {
             title: { en: "Problem", zh: "问题背景" },
@@ -419,6 +457,32 @@ export const profile: PortfolioProfile = {
             },
           ],
         },
+        media: [
+          {
+            src: "project-media/silicon-diaries-cover.jpg",
+            alt: {
+              en: "Silicon Diaries public cover image from the repository",
+              zh: "Silicon Diaries 公开仓库中的封面图",
+            },
+            caption: {
+              en: "Public repository cover image for Silicon Diaries. This is a project visual, not a runtime UI screenshot.",
+              zh: "Silicon Diaries 公开仓库中的项目封面图。它是项目视觉素材，不是运行界面截图。",
+            },
+            kind: { en: "Repository visual", zh: "仓库视觉" },
+          },
+          {
+            src: "project-media/silicon-angry.jpg",
+            alt: {
+              en: "Silicon Diaries public character image from the repository",
+              zh: "Silicon Diaries 公开仓库中的角色视觉图",
+            },
+            caption: {
+              en: "A second public visual asset from the repository. It helps communicate the personality of the local diary idea while keeping technical claims modest.",
+              zh: "来自公开仓库的第二张视觉素材，用来表达本地系统日记项目的产品气质，同时保持技术表述克制。",
+            },
+            kind: { en: "Project visual", zh: "项目视觉" },
+          },
+        ],
         sections: [
           {
             title: { en: "Problem", zh: "问题背景" },
@@ -775,6 +839,15 @@ export const profile: PortfolioProfile = {
       schoolLine: {
         en: "Computer Science and Technology undergraduate.",
         zh: "计算机科学与技术本科生。",
+      },
+      featuredEyebrow: { en: "Featured Case Studies", zh: "精选案例" },
+      featuredTitle: {
+        en: "Two project write-ups with public evidence.",
+        zh: "两个带公开证据的项目案例。",
+      },
+      featuredDescription: {
+        en: "Quick entry points for visitors who want to inspect the strongest project context first.",
+        zh: "给想先看重点项目的访客一个更快入口。",
       },
       nowEyebrow: { en: "Now", zh: "现在" },
       nowTitle: {

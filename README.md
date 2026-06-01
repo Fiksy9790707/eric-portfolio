@@ -81,6 +81,14 @@ The public resume PDF lives at:
 public/resume.pdf
 ```
 
+Project screenshots and visual evidence live at:
+
+```text
+public/project-media/
+```
+
+Only add media that is either a real project screenshot, a public repository asset, or clearly labeled as a concept visual. Do not present concept art as runtime screenshots.
+
 After deploying, update the Open Graph URL/image placeholders in `index.html`.
 
 ## Update Project Cards

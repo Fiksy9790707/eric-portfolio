@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { assetPath } from "../lib/assets";
 import { text } from "../lib/i18n";
 import type { Language, Project } from "../types/profile";
 
@@ -76,6 +77,31 @@ export default function CaseStudy({ project, language }: CaseStudyProps) {
           </div>
 
           <div className="grid gap-5">
+            {caseStudy.media && caseStudy.media.length > 0 ? (
+              <div className="grid gap-5">
+                {caseStudy.media.map((item) => (
+                  <figure key={item.src} className="surface-card overflow-hidden">
+                    <div className="border-b border-line bg-black/20">
+                      <img
+                        className="h-auto w-full object-cover"
+                        src={assetPath(item.src)}
+                        alt={text(item.alt, language)}
+                        loading="lazy"
+                      />
+                    </div>
+                    <figcaption className="p-5">
+                      <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyan">
+                        {text(item.kind, language)}
+                      </p>
+                      <p className="mt-3 text-sm leading-6 text-zinc-300">
+                        {text(item.caption, language)}
+                      </p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            ) : null}
+
             {caseStudy.sections.map((section, index) => (
               <article key={text(section.title, language)} className="surface-card p-6">
                 <div className="flex items-start justify-between gap-5">

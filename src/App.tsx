@@ -3,6 +3,7 @@ import BackToTop from "./components/BackToTop";
 import BlogPreview from "./components/BlogPreview";
 import CaseStudy from "./components/CaseStudy";
 import Contact from "./components/Contact";
+import FeaturedCaseStudies from "./components/FeaturedCaseStudies";
 import Footer from "./components/Footer";
 import GitHubActivity from "./components/GitHubActivity";
 import Hero from "./components/Hero";
@@ -38,6 +39,7 @@ export default function App() {
     <Layout language={language} onToggleLanguage={toggleLanguage}>
       <main>
         <Hero profile={profile} language={language} />
+        <FeaturedCaseStudies projects={profile.projects} profile={profile} language={language} />
         <About profile={profile} language={language} />
         <Now items={profile.currentlyBuilding} profile={profile} language={language} />
         <Projects projects={profile.projects} language={language} />
