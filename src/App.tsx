@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import GitHubActivity from "./components/GitHubActivity";
 import Hero from "./components/Hero";
 import Layout from "./components/Layout";
+import Now from "./components/Now";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Timeline from "./components/Timeline";
@@ -38,6 +39,7 @@ export default function App() {
       <main>
         <Hero profile={profile} language={language} />
         <About profile={profile} language={language} />
+        <Now items={profile.currentlyBuilding} profile={profile} language={language} />
         <Projects projects={profile.projects} language={language} />
         {caseStudyProjects.map((project) => (
           <CaseStudy key={project.id} project={project} language={language} />

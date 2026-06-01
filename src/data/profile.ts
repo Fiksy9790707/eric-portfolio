@@ -5,7 +5,7 @@ export const profile: PortfolioProfile = {
     title: "Eric / 冯学诚 - Computer Science Student & Applied AI Builder",
     description:
       "Personal portfolio of Eric, a CS undergraduate at HIT Shenzhen focused on Applied AI, Computer Vision, and Local LLM applications.",
-    lastUpdated: "2026-05-31",
+    lastUpdated: "2026-06-02",
     productionUrl: "https://eric-portfolio-weld.vercel.app/",
     ogImage: "https://eric-portfolio-weld.vercel.app/og-image.png",
   },
@@ -33,7 +33,7 @@ export const profile: PortfolioProfile = {
     githubUsername: "Fiksy9790707",
     githubUrl: "https://github.com/Fiksy9790707",
     email: "14775369722@163.com",
-    resumeUrl: null,
+    resumeUrl: "resume.pdf",
     blogUrl: null,
   },
   about: [
@@ -52,6 +52,41 @@ export const profile: PortfolioProfile = {
     {
       en: "This site keeps the language intentionally simple. It reflects what I am building and learning now, without overstating experience that is not yet public.",
       zh: "这个网站会保持真实、简洁、克制，只展示我正在学习和构建的内容，不包装成还没有公开证据的经历。",
+    },
+  ],
+  currentlyBuilding: [
+    {
+      title: {
+        en: "Portfolio and public writing",
+        zh: "作品集与公开表达",
+      },
+      description: {
+        en: "Turning selected projects into readable case studies, clearer repositories, and a portfolio that can be shared without overclaiming.",
+        zh: "把已公开项目整理成更清楚的案例、仓库说明和可分享的个人作品集，同时保持表达克制。",
+      },
+      tags: ["Portfolio", "Case Studies", "Documentation"],
+    },
+    {
+      title: {
+        en: "Computer vision prototypes",
+        zh: "计算机视觉原型",
+      },
+      description: {
+        en: "Continuing the wafer defect detection direction: small-target detection, demo interface, and a more reproducible local delivery flow.",
+        zh: "继续推进晶圆缺陷检测方向：小目标检测、演示界面，以及更容易复现的本地交付流程。",
+      },
+      tags: ["YOLOv8", "Streamlit", "Industrial AI"],
+    },
+    {
+      title: {
+        en: "Local LLM automation",
+        zh: "本地大模型自动化",
+      },
+      description: {
+        en: "Exploring local models as low-cost personal automation tools for system diaries, campus workflows, and structured information handling.",
+        zh: "探索把本地模型用于低成本个人自动化，包括系统日记、校园信息流和结构化信息整理。",
+      },
+      tags: ["Ollama", "Local LLM", "Workflow"],
     },
   ],
   projects: [
@@ -630,8 +665,8 @@ export const profile: PortfolioProfile = {
     },
     {
       label: { en: "Resume", zh: "简历" },
-      value: "TODO",
-      href: null,
+      value: "Resume PDF",
+      href: "resume.pdf",
     },
     {
       label: { en: "Blog", zh: "博客" },
@@ -741,6 +776,15 @@ export const profile: PortfolioProfile = {
         en: "Computer Science and Technology undergraduate.",
         zh: "计算机科学与技术本科生。",
       },
+      nowEyebrow: { en: "Now", zh: "现在" },
+      nowTitle: {
+        en: "Currently building toward a more complete applied AI portfolio.",
+        zh: "正在把应用 AI 方向整理成更完整、可展示的作品集。",
+      },
+      nowDescription: {
+        en: "A short, current snapshot. These are active directions, not finished claims.",
+        zh: "这里记录当前正在推进的方向，不把进行中的事情包装成已经完成的成绩。",
+      },
       projectsEyebrow: { en: "Projects", zh: "项目" },
       projectsTitle: {
         en: "Selected projects with verifiable public context.",
@@ -787,6 +831,19 @@ export const profile: PortfolioProfile = {
       copyEmail: { en: "Copy email", zh: "复制邮箱" },
       emailNotConfigured: { en: "Email not configured yet.", zh: "邮箱还没有配置。" },
       emailCopied: { en: "Email copied.", zh: "邮箱已复制。" },
+      directTitle: { en: "Direct contact", zh: "直接联系" },
+      directDescription: {
+        en: "The cleanest way to reach me right now is email or GitHub. The resume link points to a simple public PDF generated from the same verified portfolio content.",
+        zh: "目前最直接的联系渠道是邮箱或 GitHub。简历链接指向一份基于当前公开作品集内容生成的 PDF。",
+      },
+      emailDirect: { en: "Email me", zh: "发送邮件" },
+      githubDirect: { en: "Open GitHub", zh: "打开 GitHub" },
+      resumeDirect: { en: "Open resume", zh: "打开简历" },
+      formNoteTitle: { en: "No fake inbox", zh: "不做假的收件箱" },
+      formNoteBody: {
+        en: "This first version does not store form messages or send email in the background. That keeps the site free, private, and easy to deploy. A real mail provider such as Resend or SendGrid can be connected later from the existing API route when needed.",
+        zh: "第一版不会在后台保存表单消息，也不会假装已经发送邮件。这样网站保持免费、隐私友好，也更容易部署。后续如果需要，可以在现有 API route 上接入 Resend、SendGrid 等真实邮件服务。",
+      },
       name: { en: "Name", zh: "姓名" },
       email: { en: "Email", zh: "邮箱" },
       message: { en: "Message", zh: "留言" },

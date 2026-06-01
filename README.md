@@ -33,7 +33,7 @@ Build for production:
 npm run build
 ```
 
-The Vite dev server does not emulate Vercel serverless functions by itself. On plain `npm run dev`, the GitHub activity section can fall back to bundled public data and the contact form will show a clean unavailable state if `/api/contact` is not served. On Vercel, `/api/*` routes are served automatically.
+The Vite dev server does not emulate Vercel serverless functions by itself. On plain `npm run dev`, the GitHub activity section can fall back to bundled public data. The visible contact section uses direct email, GitHub, and resume links rather than a fake inbox. On Vercel, `/api/*` routes are served automatically.
 
 If Vercel CLI is installed and logged in, you can test frontend and API routes together with:
 
@@ -65,15 +65,21 @@ Edit:
 src/data/profile.ts
 ```
 
-This file contains identity, about copy, projects, skills, timeline, mock blog previews, contact links, last updated date, and fallback GitHub repository data.
+This file contains identity, about copy, current building items, projects, skills, timeline, mock blog previews, contact links, last updated date, and fallback GitHub repository data.
 
 Important TODO fields:
 
 - `identity.email`
-- `identity.resumeUrl`
 - `identity.blogUrl`
+- `contactLinks` entries for Resume and Blog
 - `site.productionUrl`
 - `site.ogImage`
+
+The public resume PDF lives at:
+
+```text
+public/resume.pdf
+```
 
 After deploying, update the Open Graph URL/image placeholders in `index.html`.
 
@@ -125,7 +131,7 @@ Accepts:
 }
 ```
 
-It validates basic required fields and email shape. In version one it does not send email and does not write to a database. It returns a success message explaining that this is a demo placeholder.
+It validates basic required fields and email shape. In version one it does not send email and does not write to a database. It returns a success message explaining that this is a demo placeholder. The current frontend intentionally does not render a fake contact form; it uses direct contact links instead.
 
 ## Add Real Email Later
 
@@ -207,7 +213,7 @@ Notes:
 - The GitHub Pages mirror is static only.
 - Vercel serverless API routes under `/api/*` do not run on GitHub Pages.
 - The GitHub activity section falls back to bundled public repository data when `/api/github` is unavailable.
-- The contact form can render, but real submission needs Vercel or a later email provider integration.
+- The contact area uses direct links. Real form submission can be added later through Vercel and an email provider integration.
 
 To enable the mirror:
 

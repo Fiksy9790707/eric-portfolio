@@ -58,6 +58,12 @@ export type SkillGroup = {
   items: string[];
 };
 
+export type CurrentlyBuildingItem = {
+  title: LocalizedString;
+  description: LocalizedString;
+  tags: string[];
+};
+
 export type TimelineItem = {
   title: LocalizedString;
   description: LocalizedString;
@@ -117,6 +123,7 @@ export type PortfolioProfile = {
     blogUrl: string | null;
   };
   about: LocalizedString[];
+  currentlyBuilding: CurrentlyBuildingItem[];
   projects: Project[];
   skills: SkillGroup[];
   timeline: TimelineItem[];
@@ -145,6 +152,9 @@ export type PortfolioProfile = {
       aboutTitle: LocalizedString;
       baseLabel: LocalizedString;
       schoolLine: LocalizedString;
+      nowEyebrow: LocalizedString;
+      nowTitle: LocalizedString;
+      nowDescription: LocalizedString;
       projectsEyebrow: LocalizedString;
       projectsTitle: LocalizedString;
       githubEyebrow: LocalizedString;
@@ -173,6 +183,13 @@ export type PortfolioProfile = {
       copyEmail: LocalizedString;
       emailNotConfigured: LocalizedString;
       emailCopied: LocalizedString;
+      directTitle: LocalizedString;
+      directDescription: LocalizedString;
+      emailDirect: LocalizedString;
+      githubDirect: LocalizedString;
+      resumeDirect: LocalizedString;
+      formNoteTitle: LocalizedString;
+      formNoteBody: LocalizedString;
       name: LocalizedString;
       email: LocalizedString;
       message: LocalizedString;
