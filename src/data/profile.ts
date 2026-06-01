@@ -124,6 +124,49 @@ export const profile: PortfolioProfile = {
             value: { en: "Prototype / building", zh: "原型 / 构建中" },
           },
         ],
+        flow: {
+          title: {
+            en: "Prototype workflow",
+            zh: "原型流程",
+          },
+          steps: [
+            {
+              label: { en: "Data", zh: "数据" },
+              detail: {
+                en: "Prepare defect-style images and labels",
+                zh: "整理缺陷图像与标注",
+              },
+            },
+            {
+              label: { en: "Train", zh: "训练" },
+              detail: {
+                en: "Explore YOLOv8 training on Aliyun PAI",
+                zh: "在 Aliyun PAI 探索 YOLOv8 训练",
+              },
+            },
+            {
+              label: { en: "Evaluate", zh: "评估" },
+              detail: {
+                en: "Check small-target detection behavior",
+                zh: "检查小目标检测表现",
+              },
+            },
+            {
+              label: { en: "Interface", zh: "界面" },
+              detail: {
+                en: "Wrap inference with Streamlit",
+                zh: "用 Streamlit 封装推理",
+              },
+            },
+            {
+              label: { en: "Deliver", zh: "交付" },
+              detail: {
+                en: "Keep Windows local demo in mind",
+                zh: "面向 Windows 本地演示",
+              },
+            },
+          ],
+        },
         sections: [
           {
             title: { en: "Problem", zh: "问题背景" },
@@ -298,6 +341,49 @@ export const profile: PortfolioProfile = {
             value: { en: "Experimental", zh: "实验中" },
           },
         ],
+        flow: {
+          title: {
+            en: "Local automation loop",
+            zh: "本地自动化闭环",
+          },
+          steps: [
+            {
+              label: { en: "Signals", zh: "信号" },
+              detail: {
+                en: "Collect CPU, memory, uptime, and status",
+                zh: "采集 CPU、内存、运行时间和状态",
+              },
+            },
+            {
+              label: { en: "Structure", zh: "结构化" },
+              detail: {
+                en: "Format system state into a stable prompt",
+                zh: "把系统状态整理成稳定 prompt",
+              },
+            },
+            {
+              label: { en: "Generate", zh: "生成" },
+              detail: {
+                en: "Use a local LLM through Ollama",
+                zh: "通过 Ollama 调用本地模型",
+              },
+            },
+            {
+              label: { en: "Write", zh: "写作" },
+              detail: {
+                en: "Produce first-person diary entries",
+                zh: "生成第一人称日记",
+              },
+            },
+            {
+              label: { en: "Archive", zh: "归档" },
+              detail: {
+                en: "Store entries for later review",
+                zh: "归档文本以便回看",
+              },
+            },
+          ],
+        },
         sections: [
           {
             title: { en: "Problem", zh: "问题背景" },

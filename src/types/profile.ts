@@ -32,6 +32,11 @@ export type CaseStudySection = {
   points?: LocalizedString[];
 };
 
+export type CaseStudyFlowStep = {
+  label: LocalizedString;
+  detail: LocalizedString;
+};
+
 export type CaseStudy = {
   id: string;
   eyebrow: LocalizedString;
@@ -40,6 +45,10 @@ export type CaseStudy = {
   readLabel: LocalizedString;
   repositoryLabel: LocalizedString;
   metrics: CaseStudyMetric[];
+  flow: {
+    title: LocalizedString;
+    steps: CaseStudyFlowStep[];
+  };
   sections: CaseStudySection[];
 };
 

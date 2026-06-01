@@ -34,6 +34,34 @@ export default function CaseStudy({ project, language }: CaseStudyProps) {
               ))}
             </div>
 
+            <div className="surface-card mt-5 p-5">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyan">
+                {text(caseStudy.flow.title, language)}
+              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-5 lg:grid-cols-1">
+                {caseStudy.flow.steps.map((step, index) => (
+                  <div
+                    key={text(step.label, language)}
+                    className="relative rounded-md border border-line bg-ink/45 p-4"
+                  >
+                    {index < caseStudy.flow.steps.length - 1 ? (
+                      <span
+                        aria-hidden="true"
+                        className="absolute -bottom-3 left-6 hidden h-3 w-px bg-cyan/40 lg:block"
+                      />
+                    ) : null}
+                    <div className="flex items-center gap-3">
+                      <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-cyan/40 bg-cyan/10 font-mono text-xs text-cyan">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <p className="text-sm font-semibold text-mint">{text(step.label, language)}</p>
+                    </div>
+                    <p className="mt-3 text-xs leading-5 text-zinc-400">{text(step.detail, language)}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {project.githubUrl ? (
               <a
                 className="focus-ring mt-7 inline-flex items-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-semibold text-cyan transition hover:border-cyan/50 hover:text-mint"
