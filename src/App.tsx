@@ -23,7 +23,7 @@ const getInitialLanguage = (): Language => {
 
 export default function App() {
   const [language, setLanguage] = useState<Language>(getInitialLanguage);
-  const waferProject = profile.projects.find((project) => project.id === "wafer-defect-detection");
+  const caseStudyProjects = profile.projects.filter((project) => project.caseStudy);
 
   const toggleLanguage = () => {
     setLanguage((value) => (value === "en" ? "zh" : "en"));
@@ -39,7 +39,9 @@ export default function App() {
         <Hero profile={profile} language={language} />
         <About profile={profile} language={language} />
         <Projects projects={profile.projects} language={language} />
-        {waferProject ? <CaseStudy project={waferProject} language={language} /> : null}
+        {caseStudyProjects.map((project) => (
+          <CaseStudy key={project.id} project={project} language={language} />
+        ))}
         <GitHubActivity fallbackRepositories={profile.github.repositories} language={language} />
         <Skills skills={profile.skills} language={language} />
         <Timeline items={profile.timeline} language={language} />

@@ -258,6 +258,150 @@ export const profile: PortfolioProfile = {
         en: "View repository",
         zh: "查看仓库",
       },
+      caseStudy: {
+        id: "silicon-diaries-case-study",
+        eyebrow: {
+          en: "Case Study",
+          zh: "项目案例",
+        },
+        title: {
+          en: "Silicon Diaries: local LLMs as personal automation tools",
+          zh: "硅基日记：把本地大模型作为个人自动化工具",
+        },
+        summary: {
+          en: "An experimental local LLM project that turns system monitoring data into first-person diary entries. It is a small but useful exploration of how local models can make personal automation feel more contextual and expressive.",
+          zh: "这是一个实验性质的本地大模型项目，把系统监控数据转化成第一人称日记。它规模不大，但很适合探索本地模型如何让个人自动化更有上下文和表达感。",
+        },
+        readLabel: {
+          en: "Read case study",
+          zh: "阅读案例",
+        },
+        repositoryLabel: {
+          en: "Open repository",
+          zh: "打开仓库",
+        },
+        metrics: [
+          {
+            label: { en: "Domain", zh: "领域" },
+            value: { en: "Local LLM automation", zh: "本地大模型自动化" },
+          },
+          {
+            label: { en: "Runtime", zh: "运行方式" },
+            value: { en: "Local Python", zh: "本地 Python" },
+          },
+          {
+            label: { en: "Monitoring", zh: "监控数据" },
+            value: { en: "psutil", zh: "psutil" },
+          },
+          {
+            label: { en: "Status", zh: "状态" },
+            value: { en: "Experimental", zh: "实验中" },
+          },
+        ],
+        sections: [
+          {
+            title: { en: "Problem", zh: "问题背景" },
+            body: {
+              en: "Most system monitoring scripts are useful but dry: they report CPU, memory, uptime, and logs without context. Silicon Diaries asks a playful but practical question: can a local LLM turn those signals into a readable daily summary without sending personal system data to a cloud model?",
+              zh: "大多数系统监控脚本有用但枯燥：它们报告 CPU、内存、运行时间和日志，却缺少上下文。硅基日记提出了一个有趣但实用的问题：能否用本地大模型把这些信号变成可读的每日总结，同时不把个人系统数据发到云端模型？",
+            },
+            points: [
+              {
+                en: "Use local system state as the input signal instead of manually written prompts.",
+                zh: "用本地系统状态作为输入信号，而不是只靠手写 prompt。",
+              },
+              {
+                en: "Keep data local by using Ollama and local model inference.",
+                zh: "通过 Ollama 和本地模型推理，让数据尽量留在本机。",
+              },
+            ],
+          },
+          {
+            title: { en: "Approach", zh: "实现思路" },
+            body: {
+              en: "The project combines Python monitoring utilities with local LLM generation. psutil collects basic system information, Python Logging keeps the process traceable, and an Ollama-served model turns the structured state into a first-person diary-style entry.",
+              zh: "项目把 Python 系统监控工具和本地大模型生成结合起来。psutil 收集基础系统信息，Python Logging 让运行过程可追踪，再由 Ollama 托管的本地模型把结构化状态转换成第一人称日记风格文本。",
+            },
+            points: [
+              {
+                en: "Collect lightweight signals such as CPU, memory, uptime, and runtime status.",
+                zh: "收集 CPU、内存、运行时间和运行状态等轻量信号。",
+              },
+              {
+                en: "Format the signals into a prompt that the local model can interpret consistently.",
+                zh: "把信号整理成模型更容易稳定理解的 prompt。",
+              },
+              {
+                en: "Archive generated diary entries so the system has a history rather than a one-off response.",
+                zh: "归档生成的日记，让系统形成历史记录，而不是一次性回答。",
+              },
+            ],
+          },
+          {
+            title: { en: "What makes it portfolio-worthy", zh: "为什么适合作品集展示" },
+            body: {
+              en: "Silicon Diaries is valuable because it shows applied thinking around local LLMs: privacy, automation, structured inputs, and a small product idea. It is not just a chatbot wrapper; it turns machine state into a user-facing artifact.",
+              zh: "硅基日记的价值在于它展示了围绕本地大模型的应用思考：隐私、自动化、结构化输入和小产品想法。它不只是聊天机器人套壳，而是把机器状态转化成面向用户的产物。",
+            },
+            points: [
+              {
+                en: "Connects system monitoring with language generation.",
+                zh: "把系统监控和语言生成连接起来。",
+              },
+              {
+                en: "Uses local inference, which fits privacy-sensitive personal automation.",
+                zh: "使用本地推理，适合对隐私敏感的个人自动化场景。",
+              },
+              {
+                en: "Shows personality and product sense while staying technically modest.",
+                zh: "在技术表达克制的前提下，体现一点产品感和个性。",
+              },
+            ],
+          },
+          {
+            title: { en: "Current limitations", zh: "当前限制" },
+            body: {
+              en: "The project is still experimental. The generated writing quality depends on prompt design and local model behavior, and the current public version should be treated as a prototype rather than a stable productivity tool.",
+              zh: "这个项目仍然是实验性质。生成质量依赖 prompt 设计和本地模型表现，当前公开版本应被视为原型，而不是稳定的生产力工具。",
+            },
+            points: [
+              {
+                en: "Add clearer setup instructions for Ollama model selection and runtime requirements.",
+                zh: "补充更清楚的 Ollama 模型选择和运行环境说明。",
+              },
+              {
+                en: "Add example outputs with sensitive information removed.",
+                zh: "补充脱敏后的生成样例。",
+              },
+              {
+                en: "Separate monitoring logic, prompt construction, and storage into cleaner modules.",
+                zh: "把监控逻辑、prompt 构造和存储归档拆成更清晰的模块。",
+              },
+            ],
+          },
+          {
+            title: { en: "Next steps", zh: "下一步" },
+            body: {
+              en: "The next step is to make the prototype easier to run and easier to judge: provide sample diaries, document the local setup, and define what a useful diary entry should include.",
+              zh: "下一步是让这个原型更容易运行、也更容易判断效果：提供样例日记、整理本地部署说明，并定义一篇有用的系统日记应该包含什么。",
+            },
+            points: [
+              {
+                en: "Add a README quickstart and model recommendations.",
+                zh: "增加 README 快速开始和模型推荐。",
+              },
+              {
+                en: "Add a small gallery of generated diary examples.",
+                zh: "增加一小组生成日记示例。",
+              },
+              {
+                en: "Explore scheduled runs so entries can be generated automatically.",
+                zh: "探索定时运行，让日记可以自动生成。",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       id: "ai-campus-assistant",
