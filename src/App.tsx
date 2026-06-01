@@ -1,6 +1,5 @@
 import About from "./components/About";
 import BackToTop from "./components/BackToTop";
-import BlogPreview from "./components/BlogPreview";
 import CaseStudy from "./components/CaseStudy";
 import Contact from "./components/Contact";
 import FeaturedCaseStudies from "./components/FeaturedCaseStudies";
@@ -12,6 +11,7 @@ import Now from "./components/Now";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Timeline from "./components/Timeline";
+import WritingNotes from "./components/WritingNotes";
 import { profile } from "./data/profile";
 import type { Language } from "./types/profile";
 import { useEffect, useState } from "react";
@@ -49,7 +49,7 @@ export default function App() {
         <GitHubActivity fallbackRepositories={profile.github.repositories} language={language} />
         <Skills skills={profile.skills} language={language} />
         <Timeline items={profile.timeline} language={language} />
-        <BlogPreview posts={profile.blogPosts} language={language} />
+        <WritingNotes posts={profile.blogPosts} language={language} />
         <Contact profile={profile} language={language} />
       </main>
       <Footer profile={profile} language={language} />

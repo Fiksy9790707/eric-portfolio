@@ -681,38 +681,114 @@ export const profile: PortfolioProfile = {
   blogPosts: [
     {
       title: { en: "Building an AI Campus Assistant", zh: "构建 AI 校园助手" },
-      date: "TODO",
+      date: "2026-06",
+      status: { en: "Draft note", zh: "草稿笔记" },
       tags: ["LLM", "Workflow", "Campus"],
       summary: {
-        en: "A design note on turning scattered campus information into structured reminders and actionable workflows.",
-        zh: "关于如何把分散的校园信息整理成结构化提醒和可执行工作流的设计笔记。",
+        en: "A product note on turning scattered campus notices into structured tasks, reminders, and knowledge snippets.",
+        zh: "关于如何把分散的校园通知整理成结构化任务、提醒和知识片段的产品笔记。",
+      },
+      notes: [
+        {
+          en: "The useful part is not only answering questions, but reducing repeated information sorting.",
+          zh: "真正有价值的部分不只是回答问题，而是减少重复的信息整理。",
+        },
+        {
+          en: "Structured output matters: deadlines, course names, locations, and action items should be separated.",
+          zh: "结构化输出很重要：DDL、课程名、地点和待办事项应该被拆开。",
+        },
+        {
+          en: "A first version can stay lightweight without login, database, or private campus integration.",
+          zh: "第一版可以保持轻量，不接登录、数据库或私有校园系统。",
+        },
+      ],
+      next: {
+        en: "Design a small public demo with mock notices and a clear input-output example.",
+        zh: "用模拟通知做一个公开小 demo，并给出清楚的输入输出示例。",
       },
     },
     {
       title: { en: "Notes on YOLO-based Defect Detection", zh: "YOLO 缺陷检测笔记" },
-      date: "TODO",
+      date: "2026-06",
+      status: { en: "Field note", zh: "实践笔记" },
       tags: ["YOLO", "Computer Vision", "Industrial AI"],
       summary: {
-        en: "Practical observations from building a small-target detection prototype for industrial defect scenarios.",
-        zh: "围绕工业缺陷场景中的小目标检测原型，整理一些实践观察。",
+        en: "Practical observations from shaping a small-target defect detection prototype into something easier to inspect.",
+        zh: "围绕小目标缺陷检测原型，记录如何把模型结果整理成更容易检查的应用流程。",
+      },
+      notes: [
+        {
+          en: "Small objects make image preparation and slicing strategy as important as the detector choice.",
+          zh: "小目标场景里，图像预处理和切片策略和检测器选择一样关键。",
+        },
+        {
+          en: "A portfolio project becomes stronger when it shows interface, delivery flow, and limitations.",
+          zh: "作品集项目如果能展示界面、交付流程和当前限制，会比只展示模型更有说服力。",
+        },
+        {
+          en: "Metrics should be published only when the dataset and evaluation protocol can be explained.",
+          zh: "只有当数据和评估流程能说清楚时，才适合公开强调指标。",
+        },
+      ],
+      next: {
+        en: "Add a sanitized demo GIF and a toy reproducible example if suitable public data is available.",
+        zh: "如果有合适的公开数据，补一个脱敏 demo GIF 和可复现的小样例。",
       },
     },
     {
       title: { en: "Local LLMs as Personal Automation Tools", zh: "把本地大模型作为个人自动化工具" },
-      date: "TODO",
+      date: "2026-06",
+      status: { en: "Exploration", zh: "探索记录" },
       tags: ["Local LLM", "Ollama", "Automation"],
       summary: {
-        en: "A short exploration of when local models are useful for private, low-cost personal tooling.",
-        zh: "简要记录本地模型适合做哪些私密、低成本的个人工具。",
+        en: "A short exploration of when local models are useful for private, low-cost personal workflows.",
+        zh: "简要记录本地模型适合做哪些私密、低成本的个人工作流。",
+      },
+      notes: [
+        {
+          en: "Local models are attractive when the input is personal, repetitive, and not worth sending to a cloud API.",
+          zh: "当输入信息比较个人、重复，而且不值得发到云端 API 时，本地模型很有吸引力。",
+        },
+        {
+          en: "The model output should be grounded in structured signals, not only an open-ended prompt.",
+          zh: "模型输出最好由结构化信号支撑，而不是只靠开放式 prompt。",
+        },
+        {
+          en: "A good local LLM tool should fail quietly and keep the original data accessible.",
+          zh: "好的本地大模型工具应该能安静失败，并保留原始数据可追溯。",
+        },
+      ],
+      next: {
+        en: "Publish sanitized diary examples and separate monitoring, prompt, and storage modules more clearly.",
+        zh: "发布脱敏日记样例，并把监控、prompt、存储模块拆得更清楚。",
       },
     },
     {
       title: { en: "From Coursework to Real Projects", zh: "从课程作业到真实项目" },
-      date: "TODO",
+      date: "2026-06",
+      status: { en: "Learning note", zh: "学习笔记" },
       tags: ["Learning", "Portfolio", "Engineering"],
       summary: {
-        en: "Notes on converting course exercises into small public projects with clearer product thinking.",
-        zh: "记录如何把课程练习逐步整理成更有产品感的小型公开项目。",
+        en: "Notes on converting exercises and experiments into small public projects with clearer product thinking.",
+        zh: "记录如何把课程练习和实验逐步整理成更有产品感的小型公开项目。",
+      },
+      notes: [
+        {
+          en: "A public project needs a reader path: problem, setup, screenshots, limitations, and next steps.",
+          zh: "公开项目需要一条读者路径：问题、运行方式、截图、限制和下一步。",
+        },
+        {
+          en: "A small project is still valuable if its boundary is clear and the repo is easy to inspect.",
+          zh: "小项目只要边界清楚、仓库容易阅读，仍然有展示价值。",
+        },
+        {
+          en: "Honest TODOs are better than pretending unfinished systems are production-ready.",
+          zh: "诚实的 TODO 比把未完成系统包装成生产级项目更好。",
+        },
+      ],
+      next: {
+        en: "Keep turning project repos into better public entry points, starting with README and evidence media.",
+        zh: "继续把项目仓库整理成更好的公开入口，先从 README 和证据素材开始。",
       },
     },
   ],
@@ -734,8 +810,8 @@ export const profile: PortfolioProfile = {
     },
     {
       label: { en: "Blog", zh: "博客" },
-      value: "TODO",
-      href: null,
+      value: "Writing / Notes",
+      href: "#writing",
     },
   ],
   github: {
@@ -818,6 +894,7 @@ export const profile: PortfolioProfile = {
       projects: { en: "Projects", zh: "项目" },
       github: { en: "GitHub", zh: "GitHub" },
       skills: { en: "Skills", zh: "技能" },
+      writing: { en: "Writing", zh: "笔记" },
       contact: { en: "Contact", zh: "联系" },
     },
     languageToggle: { en: "中文", zh: "EN" },
@@ -879,8 +956,13 @@ export const profile: PortfolioProfile = {
         en: "A conservative snapshot of the current path.",
         zh: "对当前路径的保守记录。",
       },
-      blogEyebrow: { en: "Blog Preview", zh: "文章预览" },
-      blogTitle: { en: "Writing directions to fill in later.", zh: "后续可以展开的写作方向。" },
+      blogEyebrow: { en: "Writing / Notes", zh: "写作 / 笔记" },
+      blogTitle: { en: "Short notes from projects in progress.", zh: "来自进行中项目的短笔记。" },
+      blogDescription: {
+        en: "No CMS yet. This is a lightweight, data-driven notes page for ideas that are useful enough to share before becoming full articles.",
+        zh: "暂时不接 CMS。这里是一个轻量的数据驱动笔记页，用来放那些还没写成长文、但已经值得分享的想法。",
+      },
+      blogNextLabel: { en: "Next step", zh: "下一步" },
       contactEyebrow: { en: "Contact", zh: "联系" },
       contactTitle: {
         en: "Open to feedback, collaboration, and practical project ideas.",

@@ -80,8 +80,11 @@ export type TimelineItem = {
 export type BlogPostPreview = {
   title: LocalizedString;
   date: string;
+  status: LocalizedString;
   tags: string[];
   summary: LocalizedString;
+  notes: LocalizedString[];
+  next: LocalizedString;
 };
 
 export type ContactLink = {
@@ -144,6 +147,7 @@ export type PortfolioProfile = {
       projects: LocalizedString;
       github: LocalizedString;
       skills: LocalizedString;
+      writing: LocalizedString;
       contact: LocalizedString;
     };
     languageToggle: LocalizedString;
@@ -177,6 +181,8 @@ export type PortfolioProfile = {
       timelineTitle: LocalizedString;
       blogEyebrow: LocalizedString;
       blogTitle: LocalizedString;
+      blogDescription: LocalizedString;
+      blogNextLabel: LocalizedString;
       contactEyebrow: LocalizedString;
       contactTitle: LocalizedString;
     };
