@@ -18,6 +18,29 @@ export type Project = {
   categories: ProjectCategory[];
   githubUrl: string | null;
   linkLabel: LocalizedString;
+  caseStudy?: CaseStudy;
+};
+
+export type CaseStudyMetric = {
+  label: LocalizedString;
+  value: LocalizedString;
+};
+
+export type CaseStudySection = {
+  title: LocalizedString;
+  body: LocalizedString;
+  points?: LocalizedString[];
+};
+
+export type CaseStudy = {
+  id: string;
+  eyebrow: LocalizedString;
+  title: LocalizedString;
+  summary: LocalizedString;
+  readLabel: LocalizedString;
+  repositoryLabel: LocalizedString;
+  metrics: CaseStudyMetric[];
+  sections: CaseStudySection[];
 };
 
 export type SkillGroup = {

@@ -1,6 +1,7 @@
 import About from "./components/About";
 import BackToTop from "./components/BackToTop";
 import BlogPreview from "./components/BlogPreview";
+import CaseStudy from "./components/CaseStudy";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import GitHubActivity from "./components/GitHubActivity";
@@ -22,6 +23,7 @@ const getInitialLanguage = (): Language => {
 
 export default function App() {
   const [language, setLanguage] = useState<Language>(getInitialLanguage);
+  const waferProject = profile.projects.find((project) => project.id === "wafer-defect-detection");
 
   const toggleLanguage = () => {
     setLanguage((value) => (value === "en" ? "zh" : "en"));
@@ -37,6 +39,7 @@ export default function App() {
         <Hero profile={profile} language={language} />
         <About profile={profile} language={language} />
         <Projects projects={profile.projects} language={language} />
+        {waferProject ? <CaseStudy project={waferProject} language={language} /> : null}
         <GitHubActivity fallbackRepositories={profile.github.repositories} language={language} />
         <Skills skills={profile.skills} language={language} />
         <Timeline items={profile.timeline} language={language} />

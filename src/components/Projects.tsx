@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+import { BookOpen, ExternalLink } from "lucide-react";
 import { useMemo, useState } from "react";
 import { profile } from "../data/profile";
 import { text } from "../lib/i18n";
@@ -67,7 +67,16 @@ export default function Projects({ projects, language }: ProjectsProps) {
                   </span>
                 ))}
               </div>
-              <div className="mt-7">
+              <div className="mt-7 flex flex-wrap items-center gap-4">
+                {project.caseStudy ? (
+                  <a
+                    className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
+                    href={`#${project.caseStudy.id}`}
+                  >
+                    {text(project.caseStudy.readLabel, language)}
+                    <BookOpen size={15} />
+                  </a>
+                ) : null}
                 {project.githubUrl ? (
                   <a
                     className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
