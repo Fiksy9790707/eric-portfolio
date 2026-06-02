@@ -110,11 +110,23 @@ export type NoteSection = {
   points?: LocalizedString[];
 };
 
+export type BlogSource = "original" | "zhihu" | "project-note";
+
+export type BlogFilter = "portfolio" | "ai-application" | "product-thinking" | "growth" | "zhihu";
+
+export type RelatedProject = {
+  label: LocalizedString;
+  href: string;
+};
+
 export type BlogPostPreview = {
   slug: string;
   title: LocalizedString;
   date: string;
   status: LocalizedString;
+  source: BlogSource;
+  filters: BlogFilter[];
+  relatedProject?: RelatedProject;
   tags: string[];
   coverImage?: CaseStudyMedia;
   externalUrl?: string;
@@ -224,6 +236,11 @@ export type PortfolioProfile = {
       blogDescription: LocalizedString;
       blogNextLabel: LocalizedString;
       blogReadLabel: LocalizedString;
+      blogAllLabel: LocalizedString;
+      blogLatestLabel: LocalizedString;
+      blogArchiveTitle: LocalizedString;
+      blogArchiveDescription: LocalizedString;
+      blogRelatedLabel: LocalizedString;
       backHome: LocalizedString;
       openRepository: LocalizedString;
       evidenceEyebrow: LocalizedString;

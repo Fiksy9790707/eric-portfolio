@@ -66,6 +66,7 @@ The app uses a small custom React router instead of a heavy routing dependency. 
 - `/lab/machine-learning-labs`
 - `/lab/computer-construction-minirv`
 - `/lab/software-construction-aircraft-war`
+- `/writing`
 - `/notes/building-ai-campus-assistant`
 - `/notes/yolo-defect-detection-notes`
 - `/notes/local-llms-personal-automation`
@@ -183,6 +184,9 @@ Each note supports:
 - `title`
 - `date`
 - `status`
+- `source`
+- `filters`
+- `relatedProject`
 - `tags`
 - `coverImage`
 - `externalUrl`

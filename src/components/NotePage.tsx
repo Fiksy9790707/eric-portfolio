@@ -1,13 +1,19 @@
 import { ArrowLeft, ExternalLink, NotebookText } from "lucide-react";
 import { assetPath } from "../lib/assets";
 import { text } from "../lib/i18n";
-import type { BlogPostPreview, Language, PortfolioProfile } from "../types/profile";
+import type { BlogPostPreview, BlogSource, Language, LocalizedString, PortfolioProfile } from "../types/profile";
 import AppLink from "./AppLink";
 
 type NotePageProps = {
   note: BlogPostPreview;
   profile: PortfolioProfile;
   language: Language;
+};
+
+const sourceLabels: Record<BlogSource, LocalizedString> = {
+  original: { en: "Original", zh: "Original" },
+  zhihu: { en: "Zhihu", zh: "Zhihu" },
+  "project-note": { en: "Project Note", zh: "Project Note" },
 };
 
 export default function NotePage({ note, profile, language }: NotePageProps) {
@@ -17,10 +23,10 @@ export default function NotePage({ note, profile, language }: NotePageProps) {
         <div className="section-shell reveal">
           <AppLink
             className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
-            href="/#writing"
+            href="/writing"
           >
             <ArrowLeft size={16} />
-            {text(profile.ui.sections.backHome, language)}
+            {text(profile.ui.nav.writing, language)}
           </AppLink>
 
           <div className="mt-8 max-w-4xl">
@@ -31,8 +37,9 @@ export default function NotePage({ note, profile, language }: NotePageProps) {
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-cyan">
                 <NotebookText size={14} />
-                {text(note.status, language)}
+                {text(sourceLabels[note.source], language)}
               </span>
+              <span className="tag">{text(note.status, language)}</span>
               <span className="font-mono text-xs text-zinc-500">{note.date}</span>
               {note.tags.map((tag) => (
                 <span key={tag} className="tag">
@@ -75,6 +82,15 @@ export default function NotePage({ note, profile, language }: NotePageProps) {
                   {text(note.externalLabel ?? { en: "Read original", zh: "阅读原文" }, language)}
                   <ExternalLink size={14} />
                 </a>
+              ) : null}
+              {note.relatedProject ? (
+                <AppLink
+                  className="focus-ring mt-3 inline-flex items-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-semibold text-zinc-200 transition hover:border-cyan/50 hover:text-cyan"
+                  href={note.relatedProject.href}
+                >
+                  {text(profile.ui.sections.blogRelatedLabel, language)}:{" "}
+                  {text(note.relatedProject.label, language)}
+                </AppLink>
               ) : null}
             </aside>
 

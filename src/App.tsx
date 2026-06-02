@@ -67,6 +67,10 @@ export default function App() {
         <LabExperimentPage experiment={selectedLabExperiment} profile={profile} language={language} />
       ) : route === "/lab" ? (
         <ProjectLabPage profile={profile} language={language} />
+      ) : route === "/writing" ? (
+        <main>
+          <WritingNotes posts={profile.blogPosts} language={language} mode="archive" />
+        </main>
       ) : (
         <main>
           <Hero profile={profile} language={language} />
@@ -77,7 +81,7 @@ export default function App() {
           <GitHubActivity fallbackRepositories={profile.github.repositories} language={language} />
           <Skills skills={profile.skills} language={language} />
           <Timeline items={profile.timeline} language={language} />
-          <WritingNotes posts={profile.blogPosts} language={language} />
+          <WritingNotes posts={profile.blogPosts} language={language} mode="latest" />
           <Contact profile={profile} language={language} />
         </main>
       )}
