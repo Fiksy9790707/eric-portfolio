@@ -62,12 +62,13 @@ The app uses a small custom React router instead of a heavy routing dependency. 
 
 - `/case-studies/wafer-defect-detection`
 - `/case-studies/silicon-diaries`
+- `/lab`
 - `/notes/building-ai-campus-assistant`
 - `/notes/yolo-defect-detection-notes`
 - `/notes/local-llms-personal-automation`
 - `/notes/coursework-to-real-projects`
 
-`vercel.json` rewrites the case-study and notes routes to `index.html` so direct links work on Vercel.
+`vercel.json` rewrites the case-study, lab, and notes routes to `index.html` so direct links work on Vercel.
 
 ## Update Personal Information
 
@@ -78,6 +79,8 @@ src/data/profile.ts
 ```
 
 This file contains identity, about copy, current building items, projects, skills, timeline, mock blog previews, contact links, last updated date, and fallback GitHub repository data.
+
+The Project Lab page is also data-driven from `labExperiments`. It summarizes selected local coursework folders as learning evidence. These entries should stay conservative: use them to show foundations and experiments, not to claim polished public products.
 
 Important TODO fields:
 
@@ -124,6 +127,35 @@ Each project supports:
 - `linkLabel`
 
 If a project has no public repository yet, keep `githubUrl: null` and use a TODO link label.
+
+Case studies can also include an `evidence` array. Use it to separate:
+
+- public repository links
+- screenshots or visual assets that are already safe to show
+- TODO evidence that still needs verification
+- private or NDA boundaries that should not be disclosed
+
+This keeps portfolio claims grounded in visible proof rather than adjectives.
+
+## Update Project Lab
+
+Edit the `labExperiments` array in:
+
+```text
+src/data/profile.ts
+```
+
+Each lab item supports:
+
+- `title`
+- `course`
+- `status`
+- `summary`
+- `stack`
+- `sourcePath`
+- `evidence`
+
+The current entries were organized from selected folders under `D:\HIT_study\01_Courses\HIT_S2`. The site displays public-facing folder labels such as `HIT_S2/Machine_Learning` instead of clickable local paths, because local files are not accessible to public visitors.
 
 ## Update Writing Notes
 

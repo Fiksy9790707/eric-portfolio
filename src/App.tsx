@@ -9,6 +9,7 @@ import Hero from "./components/Hero";
 import Layout from "./components/Layout";
 import Now from "./components/Now";
 import Projects from "./components/Projects";
+import ProjectLabPage from "./components/ProjectLabPage";
 import Skills from "./components/Skills";
 import Timeline from "./components/Timeline";
 import NotePage from "./components/NotePage";
@@ -57,6 +58,8 @@ export default function App() {
         <CaseStudyPage project={selectedProject} profile={profile} language={language} />
       ) : selectedNote ? (
         <NotePage note={selectedNote} profile={profile} language={language} />
+      ) : route === "/lab" ? (
+        <ProjectLabPage profile={profile} language={language} />
       ) : (
         <main>
           <Hero profile={profile} language={language} />

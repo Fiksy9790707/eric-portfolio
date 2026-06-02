@@ -1,4 +1,4 @@
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, ShieldCheck } from "lucide-react";
 import { assetPath } from "../lib/assets";
 import { text } from "../lib/i18n";
 import type { Language, PortfolioProfile, Project } from "../types/profile";
@@ -60,6 +60,48 @@ export default function CaseStudyPage({ project, profile, language }: CaseStudyP
                 </a>
               ) : null}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line">
+        <div className="section-shell reveal">
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <p className="eyebrow">{text(profile.ui.sections.evidenceEyebrow, language)}</p>
+              <h2 className="section-title">{text(profile.ui.sections.evidenceTitle, language)}</h2>
+            </div>
+            <p className="max-w-md text-sm leading-6 text-zinc-400">
+              {text(profile.ui.sections.evidenceDescription, language)}
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            {caseStudy.evidence.map((item) => (
+              <article key={text(item.label, language)} className="surface-card p-5">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-cyan/35 bg-cyan/10 text-cyan">
+                    <ShieldCheck size={18} />
+                  </div>
+                  <span className="rounded-md border border-line bg-ink/60 px-2.5 py-1 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-zinc-300">
+                    {text(item.status, language)}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-lg font-semibold text-mint">{text(item.label, language)}</h3>
+                <p className="mt-3 text-sm leading-6 text-zinc-300">{text(item.description, language)}</p>
+                {item.href ? (
+                  <a
+                    className="focus-ring mt-5 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {text(profile.ui.sections.openEvidence, language)}
+                    <ExternalLink size={14} />
+                  </a>
+                ) : null}
+              </article>
+            ))}
           </div>
         </div>
       </section>

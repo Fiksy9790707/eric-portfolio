@@ -159,6 +159,49 @@ export const profile: PortfolioProfile = {
             value: { en: "Prototype / building", zh: "原型 / 构建中" },
           },
         ],
+        evidence: [
+          {
+            label: { en: "Public repository", zh: "公开仓库" },
+            status: { en: "Available", zh: "已公开" },
+            description: {
+              en: "The portfolio links to the public GitHub repository and keeps the project framed as a prototype.",
+              zh: "作品集链接到公开 GitHub 仓库，并把项目明确表述为原型阶段。",
+            },
+            href: "https://github.com/Fiksy9790707/Wafer-Defect-Detection-System",
+          },
+          {
+            label: { en: "Interface screenshot", zh: "界面截图" },
+            status: { en: "Available", zh: "已公开" },
+            description: {
+              en: "A Streamlit-style interface screenshot is shown as visual evidence of the intended upload, detection, and export workflow.",
+              zh: "页面展示了 Streamlit 风格界面截图，用来说明上传、检测和导出流程。",
+            },
+          },
+          {
+            label: { en: "Architecture visual", zh: "架构图" },
+            status: { en: "Available", zh: "已公开" },
+            description: {
+              en: "The architecture image supports the cloud-training-to-local-demo narrative, without claiming production validation.",
+              zh: "架构图用于支撑从云端训练到本地演示的流程说明，不声称已经完成生产级验证。",
+            },
+          },
+          {
+            label: { en: "Benchmark and dataset notes", zh: "指标与数据说明" },
+            status: { en: "TODO", zh: "待补充" },
+            description: {
+              en: "Detailed public benchmark numbers and dataset notes are intentionally left as TODO until they can be verified and published cleanly.",
+              zh: "公开 benchmark 和数据集说明暂时保留为 TODO，等指标可验证、内容可公开后再补充。",
+            },
+          },
+          {
+            label: { en: "NDA boundary", zh: "保密边界" },
+            status: { en: "Explicit", zh: "已说明" },
+            description: {
+              en: "Private industrial context is not disclosed. The public page only uses sanitized repository material and portfolio-level explanation.",
+              zh: "不披露私有工业背景，只使用脱敏后的公开仓库素材和作品集层面的说明。",
+            },
+          },
+        ],
         flow: {
           title: {
             en: "Prototype workflow",
@@ -414,6 +457,49 @@ export const profile: PortfolioProfile = {
             value: { en: "Experimental", zh: "实验中" },
           },
         ],
+        evidence: [
+          {
+            label: { en: "Public repository", zh: "公开仓库" },
+            status: { en: "Available", zh: "已公开" },
+            description: {
+              en: "The repository gives visitors a public entry point for the local LLM system diary idea.",
+              zh: "公开仓库为访客提供了了解本地大模型系统日记想法的入口。",
+            },
+            href: "https://github.com/Fiksy9790707/Silicon-Diaries",
+          },
+          {
+            label: { en: "Case study write-up", zh: "案例复盘" },
+            status: { en: "Available", zh: "已公开" },
+            description: {
+              en: "The portfolio describes the monitoring, prompting, generation, and storage loop in a conservative way.",
+              zh: "作品集以克制方式说明了监控、prompt、生成和存储闭环。",
+            },
+          },
+          {
+            label: { en: "Runtime ingredients", zh: "运行要素" },
+            status: { en: "Documented", zh: "已说明" },
+            description: {
+              en: "The stack is stated as local Python, psutil, logging, Ollama, and Qwen/Llama-style local models.",
+              zh: "技术栈明确为本地 Python、psutil、logging、Ollama 和 Qwen/Llama 类本地模型。",
+            },
+          },
+          {
+            label: { en: "Demo screenshots or GIF", zh: "演示截图或 GIF" },
+            status: { en: "TODO", zh: "待补充" },
+            description: {
+              en: "A sanitized runtime screenshot or GIF would make this case study more concrete once the output examples are safe to publish.",
+              zh: "等输出样例适合公开后，可以补一张脱敏运行截图或 GIF，让案例更具体。",
+            },
+          },
+          {
+            label: { en: "Privacy boundary", zh: "隐私边界" },
+            status: { en: "Explicit", zh: "已说明" },
+            description: {
+              en: "The page avoids sharing personal diary content and focuses on the system workflow instead.",
+              zh: "页面避免公开个人日记内容，重点展示系统工作流。",
+            },
+          },
+        ],
         flow: {
           title: {
             en: "Local automation loop",
@@ -617,6 +703,140 @@ export const profile: PortfolioProfile = {
         en: "TODO: add repository",
         zh: "TODO：补充仓库",
       },
+    },
+  ],
+  labExperiments: [
+    {
+      id: "machine-learning-labs",
+      title: { en: "Machine Learning Lab Notes", zh: "机器学习实验记录" },
+      course: { en: "Machine Learning", zh: "机器学习" },
+      status: { en: "Course lab / learning evidence", zh: "课程实验 / 学习证据" },
+      summary: {
+        en: "Notebook-based experiments around classical ML examples and PyTorch MNIST practice. These are learning artifacts, not standalone products.",
+        zh: "围绕传统机器学习样例和 PyTorch MNIST 练习的 notebook 实验。这些是学习过程证据，不包装成独立产品。",
+      },
+      stack: ["Python", "Jupyter", "scikit-learn", "PyTorch", "MNIST"],
+      sourcePath: "HIT_S2/Machine_Learning",
+      evidence: [
+        {
+          en: "lab_1 contains bank/student sklearn examples and framework notebooks.",
+          zh: "lab_1 包含 bank/student sklearn 示例和实验框架 notebook。",
+        },
+        {
+          en: "lab_2 includes a PyTorch MNIST experiment notebook.",
+          zh: "lab_2 包含 PyTorch MNIST 实验 notebook。",
+        },
+        {
+          en: "lab_3 keeps experiment notebooks and generated figures/results.",
+          zh: "lab_3 保留实验 notebook 以及生成的图表和结果文件。",
+        },
+      ],
+    },
+    {
+      id: "computer-construction-minirv",
+      title: { en: "miniRV / Computer Construction Practice", zh: "miniRV / 计算机组成实践" },
+      course: { en: "Computer Construction", zh: "计算机组成" },
+      status: { en: "Course project / hardware practice", zh: "课程项目 / 硬件实践" },
+      summary: {
+        en: "Verilog and RISC-V assembly practice around multiplier modules, miniRV/AXI files, and CPU-related components.",
+        zh: "围绕乘法器、miniRV/AXI 文件和 CPU 相关模块的 Verilog 与 RISC-V 汇编练习。",
+      },
+      stack: ["Verilog", "RISC-V ASM", "AXI", "Vivado"],
+      sourcePath: "HIT_S2/Computer_Construction and HIT_S2/Project/miniRV_axi_stu",
+      evidence: [
+        {
+          en: "Includes multiplier.v, mac_test.v, miniRV_axi_stu files, and CPU module files such as ALU/Ctrl/cpu_top.",
+          zh: "包含 multiplier.v、mac_test.v、miniRV_axi_stu 文件，以及 ALU/Ctrl/cpu_top 等 CPU 模块文件。",
+        },
+        {
+          en: "Assembly exercises are kept as .asm files for low-level foundation practice.",
+          zh: "汇编练习以 .asm 文件保留，用于底层基础训练。",
+        },
+      ],
+    },
+    {
+      id: "digital-logic-verilog",
+      title: { en: "Digital Logic / Verilog Experiments", zh: "数字逻辑 / Verilog 实验" },
+      course: { en: "Digital Logic and FPGA Practice", zh: "数字逻辑与 FPGA 实践" },
+      status: { en: "Course lab / hardware basics", zh: "课程实验 / 硬件基础" },
+      summary: {
+        en: "Small Verilog modules and testbenches for muxes, registers, display logic, UART-style modules, and state-machine practice.",
+        zh: "用于多路选择器、寄存器、显示逻辑、UART 风格模块和状态机练习的小型 Verilog 模块与 testbench。",
+      },
+      stack: ["Verilog", "Testbench", "UART", "State Machine"],
+      sourcePath: "HIT_S2/Experience",
+      evidence: [
+        {
+          en: "Contains mux.v, dff.v, reg8file.v, number.v, uart_send.v, uart_recv.v, and related top-level modules.",
+          zh: "包含 mux.v、dff.v、reg8file.v、number.v、uart_send.v、uart_recv.v 及相关顶层模块。",
+        },
+        {
+          en: "The files show hardware description practice rather than a polished public repository.",
+          zh: "这些文件展示的是硬件描述训练，不包装成已完成的公开仓库项目。",
+        },
+      ],
+    },
+    {
+      id: "software-construction-aircraft-war",
+      title: { en: "Aircraft War Java Coursework", zh: "Aircraft War Java 课程项目" },
+      course: { en: "Software Construction", zh: "软件构造" },
+      status: { en: "Course project / OOP practice", zh: "课程项目 / 面向对象实践" },
+      summary: {
+        en: "A Java coursework project with game entities, factories, strategies, DAO tests, and Swing-related practice.",
+        zh: "一个 Java 课程项目，包含游戏实体、工厂、策略、DAO 测试和 Swing 相关练习。",
+      },
+      stack: ["Java", "OOP", "JUnit", "Design Patterns", "Swing"],
+      sourcePath: "HIT_S2/软件构造/AircraftWar-base",
+      evidence: [
+        {
+          en: "Source folders include aircraft, enemy, factory, strategy, dao, and prop packages.",
+          zh: "源码目录包含 aircraft、enemy、factory、strategy、dao、prop 等包。",
+        },
+        {
+          en: "Tests include DAO, factory creation, and hero shoot strategy coverage.",
+          zh: "测试包含 DAO、工厂创建和英雄射击策略相关用例。",
+        },
+      ],
+    },
+    {
+      id: "data-structure-c-exercises",
+      title: { en: "Data Structure C Exercises", zh: "数据结构 C 语言练习" },
+      course: { en: "Data Structure", zh: "数据结构" },
+      status: { en: "Course exercises / foundations", zh: "课程练习 / 基础训练" },
+      summary: {
+        en: "Small C exercises used to practice data structures and algorithmic foundations. This belongs in the lab page, not the featured project section.",
+        zh: "用于练习数据结构和算法基础的小型 C 语言实验。它适合放在实验页，而不是精选项目区。",
+      },
+      stack: ["C", "Data Structures", "Algorithms"],
+      sourcePath: "HIT_S2/data_structure/experience",
+      evidence: [
+        {
+          en: "The folder contains multiple numbered C exercise files such as 1.1.c, 2.1.c, and 2.4.c.",
+          zh: "目录中包含多个编号 C 练习文件，例如 1.1.c、2.1.c、2.4.c。",
+        },
+      ],
+    },
+    {
+      id: "embedded-course-projects",
+      title: { en: "Embedded / GPIO Project Files", zh: "嵌入式 / GPIO 项目文件" },
+      course: { en: "Course Project", zh: "课程项目" },
+      status: { en: "Experiment archive", zh: "实验归档" },
+      summary: {
+        en: "Embedded-oriented project folders with GPIO toggling and Pacman-related configuration files. Public write-up is still TODO.",
+        zh: "包含 GPIO 翻转和 Pacman 相关配置文件的嵌入式方向项目目录。公开复盘仍是 TODO。",
+      },
+      stack: ["C", "Embedded", "MSPM0", "GPIO"],
+      sourcePath: "HIT_S2/Project",
+      evidence: [
+        {
+          en: "Includes Project/pacman and Project/gpio_toggle_output folders with README/config/source files.",
+          zh: "包含 Project/pacman 和 Project/gpio_toggle_output 目录，以及 README、配置和源码文件。",
+        },
+        {
+          en: "Needs a cleaner public boundary before becoming a featured project.",
+          zh: "在成为精选项目之前，还需要整理更清楚的公开边界。",
+        },
+      ],
     },
   ],
   skills: [
@@ -1042,6 +1262,7 @@ export const profile: PortfolioProfile = {
       projects: { en: "Projects", zh: "项目" },
       github: { en: "GitHub", zh: "GitHub" },
       skills: { en: "Skills", zh: "技能" },
+      lab: { en: "Lab", zh: "实验" },
       writing: { en: "Writing", zh: "笔记" },
       contact: { en: "Contact", zh: "联系" },
     },
@@ -1114,6 +1335,28 @@ export const profile: PortfolioProfile = {
       blogReadLabel: { en: "Read note", zh: "阅读笔记" },
       backHome: { en: "Back to home", zh: "返回首页" },
       openRepository: { en: "Open repository", zh: "打开仓库" },
+      evidenceEyebrow: { en: "Evidence", zh: "证据面板" },
+      evidenceTitle: {
+        en: "What is public, what is pending, and what is intentionally private.",
+        zh: "哪些已公开，哪些待补充，哪些有意保留边界。",
+      },
+      evidenceDescription: {
+        en: "Each case study separates visible evidence from TODOs and private context, so the project reads honestly instead of sounding inflated.",
+        zh: "每个案例都会区分可见证据、待补充内容和私有边界，让项目更可信，而不是听起来被过度包装。",
+      },
+      openEvidence: { en: "Open evidence", zh: "打开证据" },
+      labEyebrow: { en: "Project Lab / Experiments", zh: "项目实验室 / 实验记录" },
+      labTitle: {
+        en: "Course labs and technical experiments that support the portfolio.",
+        zh: "支撑作品集方向的课程实验和技术练习。",
+      },
+      labDescription: {
+        en: "This page organizes selected HIT_S2 coursework folders into public-facing learning evidence. They are not presented as polished products, but they show foundations behind the current AI and systems direction.",
+        zh: "这个页面把 HIT_S2 中的一部分课程实验整理成面向公开展示的学习证据。它们不会被包装成成熟产品，但能说明当前 AI 与系统方向背后的基础训练。",
+      },
+      labSourceLabel: { en: "Local evidence folder", zh: "本地证据目录" },
+      labEvidenceLabel: { en: "Observed evidence", zh: "已观察到的证据" },
+      labBackLabel: { en: "Back to portfolio", zh: "返回作品集" },
       contactEyebrow: { en: "Contact", zh: "联系" },
       contactTitle: {
         en: "Open to feedback, collaboration, and practical project ideas.",

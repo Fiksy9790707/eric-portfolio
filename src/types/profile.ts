@@ -26,6 +26,13 @@ export type CaseStudyMetric = {
   value: LocalizedString;
 };
 
+export type EvidenceItem = {
+  label: LocalizedString;
+  status: LocalizedString;
+  description: LocalizedString;
+  href?: string | null;
+};
+
 export type CaseStudySection = {
   title: LocalizedString;
   body: LocalizedString;
@@ -52,6 +59,7 @@ export type CaseStudy = {
   readLabel: LocalizedString;
   repositoryLabel: LocalizedString;
   metrics: CaseStudyMetric[];
+  evidence: EvidenceItem[];
   flow: {
     title: LocalizedString;
     steps: CaseStudyFlowStep[];
@@ -70,6 +78,17 @@ export type CurrentlyBuildingItem = {
   title: LocalizedString;
   description: LocalizedString;
   tags: string[];
+};
+
+export type LabExperiment = {
+  id: string;
+  title: LocalizedString;
+  course: LocalizedString;
+  status: LocalizedString;
+  summary: LocalizedString;
+  stack: string[];
+  sourcePath: string;
+  evidence: LocalizedString[];
 };
 
 export type TimelineItem = {
@@ -144,6 +163,7 @@ export type PortfolioProfile = {
   about: LocalizedString[];
   currentlyBuilding: CurrentlyBuildingItem[];
   projects: Project[];
+  labExperiments: LabExperiment[];
   skills: SkillGroup[];
   timeline: TimelineItem[];
   blogPosts: BlogPostPreview[];
@@ -155,6 +175,7 @@ export type PortfolioProfile = {
       projects: LocalizedString;
       github: LocalizedString;
       skills: LocalizedString;
+      lab: LocalizedString;
       writing: LocalizedString;
       contact: LocalizedString;
     };
@@ -194,6 +215,16 @@ export type PortfolioProfile = {
       blogReadLabel: LocalizedString;
       backHome: LocalizedString;
       openRepository: LocalizedString;
+      evidenceEyebrow: LocalizedString;
+      evidenceTitle: LocalizedString;
+      evidenceDescription: LocalizedString;
+      openEvidence: LocalizedString;
+      labEyebrow: LocalizedString;
+      labTitle: LocalizedString;
+      labDescription: LocalizedString;
+      labSourceLabel: LocalizedString;
+      labEvidenceLabel: LocalizedString;
+      labBackLabel: LocalizedString;
       contactEyebrow: LocalizedString;
       contactTitle: LocalizedString;
     };
