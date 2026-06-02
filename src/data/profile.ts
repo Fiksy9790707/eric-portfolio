@@ -74,6 +74,52 @@ export const profile: PortfolioProfile = {
       tags: ["Ollama", "Local LLM", "Workflow"],
     },
   ],
+  homeChoices: [
+    {
+      title: {
+        en: "About",
+        zh: "关于",
+      },
+      description: {
+        en: "Background, focus, skills, timeline, and public GitHub activity.",
+        zh: "背景、方向、技能、路径和公开 GitHub 动态。",
+      },
+      href: "/about",
+    },
+    {
+      title: {
+        en: "Projects",
+        zh: "项目",
+      },
+      description: {
+        en: "Selected projects, case studies, repositories, and project boundaries.",
+        zh: "精选项目、案例、仓库与项目边界。",
+      },
+      href: "/projects",
+    },
+    {
+      title: {
+        en: "Writing",
+        zh: "写作",
+      },
+      description: {
+        en: "Original notes, Zhihu essays, and project reflections.",
+        zh: "原创随笔、知乎文章和项目复盘。",
+      },
+      href: "/writing",
+    },
+    {
+      title: {
+        en: "Lab",
+        zh: "实验",
+      },
+      description: {
+        en: "Selected coursework experiments and technical practice.",
+        zh: "课程实验和技术练习整理。",
+      },
+      href: "/lab",
+    },
+  ],
   projects: [
     {
       id: "wafer-defect-detection",
@@ -1939,18 +1985,25 @@ export const profile: PortfolioProfile = {
     sections: {
       aboutEyebrow: { en: "About Me", zh: "关于我" },
       aboutTitle: {
-        en: "A CS undergraduate building practical AI workflows.",
-        zh: "一个正在构建实用 AI 工作流的计算机本科生。",
+        en: "Computer science, applied AI, and practical systems.",
+        zh: "计算机基础、应用 AI 与实用系统。",
       },
       baseLabel: { en: "Base", zh: "基础身份" },
       schoolLine: {
         en: "Computer Science and Technology undergraduate.",
         zh: "计算机科学与技术本科生。",
       },
+      indexEyebrow: { en: "Explore", zh: "快速入口" },
+      indexTitle: { en: "Choose a section.", zh: "选择一个方向。" },
+      indexDescription: {
+        en: "Background, projects, writing, and lab notes are separated for quicker reading.",
+        zh: "背景、项目、写作和实验记录分开呈现，方便快速阅读。",
+      },
+      indexOpenLabel: { en: "Open", zh: "打开" },
       featuredEyebrow: { en: "Featured Case Studies", zh: "精选案例" },
       featuredTitle: {
-        en: "Two project write-ups with public evidence.",
-        zh: "两个带公开证据的项目案例。",
+        en: "Featured case studies.",
+        zh: "精选案例。",
       },
       featuredDescription: {
         en: "Wafer Defect Detection and Silicon Diaries.",
@@ -1958,8 +2011,8 @@ export const profile: PortfolioProfile = {
       },
       nowEyebrow: { en: "Now", zh: "现在" },
       nowTitle: {
-        en: "Currently building toward a more complete applied AI portfolio.",
-        zh: "正在把应用 AI 方向整理成更完整、可展示的作品集。",
+        en: "Currently building.",
+        zh: "当前在做。",
       },
       nowDescription: {
         en: "Applied AI, computer vision, local LLM, and public project writing.",
@@ -1967,24 +2020,24 @@ export const profile: PortfolioProfile = {
       },
       projectsEyebrow: { en: "Projects", zh: "项目" },
       projectsTitle: {
-        en: "Selected projects with verifiable public context.",
-        zh: "有公开信息支撑的精选项目。",
+        en: "Selected projects.",
+        zh: "精选项目。",
       },
       githubEyebrow: { en: "Public GitHub", zh: "公开 GitHub" },
-      githubTitle: { en: "Live public repository snapshot.", zh: "公开仓库动态快照。" },
+      githubTitle: { en: "Public repositories.", zh: "公开仓库。" },
       githubDescription: {
         en: "Selected public repositories, languages, and recent updates.",
         zh: "公开仓库、主要语言和近期更新。",
       },
       skillsEyebrow: { en: "Skills", zh: "技能" },
       skillsTitle: {
-        en: "Tools I am learning, building with, and exploring.",
-        zh: "我正在学习、使用和探索的工具。",
+        en: "Skills and tools.",
+        zh: "技能与工具。",
       },
       timelineEyebrow: { en: "Timeline", zh: "时间线" },
       timelineTitle: {
-        en: "Learning, building, and project milestones.",
-        zh: "学习、构建和项目整理节点。",
+        en: "Path so far.",
+        zh: "当前路径。",
       },
       blogEyebrow: { en: "Writing / Notes", zh: "写作 / 笔记" },
       blogTitle: { en: "Writing", zh: "写作" },
@@ -2006,18 +2059,18 @@ export const profile: PortfolioProfile = {
       openRepository: { en: "Open repository", zh: "打开仓库" },
       evidenceEyebrow: { en: "Evidence", zh: "证据面板" },
       evidenceTitle: {
-        en: "What is public, what is pending, and what is intentionally private.",
-        zh: "哪些已公开，哪些待补充，哪些有意保留边界。",
+        en: "Evidence and next steps.",
+        zh: "材料与下一步。",
       },
       evidenceDescription: {
-        en: "Each case study separates visible evidence from TODOs and private context, so the project reads honestly instead of sounding inflated.",
-        zh: "每个案例列出可见材料、待补充内容和项目边界。",
+        en: "Repository links, screenshots, TODOs, and next steps for each case study.",
+        zh: "每个案例对应的仓库链接、截图、TODO 和下一步。",
       },
       openEvidence: { en: "Open evidence", zh: "打开证据" },
       labEyebrow: { en: "Project Lab / Experiments", zh: "项目实验室 / 实验记录" },
       labTitle: {
-        en: "Course labs and technical experiments that support the portfolio.",
-        zh: "支撑作品集方向的课程实验和技术练习。",
+        en: "Project Lab.",
+        zh: "项目实验室。",
       },
       labDescription: {
         en: "Selected coursework experiments across machine learning, computer construction, and software construction.",

@@ -1,18 +1,15 @@
-import About from "./components/About";
+import AboutPage from "./components/AboutPage";
 import BackToTop from "./components/BackToTop";
 import CaseStudyPage from "./components/CaseStudyPage";
 import Contact from "./components/Contact";
 import FeaturedCaseStudies from "./components/FeaturedCaseStudies";
 import Footer from "./components/Footer";
-import GitHubActivity from "./components/GitHubActivity";
 import Hero from "./components/Hero";
+import HomeChoices from "./components/HomeChoices";
 import LabExperimentPage from "./components/LabExperimentPage";
 import Layout from "./components/Layout";
-import Now from "./components/Now";
-import Projects from "./components/Projects";
+import ProjectsPage from "./components/ProjectsPage";
 import ProjectLabPage from "./components/ProjectLabPage";
-import Skills from "./components/Skills";
-import Timeline from "./components/Timeline";
 import NotePage from "./components/NotePage";
 import WritingNotes from "./components/WritingNotes";
 import { profile } from "./data/profile";
@@ -65,6 +62,10 @@ export default function App() {
         <NotePage note={selectedNote} profile={profile} language={language} />
       ) : selectedLabExperiment ? (
         <LabExperimentPage experiment={selectedLabExperiment} profile={profile} language={language} />
+      ) : route === "/about" ? (
+        <AboutPage profile={profile} language={language} />
+      ) : route === "/projects" ? (
+        <ProjectsPage profile={profile} language={language} />
       ) : route === "/lab" ? (
         <ProjectLabPage profile={profile} language={language} />
       ) : route === "/writing" ? (
@@ -74,13 +75,8 @@ export default function App() {
       ) : (
         <main>
           <Hero profile={profile} language={language} />
+          <HomeChoices profile={profile} language={language} />
           <FeaturedCaseStudies projects={profile.projects} profile={profile} language={language} />
-          <About profile={profile} language={language} />
-          <Now items={profile.currentlyBuilding} profile={profile} language={language} />
-          <Projects projects={profile.projects} language={language} />
-          <GitHubActivity fallbackRepositories={profile.github.repositories} language={language} />
-          <Skills skills={profile.skills} language={language} />
-          <Timeline items={profile.timeline} language={language} />
           <WritingNotes posts={profile.blogPosts} language={language} mode="latest" />
           <Contact profile={profile} language={language} />
         </main>

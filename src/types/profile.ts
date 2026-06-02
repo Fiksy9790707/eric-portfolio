@@ -80,6 +80,12 @@ export type CurrentlyBuildingItem = {
   tags: string[];
 };
 
+export type HomeChoice = {
+  title: LocalizedString;
+  description: LocalizedString;
+  href: string;
+};
+
 export type LabExperiment = {
   id: string;
   title: LocalizedString;
@@ -185,6 +191,7 @@ export type PortfolioProfile = {
   };
   about: LocalizedString[];
   currentlyBuilding: CurrentlyBuildingItem[];
+  homeChoices: HomeChoice[];
   projects: Project[];
   labExperiments: LabExperiment[];
   skills: SkillGroup[];
@@ -216,6 +223,10 @@ export type PortfolioProfile = {
       aboutTitle: LocalizedString;
       baseLabel: LocalizedString;
       schoolLine: LocalizedString;
+      indexEyebrow: LocalizedString;
+      indexTitle: LocalizedString;
+      indexDescription: LocalizedString;
+      indexOpenLabel: LocalizedString;
       featuredEyebrow: LocalizedString;
       featuredTitle: LocalizedString;
       featuredDescription: LocalizedString;

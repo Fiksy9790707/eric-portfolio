@@ -60,6 +60,8 @@ vercel.json
 
 The app uses a small custom React router instead of a heavy routing dependency. Current client-side routes include:
 
+- `/about`
+- `/projects`
 - `/case-studies/wafer-defect-detection`
 - `/case-studies/silicon-diaries`
 - `/lab`
@@ -72,7 +74,7 @@ The app uses a small custom React router instead of a heavy routing dependency. 
 - `/notes/local-llms-personal-automation`
 - `/notes/coursework-to-real-projects`
 
-`vercel.json` rewrites the case-study, lab, and notes routes to `index.html` so direct links work on Vercel.
+`vercel.json` rewrites the page, case-study, lab, and notes routes to `index.html` so direct links work on Vercel.
 
 ## Update Personal Information
 

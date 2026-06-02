@@ -1,6 +1,7 @@
 import { ArrowRight, Github } from "lucide-react";
 import { text } from "../lib/i18n";
 import type { Language, PortfolioProfile } from "../types/profile";
+import AppLink from "./AppLink";
 
 type HeroProps = {
   profile: PortfolioProfile;
@@ -23,13 +24,13 @@ export default function Hero({ profile, language }: HeroProps) {
             {text(profile.identity.tagline, language)}
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a
+            <AppLink
               className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-mint px-5 py-3 text-sm font-semibold text-ink transition hover:bg-cyan"
-              href="#projects"
+              href="/projects"
             >
               {text(profile.ui.hero.viewProjects, language)}
               <ArrowRight size={17} />
-            </a>
+            </AppLink>
             <a
               className="focus-ring inline-flex items-center justify-center gap-2 rounded-md border border-line px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:border-cyan/50 hover:text-cyan"
               href={profile.identity.githubUrl}

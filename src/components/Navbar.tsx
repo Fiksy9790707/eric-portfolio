@@ -13,13 +13,13 @@ type NavbarProps = {
 export default function Navbar({ language, onToggleLanguage }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const navItems = [
-    { label: text(profile.ui.nav.about, language), href: "#about" },
-    { label: text(profile.ui.nav.projects, language), href: "#projects" },
-    { label: text(profile.ui.nav.github, language), href: "#github" },
-    { label: text(profile.ui.nav.skills, language), href: "#skills" },
+    { label: text(profile.ui.nav.about, language), href: "/about" },
+    { label: text(profile.ui.nav.projects, language), href: "/projects" },
+    { label: text(profile.ui.nav.github, language), href: "/about#github" },
+    { label: text(profile.ui.nav.skills, language), href: "/about#skills" },
     { label: text(profile.ui.nav.lab, language), href: "/lab" },
     { label: text(profile.ui.nav.writing, language), href: "/writing" },
-    { label: text(profile.ui.nav.contact, language), href: "#contact" },
+    { label: text(profile.ui.nav.contact, language), href: "/#contact" },
   ];
 
   return (
