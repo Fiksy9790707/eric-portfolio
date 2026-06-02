@@ -990,8 +990,8 @@ export const profile: PortfolioProfile = {
           zh: "深色桌面插画，包含电脑代码窗口、课程笔记和项目卡片",
         },
         caption: {
-          en: "Generated cover image for this essay. It is a concept visual, not a runtime screenshot.",
-          zh: "这篇随笔的生成封面图，用来表达从课程材料到项目整理的过程。",
+          en: "Coursework to Projects",
+          zh: "Coursework to Projects",
         },
         kind: { en: "Generated cover", zh: "生成封面" },
       },
