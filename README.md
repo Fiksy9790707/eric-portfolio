@@ -190,7 +190,6 @@ Each note supports:
 - `filters`
 - `relatedProject`
 - `tags`
-- `coverImage`
 - `externalUrl`
 - `externalLabel`
 - `summary`
@@ -198,7 +197,7 @@ Each note supports:
 - `next`
 - `sections`
 
-The notes are static content for now. To publish a new blog entry, add one object to `blogPosts` and place any cover image under `public/project-media/`.
+The notes are static content for now. To publish a new blog entry, add one object to `blogPosts`. Avoid decorative cover images; only add media when it is a real screenshot, diagram, or original article asset that helps explain the work.
 
 ## API Routes
 

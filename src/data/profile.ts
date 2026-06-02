@@ -77,14 +77,14 @@ export const profile: PortfolioProfile = {
   homeChoices: [
     {
       title: {
-        en: "About",
-        zh: "关于",
+        en: "Code",
+        zh: "代码",
       },
       description: {
-        en: "Background, focus, skills, timeline, and public GitHub activity.",
-        zh: "背景、方向、技能、路径和公开 GitHub 动态。",
+        en: "Read engineering snippets from the Wafer and Silicon Diaries case studies.",
+        zh: "查看 Wafer 和 Silicon Diaries 案例里的工程片段。",
       },
-      href: "/about",
+      href: "/case-studies/wafer-defect-detection#code-highlights",
     },
     {
       title: {
@@ -107,17 +107,6 @@ export const profile: PortfolioProfile = {
         zh: "原创随笔、知乎文章和项目复盘。",
       },
       href: "/writing",
-    },
-    {
-      title: {
-        en: "Lab",
-        zh: "实验",
-      },
-      description: {
-        en: "Selected coursework experiments and technical practice.",
-        zh: "课程实验和技术练习整理。",
-      },
-      href: "/lab",
     },
   ],
   projects: [
@@ -233,6 +222,73 @@ export const profile: PortfolioProfile = {
             },
           },
         ],
+        codeHighlights: [
+          {
+            title: {
+              en: "Detection pipeline",
+              zh: "检测流水线",
+            },
+            language: "Python",
+            description: {
+              en: "The app layer should keep inference predictable: load an image, run YOLO with a confidence threshold, normalize boxes, then export results for review.",
+              zh: "应用层需要保持推理流程清晰：读取图像，按置信度运行 YOLO，整理检测框，再导出结果供复核。",
+            },
+            code: `def run_detection(image_path, model, conf=0.35):
+    image = load_image(image_path)
+    results = model.predict(image, conf=conf)
+
+    boxes = []
+    for item in results[0].boxes:
+        boxes.append({
+            "class_id": int(item.cls),
+            "confidence": float(item.conf),
+            "xyxy": item.xyxy.tolist()[0],
+        })
+
+    return {
+        "preview": draw_boxes(image, boxes),
+        "boxes": boxes,
+        "csv": export_detection_csv(boxes),
+    }`,
+            points: [
+              {
+                en: "Keep model inference separate from Streamlit UI state.",
+                zh: "把模型推理和 Streamlit 界面状态分开。",
+              },
+              {
+                en: "Return both visual preview and structured detection data.",
+                zh: "同时返回可视化预览和结构化检测数据。",
+              },
+            ],
+          },
+          {
+            title: {
+              en: "Delivery boundary",
+              zh: "交付边界",
+            },
+            language: "Workflow",
+            description: {
+              en: "A useful prototype needs more than a notebook result, so the workflow keeps training, UI, and local demo packaging as separate steps.",
+              zh: "可展示原型不能只停在 notebook 结果，所以流程把训练、界面和本地演示打包分成独立步骤。",
+            },
+            code: `cloud_train_yolov8()
+  -> save_best_weights()
+  -> load_weights_in_local_app()
+  -> streamlit_upload_and_detect()
+  -> export_csv_for_review()
+  -> package_windows_demo()`,
+            points: [
+              {
+                en: "Cloud training is treated as an upstream step, not the whole product.",
+                zh: "云端训练只是上游步骤，不是整个产品。",
+              },
+              {
+                en: "Local delivery remains part of the design constraint.",
+                zh: "本地交付始终是设计约束的一部分。",
+              },
+            ],
+          },
+        ],
         flow: {
           title: {
             en: "Prototype workflow",
@@ -300,18 +356,6 @@ export const profile: PortfolioProfile = {
               zh: "来自项目公开仓库的架构图，用于说明系统上下文，不作为性能指标声明。",
             },
             kind: { en: "Architecture visual", zh: "架构图" },
-          },
-          {
-            src: "project-media/wafer-inspection.png",
-            alt: {
-              en: "Wafer inspection visual asset from the public repository",
-              zh: "公开仓库中的晶圆检测视觉素材",
-            },
-            caption: {
-              en: "Additional public visual asset from the repository. It gives visitors a concrete sense of the inspection domain while respecting the NDA boundary.",
-              zh: "来自仓库的补充视觉素材，在不越过保密边界的前提下，让访客更直观理解检测场景。",
-            },
-            kind: { en: "Project visual", zh: "项目视觉" },
           },
         ],
         sections: [
@@ -531,6 +575,67 @@ export const profile: PortfolioProfile = {
             },
           },
         ],
+        codeHighlights: [
+          {
+            title: {
+              en: "System signal snapshot",
+              zh: "系统状态快照",
+            },
+            language: "Python",
+            description: {
+              en: "The monitoring layer should collect small, stable signals that are easy for a local model to summarize.",
+              zh: "监控层收集小而稳定的信号，让本地模型更容易生成摘要。",
+            },
+            code: `def collect_system_state():
+    return {
+        "cpu_percent": psutil.cpu_percent(interval=1),
+        "memory_percent": psutil.virtual_memory().percent,
+        "uptime_seconds": time.time() - psutil.boot_time(),
+        "active_processes": len(psutil.pids()),
+    }`,
+            points: [
+              {
+                en: "Use lightweight signals instead of noisy full logs.",
+                zh: "优先使用轻量状态，而不是把完整日志直接丢给模型。",
+              },
+              {
+                en: "Keep the schema stable so prompts are easier to debug.",
+                zh: "保持结构稳定，方便调试 prompt。",
+              },
+            ],
+          },
+          {
+            title: {
+              en: "Local generation loop",
+              zh: "本地生成闭环",
+            },
+            language: "Python",
+            description: {
+              en: "The LLM call is treated as one step in a local pipeline: structure context, generate text, then write a traceable entry.",
+              zh: "LLM 调用只是本地流水线的一步：组织上下文、生成文本、写入可追踪记录。",
+            },
+            code: `def write_diary_entry(model, state):
+    prompt = build_diary_prompt(state)
+    entry = ollama_generate(model=model, prompt=prompt)
+
+    logging.info("generated diary entry")
+    append_markdown_entry(
+        title=current_date_title(),
+        metadata=state,
+        body=entry,
+    )`,
+            points: [
+              {
+                en: "Keep generation local through Ollama.",
+                zh: "通过 Ollama 保持本地生成。",
+              },
+              {
+                en: "Archive generated entries with metadata for later review.",
+                zh: "把生成内容和元数据一起归档，方便回看。",
+              },
+            ],
+          },
+        ],
         flow: {
           title: {
             en: "Local automation loop",
@@ -574,32 +679,6 @@ export const profile: PortfolioProfile = {
             },
           ],
         },
-        media: [
-          {
-            src: "project-media/silicon-diaries-cover.jpg",
-            alt: {
-              en: "Silicon Diaries public cover image from the repository",
-              zh: "Silicon Diaries 公开仓库中的封面图",
-            },
-            caption: {
-              en: "Public repository cover image for Silicon Diaries. This is a project visual, not a runtime UI screenshot.",
-              zh: "Silicon Diaries 公开仓库中的项目封面图。它是项目视觉素材，不是运行界面截图。",
-            },
-            kind: { en: "Repository visual", zh: "仓库视觉" },
-          },
-          {
-            src: "project-media/silicon-angry.jpg",
-            alt: {
-              en: "Silicon Diaries public character image from the repository",
-              zh: "Silicon Diaries 公开仓库中的角色视觉图",
-            },
-            caption: {
-              en: "A second public visual asset from the repository. It helps communicate the personality of the local diary idea while keeping technical claims modest.",
-              zh: "来自公开仓库的第二张视觉素材，用来表达本地系统日记项目的产品气质。",
-            },
-            kind: { en: "Project visual", zh: "项目视觉" },
-          },
-        ],
         sections: [
           {
             title: { en: "Problem", zh: "问题背景" },
@@ -1035,18 +1114,6 @@ export const profile: PortfolioProfile = {
         href: "/lab",
       },
       tags: ["Portfolio", "Internship", "Projects", "Reflection"],
-      coverImage: {
-        src: "project-media/blog-coursework-to-projects.png",
-        alt: {
-          en: "Dark desk illustration with laptop, code windows, coursework notebooks, and project cards",
-          zh: "深色桌面插画，包含电脑代码窗口、课程笔记和项目卡片",
-        },
-        caption: {
-          en: "Coursework to Projects",
-          zh: "Coursework to Projects",
-        },
-        kind: { en: "Generated cover", zh: "生成封面" },
-      },
       summary: {
         en: "A personal note on why I started turning coursework and prototypes into a clearer public portfolio while preparing for internships.",
         zh: "一篇关于为什么开始整理作品集的短随笔：从找实习、整理项目，到意识到真实项目需要面对用户、部署和可维护性。",
@@ -1174,15 +1241,6 @@ export const profile: PortfolioProfile = {
       tags: ["AI 应用", "家庭健康", "Local-First", "产品设计"],
       externalUrl: "https://zhuanlan.zhihu.com/p/2021735140338968382",
       externalLabel: { en: "Read on Zhihu", zh: "知乎原文" },
-      coverImage: {
-        src: "project-media/blog-zhihu-essays.png",
-        alt: {
-          en: "Dark editorial illustration with laptop, notebooks, article cards, and interface panels",
-          zh: "深色编辑风插画，包含电脑、笔记、文章卡片和界面面板",
-        },
-        caption: { en: "Published Essays", zh: "Published Essays" },
-        kind: { en: "Published article", zh: "已发布文章" },
-      },
       summary: {
         en: "A product reflection on family health management, local-first thinking, and why technology should organize information before making decisions.",
         zh: "从家庭健康管理出发，讨论技术进入真实生活时应该先解决什么：不是替人做决定，而是把信息整理得可靠、可追溯、可使用。",
@@ -1259,15 +1317,6 @@ export const profile: PortfolioProfile = {
       tags: ["认知", "个人成长", "规则", "交付"],
       externalUrl: "https://zhuanlan.zhihu.com/p/1975971017773060131",
       externalLabel: { en: "Read on Zhihu", zh: "知乎原文" },
-      coverImage: {
-        src: "project-media/blog-zhihu-essays.png",
-        alt: {
-          en: "Dark editorial illustration with laptop, notebooks, article cards, and interface panels",
-          zh: "深色编辑风插画，包含电脑、笔记、文章卡片和界面面板",
-        },
-        caption: { en: "Published Essays", zh: "Published Essays" },
-        kind: { en: "Published article", zh: "已发布文章" },
-      },
       summary: {
         en: "A reflection on moving from outside criticism to inside action, using imperfect rules to get real work done.",
         zh: "一篇关于从场外评价走向场内行动的文章：不只是嘲讽规则，而是理解规则、利用规则，把事情推进下去。",
@@ -1344,15 +1393,6 @@ export const profile: PortfolioProfile = {
       tags: ["AI 创业", "Skill", "OpenClaw", "产品机会"],
       externalUrl: "https://zhuanlan.zhihu.com/p/1975385304899818505",
       externalLabel: { en: "Read on Zhihu", zh: "知乎原文" },
-      coverImage: {
-        src: "project-media/blog-zhihu-essays.png",
-        alt: {
-          en: "Dark editorial illustration with laptop, notebooks, article cards, and interface panels",
-          zh: "深色编辑风插画，包含电脑、笔记、文章卡片和界面面板",
-        },
-        caption: { en: "Published Essays", zh: "Published Essays" },
-        kind: { en: "Published article", zh: "已发布文章" },
-      },
       summary: {
         en: "A practical note on OpenClaw's Skill ecosystem, early platform opportunities, and why integration can be valuable before invention.",
         zh: "围绕 OpenClaw Skill 生态写的一篇机会分析：早期平台里，普通人不一定要发明新算法，先把具体能力集成出来也有价值。",
@@ -1429,15 +1469,6 @@ export const profile: PortfolioProfile = {
       tags: ["认知", "草台班子理论", "个人成长"],
       externalUrl: "https://zhuanlan.zhihu.com/p/2015181705862993549",
       externalLabel: { en: "Read on Zhihu", zh: "知乎原文" },
-      coverImage: {
-        src: "project-media/blog-zhihu-essays.png",
-        alt: {
-          en: "Dark editorial illustration with laptop, notebooks, article cards, and interface panels",
-          zh: "深色编辑风插画，包含电脑、笔记、文章卡片和界面面板",
-        },
-        caption: { en: "Published Essays", zh: "Published Essays" },
-        kind: { en: "Published article", zh: "已发布文章" },
-      },
       summary: {
         en: "A reflection on why seeing imperfection can be liberating, but can also lead to arrogance if it stops at judgment.",
         zh: "关于“草台班子理论”的一篇反思：它能帮人破除权威滤镜，但如果只停留在看透和嘲讽，也会带来新的自我误判。",
@@ -1514,15 +1545,6 @@ export const profile: PortfolioProfile = {
       tags: ["AI", "产品思维", "用户体验", "入口"],
       externalUrl: "https://zhuanlan.zhihu.com/p/2019034233159570513",
       externalLabel: { en: "Read on Zhihu", zh: "知乎原文" },
-      coverImage: {
-        src: "project-media/blog-zhihu-essays.png",
-        alt: {
-          en: "Dark editorial illustration with laptop, notebooks, article cards, and interface panels",
-          zh: "深色编辑风插画，包含电脑、笔记、文章卡片和界面面板",
-        },
-        caption: { en: "Published Essays", zh: "Published Essays" },
-        kind: { en: "Published article", zh: "已发布文章" },
-      },
       summary: {
         en: "A product-thinking essay on AI entry points, context switching, learning cost, and why tools become powerful when they appear where users already are.",
         zh: "一篇关于 AI 入口和产品分发的文章：工具真正进入用户日常，不只靠技术能力，也靠更低的切换成本和学习成本。",
@@ -1993,11 +2015,11 @@ export const profile: PortfolioProfile = {
         en: "Computer Science and Technology undergraduate.",
         zh: "计算机科学与技术本科生。",
       },
-      indexEyebrow: { en: "Explore", zh: "快速入口" },
-      indexTitle: { en: "Choose a section.", zh: "选择一个方向。" },
+      indexEyebrow: { en: "Technical Index", zh: "技术入口" },
+      indexTitle: { en: "Code, projects, writing.", zh: "代码、项目、写作。" },
       indexDescription: {
-        en: "Background, projects, writing, and lab notes are separated for quicker reading.",
-        zh: "背景、项目、写作和实验记录分开呈现，方便快速阅读。",
+        en: "A compact path into implementation details, project context, and technical notes.",
+        zh: "用更短的路径进入实现细节、项目上下文和技术笔记。",
       },
       indexOpenLabel: { en: "Open", zh: "打开" },
       featuredEyebrow: { en: "Featured Case Studies", zh: "精选案例" },
@@ -2067,6 +2089,12 @@ export const profile: PortfolioProfile = {
         zh: "每个案例对应的仓库链接、截图、TODO 和下一步。",
       },
       openEvidence: { en: "Open evidence", zh: "打开证据" },
+      codeEyebrow: { en: "Code Highlights", zh: "代码片段" },
+      codeTitle: { en: "Implementation notes.", zh: "实现要点。" },
+      codeDescription: {
+        en: "Short snippets and engineering decisions from the project workflow.",
+        zh: "项目流程中的关键片段和工程决策。",
+      },
       labEyebrow: { en: "Project Lab / Experiments", zh: "项目实验室 / 实验记录" },
       labTitle: {
         en: "Project Lab.",

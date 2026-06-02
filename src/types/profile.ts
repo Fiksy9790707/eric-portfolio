@@ -39,6 +39,14 @@ export type CaseStudySection = {
   points?: LocalizedString[];
 };
 
+export type CaseStudyCodeHighlight = {
+  title: LocalizedString;
+  language: string;
+  description: LocalizedString;
+  code: string;
+  points?: LocalizedString[];
+};
+
 export type CaseStudyFlowStep = {
   label: LocalizedString;
   detail: LocalizedString;
@@ -60,6 +68,7 @@ export type CaseStudy = {
   repositoryLabel: LocalizedString;
   metrics: CaseStudyMetric[];
   evidence: EvidenceItem[];
+  codeHighlights?: CaseStudyCodeHighlight[];
   flow: {
     title: LocalizedString;
     steps: CaseStudyFlowStep[];
@@ -258,6 +267,9 @@ export type PortfolioProfile = {
       evidenceTitle: LocalizedString;
       evidenceDescription: LocalizedString;
       openEvidence: LocalizedString;
+      codeEyebrow: LocalizedString;
+      codeTitle: LocalizedString;
+      codeDescription: LocalizedString;
       labEyebrow: LocalizedString;
       labTitle: LocalizedString;
       labDescription: LocalizedString;

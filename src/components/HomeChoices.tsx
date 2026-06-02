@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Code2, Compass, FlaskConical, UserRound } from "lucide-react";
+import { ArrowRight, BookOpen, Code2, Compass } from "lucide-react";
 import { useState } from "react";
 import { text } from "../lib/i18n";
 import type { Language, PortfolioProfile } from "../types/profile";
@@ -9,7 +9,7 @@ type HomeChoicesProps = {
   language: Language;
 };
 
-const choiceIcons = [UserRound, Code2, BookOpen, FlaskConical];
+const choiceIcons = [Code2, Compass, BookOpen];
 
 export default function HomeChoices({ profile, language }: HomeChoicesProps) {
   const defaultIndex = Math.max(

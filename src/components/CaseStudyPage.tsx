@@ -1,4 +1,4 @@
-import { ArrowLeft, ExternalLink, ShieldCheck } from "lucide-react";
+import { ArrowLeft, Code2, ExternalLink, ShieldCheck } from "lucide-react";
 import { assetPath } from "../lib/assets";
 import { text } from "../lib/i18n";
 import type { Language, PortfolioProfile, Project } from "../types/profile";
@@ -23,7 +23,7 @@ export default function CaseStudyPage({ project, profile, language }: CaseStudyP
         <div className="section-shell reveal">
           <AppLink
             className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
-            href="/#projects"
+            href="/projects"
           >
             <ArrowLeft size={16} />
             {text(profile.ui.sections.backHome, language)}
@@ -130,6 +130,58 @@ export default function CaseStudyPage({ project, profile, language }: CaseStudyP
                     <p className="mt-3 text-sm leading-6 text-zinc-300">{text(item.caption, language)}</p>
                   </figcaption>
                 </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {caseStudy.codeHighlights && caseStudy.codeHighlights.length > 0 ? (
+        <section id="code-highlights" className="border-b border-line">
+          <div className="section-shell reveal">
+            <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+              <div>
+                <p className="eyebrow">{text(profile.ui.sections.codeEyebrow, language)}</p>
+                <h2 className="section-title">{text(profile.ui.sections.codeTitle, language)}</h2>
+              </div>
+              <p className="max-w-md text-sm leading-6 text-zinc-400">
+                {text(profile.ui.sections.codeDescription, language)}
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-5 lg:grid-cols-2">
+              {caseStudy.codeHighlights.map((highlight) => (
+                <article key={text(highlight.title, language)} className="surface-card overflow-hidden">
+                  <div className="flex items-start justify-between gap-4 border-b border-line p-5">
+                    <div>
+                      <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-cyan">
+                        <Code2 size={15} />
+                        {highlight.language}
+                      </div>
+                      <h3 className="mt-4 text-xl font-semibold text-mint">
+                        {text(highlight.title, language)}
+                      </h3>
+                      <p className="mt-3 text-sm leading-6 text-zinc-300">
+                        {text(highlight.description, language)}
+                      </p>
+                    </div>
+                  </div>
+
+                  <pre className="overflow-x-auto bg-black/25 p-5 text-[0.78rem] leading-6 text-zinc-200">
+                    <code>{highlight.code}</code>
+                  </pre>
+
+                  {highlight.points ? (
+                    <ul className="grid gap-3 border-t border-line p-5">
+                      {highlight.points.map((point) => (
+                        <li key={text(point, language)} className="flex gap-3 text-sm leading-6 text-zinc-300">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" />
+                          <span>{text(point, language)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </article>
               ))}
             </div>
           </div>

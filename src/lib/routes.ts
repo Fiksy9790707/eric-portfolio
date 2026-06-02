@@ -26,7 +26,20 @@ export const navigateTo = (path: string) => {
 
   if (path.includes("#")) {
     const [, hash] = path.split("#");
-    window.setTimeout(() => document.getElementById(hash)?.scrollIntoView(), 0);
+    const scrollToHash = (attempt = 0) => {
+      const target = document.getElementById(hash);
+
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+
+      if (attempt < 8) {
+        window.setTimeout(() => scrollToHash(attempt + 1), 40);
+      }
+    };
+
+    window.setTimeout(() => scrollToHash(), 0);
   } else {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
