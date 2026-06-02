@@ -184,12 +184,13 @@ Each note supports:
 - `date`
 - `status`
 - `tags`
+- `coverImage`
 - `summary`
 - `notes`
 - `next`
 - `sections`
 
-The notes are mock/static content for now. There is no CMS, database, or markdown build step in version one.
+The notes are static content for now. To publish a new blog entry, add one object to `blogPosts` and place any cover image under `public/project-media/`.
 
 ## API Routes
 

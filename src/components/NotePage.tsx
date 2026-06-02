@@ -1,4 +1,5 @@
 import { ArrowLeft, NotebookText } from "lucide-react";
+import { assetPath } from "../lib/assets";
 import { text } from "../lib/i18n";
 import type { BlogPostPreview, Language, PortfolioProfile } from "../types/profile";
 import AppLink from "./AppLink";
@@ -41,6 +42,18 @@ export default function NotePage({ note, profile, language }: NotePageProps) {
             </div>
             <p className="section-copy">{text(note.summary, language)}</p>
           </div>
+          {note.coverImage ? (
+            <figure className="surface-card mt-8 overflow-hidden">
+              <img
+                className="h-auto w-full object-cover"
+                src={assetPath(note.coverImage.src)}
+                alt={text(note.coverImage.alt, language)}
+              />
+              <figcaption className="border-t border-line p-4 text-sm leading-6 text-zinc-400">
+                {text(note.coverImage.caption, language)}
+              </figcaption>
+            </figure>
+          ) : null}
         </div>
       </section>
 

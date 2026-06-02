@@ -975,6 +975,137 @@ export const profile: PortfolioProfile = {
   ],
   blogPosts: [
     {
+      slug: "why-i-started-organizing-my-portfolio",
+      title: {
+        en: "From Coursework to Real Projects: Why I Started Organizing My Portfolio",
+        zh: "从课程作业到真实项目：我为什么开始整理作品集",
+      },
+      date: "2026-06",
+      status: { en: "Personal essay", zh: "中文随笔" },
+      tags: ["Portfolio", "Internship", "Projects", "Reflection"],
+      coverImage: {
+        src: "project-media/blog-coursework-to-projects.png",
+        alt: {
+          en: "Dark desk illustration with laptop, code windows, coursework notebooks, and project cards",
+          zh: "深色桌面插画，包含电脑代码窗口、课程笔记和项目卡片",
+        },
+        caption: {
+          en: "Generated cover image for this essay. It is a concept visual, not a runtime screenshot.",
+          zh: "这篇随笔的生成封面图，用来表达从课程材料到项目整理的过程。",
+        },
+        kind: { en: "Generated cover", zh: "生成封面" },
+      },
+      summary: {
+        en: "A personal note on why I started turning coursework and prototypes into a clearer public portfolio while preparing for internships.",
+        zh: "一篇关于为什么开始整理作品集的短随笔：从找实习、整理项目，到意识到真实项目需要面对用户、部署和可维护性。",
+      },
+      notes: [
+        {
+          en: "The first motivation was simple: preparing for internships and making my work easier to inspect.",
+          zh: "最开始的动机很简单：找实习，也想把东西整理出来。",
+        },
+        {
+          en: "The main problem was not having no projects, but that many projects were not finished enough to be understood quickly.",
+          zh: "最大的问题不是没有项目，而是很多项目还没有整理到别人能快速看懂的程度。",
+        },
+        {
+          en: "A real project needs users, interface, deployment, reproducibility, maintenance, and a low-friction start.",
+          zh: "真实项目要考虑用户、界面、部署、可复现、可维护，以及别人能不能快速上手。",
+        },
+      ],
+      next: {
+        en: "Keep turning selected projects into clearer repositories, case studies, and small public demos.",
+        zh: "继续把选中的项目整理成更清楚的仓库、案例和小型公开 demo。",
+      },
+      sections: [
+        {
+          title: { en: "Why I started", zh: "一开始只是想找实习" },
+          body: {
+            en: "The first reason was practical: I was preparing for internships, and I needed a place where my projects could be seen together.",
+            zh: "一开始其实没有想那么复杂。就是找实习，想把自己做过的东西整理出来。以前项目散在 GitHub、课程文件夹、截图和一些临时 demo 里。我自己知道这些东西存在，但别人点进来，很难在几分钟内判断我到底做过什么。",
+          },
+          points: [
+            {
+              en: "A project that only I can understand is not yet a good public project.",
+              zh: "一个只有我自己能看懂的项目，还不算一个好的公开项目。",
+            },
+            {
+              en: "Portfolio work is partly about making past work inspectable.",
+              zh: "整理作品集，本质上也是把过去的工作变得可检查。",
+            },
+          ],
+        },
+        {
+          title: { en: "The real problem", zh: "问题不是没有做，而是没有完全做完" },
+          body: {
+            en: "I gradually realized that my problem was not having no projects. The harder part was that many projects stopped at the point where I understood them, but another person could not easily run, judge, or continue them.",
+            zh: "后来我发现，问题不是我完全没有东西。问题是很多东西都停在了一个很尴尬的位置：我知道它做过什么，也知道代码在哪里，但它没有完全整理到可以给别人看的程度。README 不够清楚，截图不够直观，运行步骤可能只有我自己记得，项目边界也没有写明白。",
+          },
+          points: [
+            {
+              en: "Code is only one part of the project.",
+              zh: "代码只是项目的一部分。",
+            },
+            {
+              en: "A visitor also needs context, screenshots, setup steps, and a reason to keep reading.",
+              zh: "别人还需要背景、截图、安装步骤，以及继续看下去的理由。",
+            },
+          ],
+        },
+        {
+          title: { en: "Coursework and real projects", zh: "课程作业和真实项目的区别" },
+          body: {
+            en: "Coursework often has a clear answer and a clear deadline. Real projects are different. They need to think about users, interfaces, deployment, reproducibility, updates, maintenance, and whether another person can install and start quickly.",
+            zh: "课程作业通常有明确题目、明确 deadline、明确评分方式。但真实项目不一样。它不只是“能跑”就结束了，还要考虑用户是谁、界面怎么用、怎么部署、别人能不能复现、后面能不能更新维护、安装上手是不是足够简单。",
+          },
+          points: [
+            {
+              en: "A working demo is not the same as an easy-to-use project.",
+              zh: "能跑的 demo，和容易上手的项目，不是一回事。",
+            },
+            {
+              en: "Documentation, deployment, and maintenance are also engineering work.",
+              zh: "文档、部署和维护，本身也是工程能力的一部分。",
+            },
+          ],
+        },
+        {
+          title: { en: "The directions I care about", zh: "我更想继续做下去的方向" },
+          body: {
+            en: "Among the current projects, Silicon Diaries and AI Campus Assistant feel closer to directions I want to keep exploring. They are not only model tasks. They are closer to small tools that enter a real workflow.",
+            zh: "在现在这些方向里，我更想继续做下去的，应该是 Silicon Diaries 和 AI Campus Assistant。它们不只是模型任务，更像是会进入真实工作流的小工具。一个关注本地大模型和个人自动化，一个关注校园信息整理和结构化输出。它们让我觉得，AI 应用不是把模型接上去就结束，而是要真的减少人的重复整理成本。",
+          },
+          points: [
+            {
+              en: "I care about AI applications that reduce repeated information sorting.",
+              zh: "我比较在意那些能减少重复信息整理的 AI 应用。",
+            },
+            {
+              en: "A useful tool should fit into daily workflow, not only look impressive in a demo.",
+              zh: "有用的工具应该进入日常流程，而不只是 demo 里看起来厉害。",
+            },
+          ],
+        },
+        {
+          title: { en: "What I hope people see", zh: "我希望别人看到什么" },
+          body: {
+            en: "I do not expect visitors to see me as an expert. I hope they can see that I am serious about building, willing to organize unfinished work, and trying to make projects more trustworthy.",
+            zh: "我不希望别人看完作品集之后觉得我是什么大神。更真实一点，我希望别人觉得：这个人方向还算清楚，真的在做东西，也愿意把没整理好的东西继续整理下去。更重要的是，可以被信任。不是因为我说得多漂亮，而是因为项目、文章、截图、README 和下一步计划能互相对上。",
+          },
+          points: [
+            {
+              en: "Trust comes from consistency between writing, code, screenshots, and next steps.",
+              zh: "信任感来自文字、代码、截图和后续计划之间的一致。",
+            },
+            {
+              en: "This portfolio is a starting point for that kind of consistency.",
+              zh: "这个作品集就是我开始整理这种一致性的起点。",
+            },
+          ],
+        },
+      ],
+    },
+    {
       slug: "building-ai-campus-assistant",
       title: { en: "Building an AI Campus Assistant", zh: "构建 AI 校园助手" },
       date: "2026-06",
