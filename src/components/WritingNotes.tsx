@@ -1,7 +1,8 @@
-import { NotebookText } from "lucide-react";
+import { ArrowRight, NotebookText } from "lucide-react";
 import { profile } from "../data/profile";
 import { text } from "../lib/i18n";
 import type { BlogPostPreview, Language } from "../types/profile";
+import AppLink from "./AppLink";
 
 type WritingNotesProps = {
   posts: BlogPostPreview[];
@@ -61,6 +62,14 @@ export default function WritingNotes({ posts, language }: WritingNotesProps) {
                 </p>
                 <p className="mt-2 text-sm leading-6 text-zinc-300">{text(post.next, language)}</p>
               </div>
+
+              <AppLink
+                className="focus-ring mt-6 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
+                href={`/notes/${post.slug}`}
+              >
+                {text(profile.ui.sections.blogReadLabel, language)}
+                <ArrowRight size={15} />
+              </AppLink>
             </article>
           ))}
         </div>

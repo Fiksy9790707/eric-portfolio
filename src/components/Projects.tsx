@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { profile } from "../data/profile";
 import { text } from "../lib/i18n";
 import type { Language, Project, ProjectCategory } from "../types/profile";
+import AppLink from "./AppLink";
 
 type ProjectsProps = {
   projects: Project[];
@@ -69,13 +70,13 @@ export default function Projects({ projects, language }: ProjectsProps) {
               </div>
               <div className="mt-7 flex flex-wrap items-center gap-4">
                 {project.caseStudy ? (
-                  <a
+                  <AppLink
                     className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
-                    href={`#${project.caseStudy.id}`}
+                    href={`/case-studies/${project.id}`}
                   >
                     {text(project.caseStudy.readLabel, language)}
                     <BookOpen size={15} />
-                  </a>
+                  </AppLink>
                 ) : null}
                 {project.githubUrl ? (
                   <a

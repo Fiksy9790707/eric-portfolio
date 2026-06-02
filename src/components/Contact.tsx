@@ -2,6 +2,7 @@ import { Copy, ExternalLink, Github, Mail, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import { text } from "../lib/i18n";
 import type { Language, PortfolioProfile } from "../types/profile";
+import AppLink from "./AppLink";
 
 type ContactProps = {
   profile: PortfolioProfile;
@@ -111,7 +112,14 @@ export default function Contact({ profile, language }: ContactProps) {
                     </p>
                     <p className="mt-1 text-sm text-zinc-200">{link.value}</p>
                   </div>
-                  {link.href ? (
+                  {link.href && (link.href.startsWith("#") || link.href.startsWith("/")) ? (
+                    <AppLink
+                      className="focus-ring rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
+                      href={link.href}
+                    >
+                      {text(profile.ui.contact.open, language)}
+                    </AppLink>
+                  ) : link.href ? (
                     <a
                       className="focus-ring rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
                       href={link.href}

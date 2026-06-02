@@ -680,6 +680,7 @@ export const profile: PortfolioProfile = {
   ],
   blogPosts: [
     {
+      slug: "building-ai-campus-assistant",
       title: { en: "Building an AI Campus Assistant", zh: "构建 AI 校园助手" },
       date: "2026-06",
       status: { en: "Draft note", zh: "草稿笔记" },
@@ -706,8 +707,45 @@ export const profile: PortfolioProfile = {
         en: "Design a small public demo with mock notices and a clear input-output example.",
         zh: "用模拟通知做一个公开小 demo，并给出清楚的输入输出示例。",
       },
+      sections: [
+        {
+          title: { en: "Why this idea matters", zh: "为什么这个想法值得做" },
+          body: {
+            en: "Campus information is often scattered across messages, course notices, activity posts, and informal reminders. The hard part is not only reading the text, but turning it into a small set of actionable objects.",
+            zh: "校园信息经常分散在通知、课程消息、活动推送和口头提醒里。难点不只是读懂文本，而是把它们整理成少量可以执行的对象。",
+          },
+          points: [
+            {
+              en: "A notice can become deadlines, locations, people, links, and follow-up actions.",
+              zh: "一条通知可以被拆成截止时间、地点、人物、链接和后续动作。",
+            },
+            {
+              en: "The assistant should help students decide what to do next, not simply summarize paragraphs.",
+              zh: "助手应该帮助学生判断下一步做什么，而不是只总结段落。",
+            },
+          ],
+        },
+        {
+          title: { en: "First version boundary", zh: "第一版边界" },
+          body: {
+            en: "The first public version can use mock notices instead of private campus systems. That keeps the demo safe, free, and easy to explain while still showing the workflow.",
+            zh: "第一版公开 demo 可以使用模拟通知，而不是接入私有校园系统。这样更安全、免费、也更容易解释，同时仍然能展示工作流。",
+          },
+          points: [
+            {
+              en: "No login, no private school API, and no persistent database in the prototype.",
+              zh: "原型阶段不做登录、不接学校私有 API，也不做持久数据库。",
+            },
+            {
+              en: "The most important output is a clear structured JSON-like result.",
+              zh: "最重要的输出是一份清楚的结构化结果。",
+            },
+          ],
+        },
+      ],
     },
     {
+      slug: "yolo-defect-detection-notes",
       title: { en: "Notes on YOLO-based Defect Detection", zh: "YOLO 缺陷检测笔记" },
       date: "2026-06",
       status: { en: "Field note", zh: "实践笔记" },
@@ -734,8 +772,45 @@ export const profile: PortfolioProfile = {
         en: "Add a sanitized demo GIF and a toy reproducible example if suitable public data is available.",
         zh: "如果有合适的公开数据，补一个脱敏 demo GIF 和可复现的小样例。",
       },
+      sections: [
+        {
+          title: { en: "Model result is not the whole project", zh: "模型结果不是整个项目" },
+          body: {
+            en: "A detection model becomes more useful when it is wrapped in a workflow that someone can inspect: input image, parameters, result boxes, output file, and known limitations.",
+            zh: "检测模型只有被包进一个可检查的流程里才更有用：输入图片、参数、检测框、输出文件和已知限制都需要能被看见。",
+          },
+          points: [
+            {
+              en: "For small targets, preprocessing choices can decide whether the model sees enough detail.",
+              zh: "在小目标场景里，预处理方式会影响模型能不能看到足够细节。",
+            },
+            {
+              en: "A public case study should show the interface and the delivery thinking, not just a model name.",
+              zh: "公开案例应该展示界面和交付思路，而不只是写一个模型名称。",
+            },
+          ],
+        },
+        {
+          title: { en: "How to talk about limits", zh: "如何说明限制" },
+          body: {
+            en: "It is tempting to put impressive metrics on a portfolio page, but metrics are only useful when the dataset and evaluation protocol are public enough to understand.",
+            zh: "作品集里很容易想放漂亮指标，但只有当数据和评估流程足够清楚时，指标才真正有意义。",
+          },
+          points: [
+            {
+              en: "Use screenshots, architecture, and process notes when metrics cannot be verified.",
+              zh: "当指标无法验证时，用截图、架构和流程笔记来支撑项目更稳妥。",
+            },
+            {
+              en: "Separate prototype claims from future production ideas.",
+              zh: "把当前原型能力和未来生产化设想区分开。",
+            },
+          ],
+        },
+      ],
     },
     {
+      slug: "local-llms-personal-automation",
       title: { en: "Local LLMs as Personal Automation Tools", zh: "把本地大模型作为个人自动化工具" },
       date: "2026-06",
       status: { en: "Exploration", zh: "探索记录" },
@@ -762,8 +837,45 @@ export const profile: PortfolioProfile = {
         en: "Publish sanitized diary examples and separate monitoring, prompt, and storage modules more clearly.",
         zh: "发布脱敏日记样例，并把监控、prompt、存储模块拆得更清楚。",
       },
+      sections: [
+        {
+          title: { en: "Where local models fit", zh: "本地模型适合的位置" },
+          body: {
+            en: "Local LLMs are useful when the task is personal, repetitive, and privacy-sensitive. They do not need to replace cloud models; they can become a low-cost layer for small automations.",
+            zh: "当任务比较个人、重复、又有隐私顾虑时，本地大模型很适合。它不需要替代云端模型，而是可以成为小型自动化的低成本一层。",
+          },
+          points: [
+            {
+              en: "System state, local notes, and small reminders are good local-first inputs.",
+              zh: "系统状态、本地笔记和小提醒都适合优先在本地处理。",
+            },
+            {
+              en: "The output should be helpful even when it is imperfect.",
+              zh: "即使输出不完美，也应该对用户有帮助。",
+            },
+          ],
+        },
+        {
+          title: { en: "Structure before generation", zh: "先结构化，再生成" },
+          body: {
+            en: "A local model becomes easier to control when the input is structured first. Silicon Diaries uses system signals as the grounding layer before asking the model to write.",
+            zh: "先把输入结构化，本地模型就更容易控制。硅基日记先用系统信号作为支撑，再让模型生成文字。",
+          },
+          points: [
+            {
+              en: "Monitoring, prompt construction, generation, and storage should be separate modules.",
+              zh: "监控、prompt 构造、生成和存储应该拆成独立模块。",
+            },
+            {
+              en: "Raw data should remain accessible so generated text can be audited.",
+              zh: "原始数据应该保留可访问，这样生成文本才可以回看和检查。",
+            },
+          ],
+        },
+      ],
     },
     {
+      slug: "coursework-to-real-projects",
       title: { en: "From Coursework to Real Projects", zh: "从课程作业到真实项目" },
       date: "2026-06",
       status: { en: "Learning note", zh: "学习笔记" },
@@ -790,6 +902,42 @@ export const profile: PortfolioProfile = {
         en: "Keep turning project repos into better public entry points, starting with README and evidence media.",
         zh: "继续把项目仓库整理成更好的公开入口，先从 README 和证据素材开始。",
       },
+      sections: [
+        {
+          title: { en: "A project needs a reader path", zh: "项目需要读者路径" },
+          body: {
+            en: "Many small projects are technically useful but hard for a visitor to understand. A good public project should guide the reader from context to proof.",
+            zh: "很多小项目技术上有价值，但访客很难快速看懂。一个好的公开项目应该把读者从背景引到证据。",
+          },
+          points: [
+            {
+              en: "Problem, screenshots, quickstart, limitations, and next steps are the minimum useful structure.",
+              zh: "问题、截图、快速开始、限制和下一步，是最基本也最有用的结构。",
+            },
+            {
+              en: "A README is part of the product, not an afterthought.",
+              zh: "README 是项目的一部分，不是最后随便补的说明。",
+            },
+          ],
+        },
+        {
+          title: { en: "Keep the claims honest", zh: "保持表述诚实" },
+          body: {
+            en: "A student portfolio does not need to pretend that every prototype is production-grade. Honest boundaries often make the work more credible.",
+            zh: "学生作品集不需要把每个原型都包装成生产级系统。边界说清楚，反而更可信。",
+          },
+          points: [
+            {
+              en: "TODOs are acceptable when they clearly mark what is missing.",
+              zh: "TODO 可以存在，只要清楚标明缺的是什么。",
+            },
+            {
+              en: "Evidence beats adjectives: screenshots and reproducible steps matter more than big claims.",
+              zh: "证据比形容词重要：截图和可复现步骤比夸张表述更有用。",
+            },
+          ],
+        },
+      ],
     },
   ],
   contactLinks: [
@@ -963,6 +1111,9 @@ export const profile: PortfolioProfile = {
         zh: "暂时不接 CMS。这里是一个轻量的数据驱动笔记页，用来放那些还没写成长文、但已经值得分享的想法。",
       },
       blogNextLabel: { en: "Next step", zh: "下一步" },
+      blogReadLabel: { en: "Read note", zh: "阅读笔记" },
+      backHome: { en: "Back to home", zh: "返回首页" },
+      openRepository: { en: "Open repository", zh: "打开仓库" },
       contactEyebrow: { en: "Contact", zh: "联系" },
       contactTitle: {
         en: "Open to feedback, collaboration, and practical project ideas.",

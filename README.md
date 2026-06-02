@@ -53,9 +53,21 @@ api/
   health.ts
   github.ts
   contact.ts
+vercel.json
 ```
 
 `api/` is at the repository root because Vercel detects root-level serverless functions there for Vite projects.
+
+The app uses a small custom React router instead of a heavy routing dependency. Current client-side routes include:
+
+- `/case-studies/wafer-defect-detection`
+- `/case-studies/silicon-diaries`
+- `/notes/building-ai-campus-assistant`
+- `/notes/yolo-defect-detection-notes`
+- `/notes/local-llms-personal-automation`
+- `/notes/coursework-to-real-projects`
+
+`vercel.json` rewrites the case-study and notes routes to `index.html` so direct links work on Vercel.
 
 ## Update Personal Information
 
@@ -112,6 +124,28 @@ Each project supports:
 - `linkLabel`
 
 If a project has no public repository yet, keep `githubUrl: null` and use a TODO link label.
+
+## Update Writing Notes
+
+Edit the `blogPosts` array in:
+
+```text
+src/data/profile.ts
+```
+
+Each note supports:
+
+- `slug`
+- `title`
+- `date`
+- `status`
+- `tags`
+- `summary`
+- `notes`
+- `next`
+- `sections`
+
+The notes are mock/static content for now. There is no CMS, database, or markdown build step in version one.
 
 ## API Routes
 
@@ -222,6 +256,7 @@ Notes:
 - Vercel serverless API routes under `/api/*` do not run on GitHub Pages.
 - The GitHub activity section falls back to bundled public repository data when `/api/github` is unavailable.
 - The contact area uses direct links. Real form submission can be added later through Vercel and an email provider integration.
+- Direct deep links such as `/notes/...` are configured for Vercel. On GitHub Pages, use in-app navigation from the mirror homepage unless a Pages fallback is added later.
 
 To enable the mirror:
 

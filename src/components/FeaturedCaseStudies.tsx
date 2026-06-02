@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { assetPath } from "../lib/assets";
 import { text } from "../lib/i18n";
 import type { Language, PortfolioProfile, Project } from "../types/profile";
+import AppLink from "./AppLink";
 
 type FeaturedCaseStudiesProps = {
   projects: Project[];
@@ -30,10 +31,10 @@ export default function FeaturedCaseStudies({ projects, profile, language }: Fea
             const media = project.caseStudy?.media?.[0];
 
             return (
-              <a
+              <AppLink
                 key={project.id}
                 className="surface-card group grid overflow-hidden focus-ring md:grid-cols-[0.95fr_1.05fr]"
-                href={`#${project.caseStudy?.id}`}
+                href={`/case-studies/${project.id}`}
               >
                 <div className="relative min-h-56 overflow-hidden border-b border-line md:border-b-0 md:border-r">
                   {media ? (
@@ -65,7 +66,7 @@ export default function FeaturedCaseStudies({ projects, profile, language }: Fea
                     <ArrowRight size={16} />
                   </div>
                 </div>
-              </a>
+              </AppLink>
             );
           })}
         </div>

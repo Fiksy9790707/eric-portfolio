@@ -77,7 +77,14 @@ export type TimelineItem = {
   description: LocalizedString;
 };
 
+export type NoteSection = {
+  title: LocalizedString;
+  body: LocalizedString;
+  points?: LocalizedString[];
+};
+
 export type BlogPostPreview = {
+  slug: string;
   title: LocalizedString;
   date: string;
   status: LocalizedString;
@@ -85,6 +92,7 @@ export type BlogPostPreview = {
   summary: LocalizedString;
   notes: LocalizedString[];
   next: LocalizedString;
+  sections: NoteSection[];
 };
 
 export type ContactLink = {
@@ -183,6 +191,9 @@ export type PortfolioProfile = {
       blogTitle: LocalizedString;
       blogDescription: LocalizedString;
       blogNextLabel: LocalizedString;
+      blogReadLabel: LocalizedString;
+      backHome: LocalizedString;
+      openRepository: LocalizedString;
       contactEyebrow: LocalizedString;
       contactTitle: LocalizedString;
     };
