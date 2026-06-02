@@ -1,4 +1,4 @@
-import { ArrowLeft, NotebookText } from "lucide-react";
+import { ArrowLeft, ExternalLink, NotebookText } from "lucide-react";
 import { assetPath } from "../lib/assets";
 import { text } from "../lib/i18n";
 import type { BlogPostPreview, Language, PortfolioProfile } from "../types/profile";
@@ -65,6 +65,17 @@ export default function NotePage({ note, profile, language }: NotePageProps) {
                 {text(profile.ui.sections.blogNextLabel, language)}
               </p>
               <p className="mt-3 text-sm leading-6 text-zinc-300">{text(note.next, language)}</p>
+              {note.externalUrl ? (
+                <a
+                  className="focus-ring mt-5 inline-flex items-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-semibold text-cyan transition hover:border-cyan/50 hover:text-mint"
+                  href={note.externalUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {text(note.externalLabel ?? { en: "Read original", zh: "阅读原文" }, language)}
+                  <ExternalLink size={14} />
+                </a>
+              ) : null}
             </aside>
 
             <div className="grid gap-5">

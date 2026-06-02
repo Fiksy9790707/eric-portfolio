@@ -117,6 +117,8 @@ export type BlogPostPreview = {
   status: LocalizedString;
   tags: string[];
   coverImage?: CaseStudyMedia;
+  externalUrl?: string;
+  externalLabel?: LocalizedString;
   summary: LocalizedString;
   notes: LocalizedString[];
   next: LocalizedString;

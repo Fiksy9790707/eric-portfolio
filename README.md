@@ -185,6 +185,8 @@ Each note supports:
 - `status`
 - `tags`
 - `coverImage`
+- `externalUrl`
+- `externalLabel`
 - `summary`
 - `notes`
 - `next`

@@ -1106,6 +1106,401 @@ export const profile: PortfolioProfile = {
       ],
     },
     {
+      slug: "family-health-ai-what-we-need",
+      title: {
+        en: "When Technology Enters Family Health Management, What Do We Really Need?",
+        zh: "当技术进入家庭健康管理，我们真正需要什么？",
+      },
+      date: "2026-03",
+      status: { en: "Published on Zhihu", zh: "知乎已发布" },
+      tags: ["AI 应用", "家庭健康", "Local-First", "产品设计"],
+      externalUrl: "https://zhuanlan.zhihu.com/p/2021735140338968382",
+      externalLabel: { en: "Read on Zhihu", zh: "知乎原文" },
+      coverImage: {
+        src: "project-media/blog-zhihu-essays.png",
+        alt: {
+          en: "Dark editorial illustration with laptop, notebooks, article cards, and interface panels",
+          zh: "深色编辑风插画，包含电脑、笔记、文章卡片和界面面板",
+        },
+        caption: { en: "Published Essays", zh: "Published Essays" },
+        kind: { en: "Published article", zh: "已发布文章" },
+      },
+      summary: {
+        en: "A product reflection on family health management, local-first thinking, and why technology should organize information before making decisions.",
+        zh: "从家庭健康管理出发，讨论技术进入真实生活时应该先解决什么：不是替人做决定，而是把信息整理得可靠、可追溯、可使用。",
+      },
+      notes: [
+        {
+          en: "Family health management needs reliable information organization before smarter AI.",
+          zh: "家庭健康管理最缺的不是更聪明的 AI，而是更可靠的信息整理。",
+        },
+        {
+          en: "Local-first is not only a privacy slogan; it is an architectural choice.",
+          zh: "Local-First 不只是隐私口号，而是一种架构选择。",
+        },
+        {
+          en: "The system should archive, remind, and connect, not replace human judgment.",
+          zh: "系统应该做归档、提醒和连接，而不是替代人的判断。",
+        },
+      ],
+      next: {
+        en: "Use the family-health project as a reference for future local-first application design.",
+        zh: "后续可以把 family-health 项目作为 Local-First 应用设计的参考案例。",
+      },
+      sections: [
+        {
+          title: { en: "From a real family scene", zh: "从一个真实家庭场景开始" },
+          body: {
+            en: "The article starts from everyday family health problems: scattered reports, medication records, checkup reminders, and the difficulty of answering simple questions when a doctor asks about history.",
+            zh: "这篇文章从很具体的家庭场景开始：药物记录、复查提醒、体检报告、医生询问病史时全家一起翻手机相册。问题看起来琐碎，但真正麻烦的是信息长期散乱。",
+          },
+          points: [
+            {
+              en: "The first problem is not diagnosis, but organization.",
+              zh: "第一个问题不是诊断，而是整理。",
+            },
+            {
+              en: "Health records need traceability and human confirmation.",
+              zh: "健康记录需要可追溯，也需要人工确认。",
+            },
+          ],
+        },
+        {
+          title: { en: "Technology with boundaries", zh: "有边界的技术" },
+          body: {
+            en: "The core idea is that high-risk domains need clear boundaries. A useful health assistant should reduce chaos, preserve source records, and help family members communicate better.",
+            zh: "文章的核心不是炫耀系统能做多少事，而是讨论边界。健康类工具更应该减少混乱、保留来源、帮助家庭成员和医生沟通，而不是越过人的判断。",
+          },
+          points: [
+            {
+              en: "Archive before decision.",
+              zh: "先归档，再谈决策。",
+            },
+            {
+              en: "Remind before recommend.",
+              zh: "先提醒，再谈推荐。",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      slug: "use-rules-not-mock-rules",
+      title: {
+        en: "Use the Rules Instead of Mocking Them",
+        zh: "利用规则而不是嘲讽规则：成熟认知者的生存策略",
+      },
+      date: "2026-03",
+      status: { en: "Published on Zhihu", zh: "知乎已发布" },
+      tags: ["认知", "个人成长", "规则", "交付"],
+      externalUrl: "https://zhuanlan.zhihu.com/p/1975971017773060131",
+      externalLabel: { en: "Read on Zhihu", zh: "知乎原文" },
+      coverImage: {
+        src: "project-media/blog-zhihu-essays.png",
+        alt: {
+          en: "Dark editorial illustration with laptop, notebooks, article cards, and interface panels",
+          zh: "深色编辑风插画，包含电脑、笔记、文章卡片和界面面板",
+        },
+        caption: { en: "Published Essays", zh: "Published Essays" },
+        kind: { en: "Published article", zh: "已发布文章" },
+      },
+      summary: {
+        en: "A reflection on moving from outside criticism to inside action, using imperfect rules to get real work done.",
+        zh: "一篇关于从场外评价走向场内行动的文章：不只是嘲讽规则，而是理解规则、利用规则，把事情推进下去。",
+      },
+      notes: [
+        {
+          en: "Seeing imperfection is easy; building inside constraints is harder.",
+          zh: "看见不完美很容易，在约束里把事情做出来更难。",
+        },
+        {
+          en: "Delivery gives technology a real target.",
+          zh: "交付会让技术有真实目标。",
+        },
+        {
+          en: "The useful question is not only whether a rule is bad, but what can be done under it.",
+          zh: "有用的问题不只是规则蠢不蠢，而是在这个规则下我能做什么。",
+        },
+      ],
+      next: {
+        en: "Keep using project work as a way to test ideas instead of only commenting on them.",
+        zh: "继续用项目实践检验想法，而不是只停留在评价上。",
+      },
+      sections: [
+        {
+          title: { en: "From comment to action", zh: "从评价到行动" },
+          body: {
+            en: "The article starts with the attraction of the 'grass stage' mindset: once you see the flaws in institutions and teams, it feels easy to stand outside and judge.",
+            zh: "这篇文章从“草台班子理论”的爽感写起。看见老师、公司、流程里的不完美之后，人很容易站在外面评价，好像自己已经看透了一切。",
+          },
+          points: [
+            {
+              en: "Criticism can feel like clarity, but it may also become distance.",
+              zh: "批判有时候像清醒，但也可能把自己挡在行动外面。",
+            },
+            {
+              en: "A flawed system can still produce real products.",
+              zh: "一个不完美的系统，也可能真的做出产品。",
+            },
+          ],
+        },
+        {
+          title: { en: "Why this matters for projects", zh: "这和做项目有什么关系" },
+          body: {
+            en: "The article connects this mindset to project work: knowing a model or tool is not enough. The value appears when those skills serve delivery.",
+            zh: "文章后半段把这个问题拉回到项目上：知道 YOLOv8 怎么训练、知道怎么调参，并不自动等于项目能交付。技术只有服务于真实交付时，价值才会变清楚。",
+          },
+          points: [
+            {
+              en: "Ask how to build under the current constraint.",
+              zh: "问自己：在当前约束下，怎么把东西做出来。",
+            },
+            {
+              en: "Use rules as a field of action.",
+              zh: "把规则当成行动场，而不是只当成吐槽对象。",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      slug: "ai-skill-ecosystem-opportunity",
+      title: {
+        en: "AI Startup Opportunities: How Ordinary People Can Enter",
+        zh: "AI 创业机会：普通人如何入局？聊聊 OpenClaw Skill 生态的早期红利",
+      },
+      date: "2026-03",
+      status: { en: "Published on Zhihu", zh: "知乎已发布" },
+      tags: ["AI 创业", "Skill", "OpenClaw", "产品机会"],
+      externalUrl: "https://zhuanlan.zhihu.com/p/1975385304899818505",
+      externalLabel: { en: "Read on Zhihu", zh: "知乎原文" },
+      coverImage: {
+        src: "project-media/blog-zhihu-essays.png",
+        alt: {
+          en: "Dark editorial illustration with laptop, notebooks, article cards, and interface panels",
+          zh: "深色编辑风插画，包含电脑、笔记、文章卡片和界面面板",
+        },
+        caption: { en: "Published Essays", zh: "Published Essays" },
+        kind: { en: "Published article", zh: "已发布文章" },
+      },
+      summary: {
+        en: "A practical note on OpenClaw's Skill ecosystem, early platform opportunities, and why integration can be valuable before invention.",
+        zh: "围绕 OpenClaw Skill 生态写的一篇机会分析：早期平台里，普通人不一定要发明新算法，先把具体能力集成出来也有价值。",
+      },
+      notes: [
+        {
+          en: "Early ecosystems often reward people who build useful tools around the platform.",
+          zh: "新生态早期，往往会奖励那些先把工具做出来的人。",
+        },
+        {
+          en: "A Skill is closer to integration and workflow packaging than pure algorithm research.",
+          zh: "Skill 更接近集成和工作流封装，不是纯算法研究。",
+        },
+        {
+          en: "The opportunity is practical: build, teach, or provide integration services.",
+          zh: "机会也很具体：开发 Skill、做教程、做集成服务。",
+        },
+      ],
+      next: {
+        en: "Watch platform ecosystems through the lens of concrete user workflows.",
+        zh: "后续可以继续从具体用户工作流角度观察平台生态。",
+      },
+      sections: [
+        {
+          title: { en: "Why Skill ecosystems matter", zh: "为什么 Skill 生态值得看" },
+          body: {
+            en: "The article compares early Skill ecosystems to earlier platform waves: once a platform appears, practical tools and integrations become valuable.",
+            zh: "这篇文章把 Skill 生态看作一种早期平台机会。平台本身提供基础设施，第三方开发者提供具体能力，真正有价值的是把用户场景接进去。",
+          },
+          points: [
+            {
+              en: "Users pay for AI that can do work, not only chat.",
+              zh: "用户需要的是能干活的 AI，而不只是会聊天的 AI。",
+            },
+            {
+              en: "The entry barrier is often lower than people imagine.",
+              zh: "很多 Skill 的门槛，可能比想象中低。",
+            },
+          ],
+        },
+        {
+          title: { en: "Three possible paths", zh: "三种可能路径" },
+          body: {
+            en: "The article lays out three routes: building Skills, teaching others to build them, and providing integration services for real workflows.",
+            zh: "文章整理了三条路径：直接开发 Skill，教别人开发 Skill，或者帮具体用户/团队做工作流集成。它更像一个理性入口，而不是鼓励盲目 All in。",
+          },
+          points: [
+            {
+              en: "Build a small useful Skill first.",
+              zh: "先做一个小而有用的 Skill。",
+            },
+            {
+              en: "Look for real repetitive workflows.",
+              zh: "去找真实重复的工作流。",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      slug: "grass-stage-theory-risk",
+      title: {
+        en: "The Truth of Grass Stage Theory",
+        zh: "草台班子理论的真相：为什么这个观点既对又危险",
+      },
+      date: "2026-03",
+      status: { en: "Published on Zhihu", zh: "知乎已发布" },
+      tags: ["认知", "草台班子理论", "个人成长"],
+      externalUrl: "https://zhuanlan.zhihu.com/p/2015181705862993549",
+      externalLabel: { en: "Read on Zhihu", zh: "知乎原文" },
+      coverImage: {
+        src: "project-media/blog-zhihu-essays.png",
+        alt: {
+          en: "Dark editorial illustration with laptop, notebooks, article cards, and interface panels",
+          zh: "深色编辑风插画，包含电脑、笔记、文章卡片和界面面板",
+        },
+        caption: { en: "Published Essays", zh: "Published Essays" },
+        kind: { en: "Published article", zh: "已发布文章" },
+      },
+      summary: {
+        en: "A reflection on why seeing imperfection can be liberating, but can also lead to arrogance if it stops at judgment.",
+        zh: "关于“草台班子理论”的一篇反思：它能帮人破除权威滤镜，但如果只停留在看透和嘲讽，也会带来新的自我误判。",
+      },
+      notes: [
+        {
+          en: "The theory is useful when it removes fear.",
+          zh: "这个观点有用的地方，是它能让人不再迷信权威。",
+        },
+        {
+          en: "It becomes dangerous when it turns into easy arrogance.",
+          zh: "危险的地方，是它也可能让人滑向轻易的狂妄。",
+        },
+        {
+          en: "The better response is participation and building.",
+          zh: "更好的回应，是参与和做事。",
+        },
+      ],
+      next: {
+        en: "Connect this reflection with project delivery and internship preparation.",
+        zh: "后续可以把这个思考继续和项目交付、实习准备联系起来。",
+      },
+      sections: [
+        {
+          title: { en: "What it gets right", zh: "它说对了什么" },
+          body: {
+            en: "The idea is attractive because it reveals a truth: many systems are imperfect, and authority is often less complete than it looks from the outside.",
+            zh: "这个观点之所以流行，是因为它确实说中了一部分现实：很多系统并不完美，很多权威也没有想象中那么完整。意识到这一点，可以减少恐惧。",
+          },
+          points: [
+            {
+              en: "Imperfection is normal.",
+              zh: "不完美是常态。",
+            },
+            {
+              en: "Authority can be understood, not worshiped.",
+              zh: "权威可以被理解，而不是被迷信。",
+            },
+          ],
+        },
+        {
+          title: { en: "Where it becomes risky", zh: "它危险在哪里" },
+          body: {
+            en: "The risk appears when insight becomes an excuse to stay outside. If everything is dismissed as a grass stage, it becomes harder to enter the game and build.",
+            zh: "风险在于，看透之后，人可能反而停在场外。如果什么都被归为草台班子，就很容易只剩评价，而没有参与。",
+          },
+          points: [
+            {
+              en: "Seeing flaws is not the same as being able to build.",
+              zh: "看见问题，不等于有能力把事情做成。",
+            },
+            {
+              en: "The useful version of the idea should lead to action.",
+              zh: "这个观点真正有用的版本，应该把人推向行动。",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      slug: "entry-revolution-distribution-over-tech",
+      title: {
+        en: "Entry Revolution: Why Distribution Innovation Can Matter More Than Technology Innovation",
+        zh: "入口革命：为什么分发创新大于技术创新",
+      },
+      date: "2026-03",
+      status: { en: "Published on Zhihu", zh: "知乎已发布" },
+      tags: ["AI", "产品思维", "用户体验", "入口"],
+      externalUrl: "https://zhuanlan.zhihu.com/p/2019034233159570513",
+      externalLabel: { en: "Read on Zhihu", zh: "知乎原文" },
+      coverImage: {
+        src: "project-media/blog-zhihu-essays.png",
+        alt: {
+          en: "Dark editorial illustration with laptop, notebooks, article cards, and interface panels",
+          zh: "深色编辑风插画，包含电脑、笔记、文章卡片和界面面板",
+        },
+        caption: { en: "Published Essays", zh: "Published Essays" },
+        kind: { en: "Published article", zh: "已发布文章" },
+      },
+      summary: {
+        en: "A product-thinking essay on AI entry points, context switching, learning cost, and why tools become powerful when they appear where users already are.",
+        zh: "一篇关于 AI 入口和产品分发的文章：工具真正进入用户日常，不只靠技术能力，也靠更低的切换成本和学习成本。",
+      },
+      notes: [
+        {
+          en: "Users often choose the path with the lowest friction.",
+          zh: "用户很多时候会选择摩擦最低的路径。",
+        },
+        {
+          en: "Putting AI into existing communication channels changes how people use it.",
+          zh: "把 AI 放进已有沟通入口，会改变人们使用它的方式。",
+        },
+        {
+          en: "Distribution can become a product advantage.",
+          zh: "分发本身也可以成为产品优势。",
+        },
+      ],
+      next: {
+        en: "Use entry-point thinking when designing campus and local automation tools.",
+        zh: "后续设计校园助手和本地自动化工具时，可以继续考虑入口问题。",
+      },
+      sections: [
+        {
+          title: { en: "The hidden cost of switching", zh: "被低估的切换成本" },
+          body: {
+            en: "The article starts from a simple scene: if a user is already in a chat app, leaving it to open another AI tool creates friction.",
+            zh: "文章从一个很日常的场景开始：用户已经在微信里聊天，如果为了用 AI 还要退出、打开新软件、登录、输入问题，中间每一步都是摩擦。",
+          },
+          points: [
+            {
+              en: "A good entry point removes decisions.",
+              zh: "好的入口会减少决策点。",
+            },
+            {
+              en: "Lower friction can change adoption.",
+              zh: "更低摩擦会改变使用率。",
+            },
+          ],
+        },
+        {
+          title: { en: "Why entry points matter for AI", zh: "为什么入口对 AI 很重要" },
+          body: {
+            en: "AI capability matters, but capability only becomes useful when users can reach it inside their existing workflow.",
+            zh: "AI 能力当然重要，但能力只有进入用户已有流程时，才更容易被真正使用。入口不是装饰，而是产品的一部分。",
+          },
+          points: [
+            {
+              en: "The best tool is often the one already nearby.",
+              zh: "最容易被使用的工具，往往是离用户最近的那个。",
+            },
+            {
+              en: "Product design is partly about reducing distance.",
+              zh: "产品设计的一部分，就是缩短用户和能力之间的距离。",
+            },
+          ],
+        },
+      ],
+    },
+    {
       slug: "building-ai-campus-assistant",
       title: { en: "Building an AI Campus Assistant", zh: "构建 AI 校园助手" },
       date: "2026-06",
