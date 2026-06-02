@@ -33,7 +33,7 @@ Build for production:
 npm run build
 ```
 
-The Vite dev server does not emulate Vercel serverless functions by itself. On plain `npm run dev`, the GitHub activity section can fall back to bundled public data. The visible contact section uses direct email, GitHub, and resume links rather than a fake inbox. On Vercel, `/api/*` routes are served automatically.
+The Vite dev server does not emulate Vercel serverless functions by itself. On plain `npm run dev`, the GitHub activity section can fall back to bundled public data. The visible contact section uses direct email, GitHub, and resume links. On Vercel, `/api/*` routes are served automatically.
 
 If Vercel CLI is installed and logged in, you can test frontend and API routes together with:
 

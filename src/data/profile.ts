@@ -1382,8 +1382,8 @@ export const profile: PortfolioProfile = {
         zh: "两个带公开证据的项目案例。",
       },
       featuredDescription: {
-        en: "Quick entry points for visitors who want to inspect the strongest project context first.",
-        zh: "给想先看重点项目的访客一个更快入口。",
+        en: "Wafer Defect Detection and Silicon Diaries.",
+        zh: "Wafer Defect Detection 与 Silicon Diaries。",
       },
       nowEyebrow: { en: "Now", zh: "现在" },
       nowTitle: {
@@ -1391,8 +1391,8 @@ export const profile: PortfolioProfile = {
         zh: "正在把应用 AI 方向整理成更完整、可展示的作品集。",
       },
       nowDescription: {
-        en: "A short, current snapshot. These are active directions, not finished claims.",
-        zh: "这里记录当前正在推进的方向，不把进行中的事情包装成已经完成的成绩。",
+        en: "Applied AI, computer vision, local LLM, and public project writing.",
+        zh: "应用 AI、计算机视觉、本地大模型与公开项目整理。",
       },
       projectsEyebrow: { en: "Projects", zh: "项目" },
       projectsTitle: {
@@ -1441,8 +1441,8 @@ export const profile: PortfolioProfile = {
         zh: "支撑作品集方向的课程实验和技术练习。",
       },
       labDescription: {
-        en: "This page organizes selected HIT_S2 coursework folders into public-facing learning evidence. They are not presented as polished products, but they show foundations behind the current AI and systems direction.",
-        zh: "这个页面把 HIT_S2 中的一部分课程实验整理成面向公开展示的学习证据。它们不会被包装成成熟产品，但能说明当前 AI 与系统方向背后的基础训练。",
+        en: "Selected coursework experiments across machine learning, computer construction, and software construction.",
+        zh: "机器学习、计算机组成与软件构造方向的精选课程实验。",
       },
       labSourceLabel: { en: "Local evidence folder", zh: "本地证据目录" },
       labEvidenceLabel: { en: "Observed evidence", zh: "已观察到的证据" },
@@ -1485,10 +1485,10 @@ export const profile: PortfolioProfile = {
       emailDirect: { en: "Email me", zh: "发送邮件" },
       githubDirect: { en: "Open GitHub", zh: "打开 GitHub" },
       resumeDirect: { en: "Open resume", zh: "打开简历" },
-      formNoteTitle: { en: "No fake inbox", zh: "不做假的收件箱" },
+      formNoteTitle: { en: "Contact note", zh: "联系说明" },
       formNoteBody: {
-        en: "This first version does not store form messages or send email in the background. That keeps the site free, private, and easy to deploy. A real mail provider such as Resend or SendGrid can be connected later from the existing API route when needed.",
-        zh: "第一版不会在后台保存表单消息，也不会假装已经发送邮件。这样网站保持免费、隐私友好，也更容易部署。后续如果需要，可以在现有 API route 上接入 Resend、SendGrid 等真实邮件服务。",
+        en: "Email and GitHub are the primary contact channels for now. A real mail provider can be connected later if the site needs form submission.",
+        zh: "目前主要通过邮箱和 GitHub 联系。后续如果需要表单提交，可以再接入真实邮件服务。",
       },
       name: { en: "Name", zh: "姓名" },
       email: { en: "Email", zh: "邮箱" },
