@@ -731,6 +731,56 @@ export const profile: PortfolioProfile = {
           zh: "lab_3 保留实验 notebook 以及生成的图表和结果文件。",
         },
       ],
+      detail: {
+        goal: {
+          en: "Use small notebook experiments to practice the path from dataset preparation to model training, evaluation, and result interpretation.",
+          zh: "通过小型 notebook 实验练习从数据准备、模型训练、评估到结果解释的完整路径。",
+        },
+        work: [
+          {
+            en: "Ran framework-style lab notebooks instead of only reading theory.",
+            zh: "实际运行实验框架 notebook，而不是只停留在理论阅读。",
+          },
+          {
+            en: "Practiced classical ML workflows with sklearn examples and a PyTorch MNIST exercise.",
+            zh: "通过 sklearn 示例和 PyTorch MNIST 练习熟悉传统机器学习与深度学习流程。",
+          },
+          {
+            en: "Kept generated figures/results as experiment traces for later review.",
+            zh: "保留生成图表和结果，作为后续复盘的实验痕迹。",
+          },
+        ],
+        keyFiles: [
+          "Machine_Learning/lab_1/ML_Lab1_Bank_Student_FrameworkV4.ipynb",
+          "Machine_Learning/lab_1/lab1_sklearn_exampleV4.ipynb",
+          "Machine_Learning/lab_2/ml_lab2_pytorch_mnist.ipynb",
+          "Machine_Learning/lab_3/code&data/Lab3.ipynb",
+        ],
+        learning: [
+          {
+            en: "A model result is easier to explain when the dataset, preprocessing, and evaluation path are visible.",
+            zh: "当数据、预处理和评估路径可见时，模型结果才更容易解释。",
+          },
+          {
+            en: "Notebook experiments are useful learning evidence, but they need better cleanup before becoming public projects.",
+            zh: "notebook 实验是有价值的学习证据，但在成为公开项目之前还需要进一步整理。",
+          },
+        ],
+        boundary: {
+          en: "This is shown as coursework evidence. It does not claim a novel model, public benchmark, or production deployment.",
+          zh: "这里作为课程学习证据展示，不声称新模型、公开 benchmark 或生产部署。",
+        },
+        next: [
+          {
+            en: "Extract one clean notebook into a small reproducible public demo.",
+            zh: "挑一个 notebook 整理成可复现的小型公开 demo。",
+          },
+          {
+            en: "Add a short note explaining dataset assumptions and evaluation metrics.",
+            zh: "补一篇短笔记说明数据假设和评估指标。",
+          },
+        ],
+      },
     },
     {
       id: "computer-construction-minirv",
@@ -753,28 +803,58 @@ export const profile: PortfolioProfile = {
           zh: "汇编练习以 .asm 文件保留，用于底层基础训练。",
         },
       ],
-    },
-    {
-      id: "digital-logic-verilog",
-      title: { en: "Digital Logic / Verilog Experiments", zh: "数字逻辑 / Verilog 实验" },
-      course: { en: "Digital Logic and FPGA Practice", zh: "数字逻辑与 FPGA 实践" },
-      status: { en: "Course lab / hardware basics", zh: "课程实验 / 硬件基础" },
-      summary: {
-        en: "Small Verilog modules and testbenches for muxes, registers, display logic, UART-style modules, and state-machine practice.",
-        zh: "用于多路选择器、寄存器、显示逻辑、UART 风格模块和状态机练习的小型 Verilog 模块与 testbench。",
+      detail: {
+        goal: {
+          en: "Practice low-level computer organization by connecting assembly exercises, Verilog modules, and a miniRV/AXI-style project structure.",
+          zh: "通过汇编练习、Verilog 模块和 miniRV/AXI 风格项目结构，练习计算机组成的底层实现思维。",
+        },
+        work: [
+          {
+            en: "Worked with Verilog modules for arithmetic and CPU-related building blocks.",
+            zh: "接触并整理了用于算术和 CPU 相关构件的 Verilog 模块。",
+          },
+          {
+            en: "Connected RISC-V assembly exercises with hardware-level implementation practice.",
+            zh: "把 RISC-V 汇编练习和硬件层实现实践联系起来。",
+          },
+          {
+            en: "Kept the project framed as foundations for systems thinking, not as a finished processor product.",
+            zh: "把它定位为系统思维基础训练，而不是包装成已完成的处理器产品。",
+          },
+        ],
+        keyFiles: [
+          "Computer_Construction/lab2_stu/multiplier.v",
+          "Computer_Construction/lab2_stu/miniRV_axi_stu",
+          "Computer_Construction/lab3_stu/miniRV_axi_stu",
+          "Project/miniRV_axi_stu/miniRV_axi.srcs/sources_1/new/ALU.v",
+          "Project/miniRV_axi_stu/miniRV_axi.srcs/sources_1/new/Ctrl.v",
+          "Project/miniRV_axi_stu/miniRV_axi.srcs/sources_1/new/cpu_top.v",
+        ],
+        learning: [
+          {
+            en: "System-level projects are easier to understand when modules, interfaces, and test traces are documented together.",
+            zh: "系统级项目需要把模块、接口和测试痕迹放在一起说明，读者才更容易理解。",
+          },
+          {
+            en: "Hardware practice strengthens the portfolio's CS foundation beyond application-layer AI demos.",
+            zh: "硬件实践能补强作品集中应用层 AI demo 之外的计算机基础。",
+          },
+        ],
+        boundary: {
+          en: "This page only summarizes coursework artifacts. It avoids claiming a polished CPU design or public hardware verification result.",
+          zh: "这个页面只总结课程产物，不声称完成了成熟 CPU 设计或公开硬件验证结果。",
+        },
+        next: [
+          {
+            en: "Write a cleaner module map for ALU, control, top-level CPU, and test files.",
+            zh: "整理一张更清楚的模块图，说明 ALU、控制模块、CPU 顶层和测试文件。",
+          },
+          {
+            en: "Add a sanitized build/run note if the project is later made public.",
+            zh: "如果后续公开项目，再补充脱敏后的构建和运行说明。",
+          },
+        ],
       },
-      stack: ["Verilog", "Testbench", "UART", "State Machine"],
-      sourcePath: "HIT_S2/Experience",
-      evidence: [
-        {
-          en: "Contains mux.v, dff.v, reg8file.v, number.v, uart_send.v, uart_recv.v, and related top-level modules.",
-          zh: "包含 mux.v、dff.v、reg8file.v、number.v、uart_send.v、uart_recv.v 及相关顶层模块。",
-        },
-        {
-          en: "The files show hardware description practice rather than a polished public repository.",
-          zh: "这些文件展示的是硬件描述训练，不包装成已完成的公开仓库项目。",
-        },
-      ],
     },
     {
       id: "software-construction-aircraft-war",
@@ -797,46 +877,56 @@ export const profile: PortfolioProfile = {
           zh: "测试包含 DAO、工厂创建和英雄射击策略相关用例。",
         },
       ],
-    },
-    {
-      id: "data-structure-c-exercises",
-      title: { en: "Data Structure C Exercises", zh: "数据结构 C 语言练习" },
-      course: { en: "Data Structure", zh: "数据结构" },
-      status: { en: "Course exercises / foundations", zh: "课程练习 / 基础训练" },
-      summary: {
-        en: "Small C exercises used to practice data structures and algorithmic foundations. This belongs in the lab page, not the featured project section.",
-        zh: "用于练习数据结构和算法基础的小型 C 语言实验。它适合放在实验页，而不是精选项目区。",
+      detail: {
+        goal: {
+          en: "Practice object-oriented design and small-game architecture through a Java coursework project with entities, factories, strategies, persistence, and tests.",
+          zh: "通过 Java 课程项目练习面向对象设计和小游戏架构，包括实体、工厂、策略、持久化和测试。",
+        },
+        work: [
+          {
+            en: "Organized game objects and behavior through packages such as aircraft, enemy, factory, strategy, dao, and prop.",
+            zh: "通过 aircraft、enemy、factory、strategy、dao、prop 等包组织游戏对象和行为。",
+          },
+          {
+            en: "Used tests to cover DAO behavior, factory creation, and strategy-related logic.",
+            zh: "使用测试覆盖 DAO 行为、工厂创建和策略相关逻辑。",
+          },
+          {
+            en: "Practiced separating gameplay logic from UI/demo code where possible.",
+            zh: "练习尽可能把游戏逻辑和 UI/demo 代码拆开。",
+          },
+        ],
+        keyFiles: [
+          "软件构造/AircraftWar-base/src/edu/hitsz",
+          "软件构造/AircraftWar-base/tests/edu/hitsz/dao/FileScoreRecordDaoTest.java",
+          "软件构造/AircraftWar-base/tests/edu/hitsz/factory/FactoryCreationTest.java",
+          "软件构造/AircraftWar-base/tests/edu/hitsz/strategy/HeroShootStrategyTest.java",
+        ],
+        learning: [
+          {
+            en: "Design patterns are easier to justify when they reduce concrete duplication or make behavior easier to test.",
+            zh: "设计模式只有在减少具体重复、让行为更容易测试时才真正有意义。",
+          },
+          {
+            en: "A course project can become portfolio-worthy when its structure, tests, and limits are explained clearly.",
+            zh: "课程项目只要能把结构、测试和边界说明清楚，也可以成为作品集里的有效材料。",
+          },
+        ],
+        boundary: {
+          en: "This is a coursework project, not a commercial game or production software. The page focuses on code organization and testing practice.",
+          zh: "这是课程项目，不是商业游戏或生产软件。页面重点展示代码组织和测试实践。",
+        },
+        next: [
+          {
+            en: "Add one architecture diagram showing entity, factory, strategy, and DAO relationships.",
+            zh: "补一张架构图说明实体、工厂、策略和 DAO 的关系。",
+          },
+          {
+            en: "If publishing the repo later, add screenshots and a short run guide.",
+            zh: "如果后续公开仓库，补充截图和简短运行说明。",
+          },
+        ],
       },
-      stack: ["C", "Data Structures", "Algorithms"],
-      sourcePath: "HIT_S2/data_structure/experience",
-      evidence: [
-        {
-          en: "The folder contains multiple numbered C exercise files such as 1.1.c, 2.1.c, and 2.4.c.",
-          zh: "目录中包含多个编号 C 练习文件，例如 1.1.c、2.1.c、2.4.c。",
-        },
-      ],
-    },
-    {
-      id: "embedded-course-projects",
-      title: { en: "Embedded / GPIO Project Files", zh: "嵌入式 / GPIO 项目文件" },
-      course: { en: "Course Project", zh: "课程项目" },
-      status: { en: "Experiment archive", zh: "实验归档" },
-      summary: {
-        en: "Embedded-oriented project folders with GPIO toggling and Pacman-related configuration files. Public write-up is still TODO.",
-        zh: "包含 GPIO 翻转和 Pacman 相关配置文件的嵌入式方向项目目录。公开复盘仍是 TODO。",
-      },
-      stack: ["C", "Embedded", "MSPM0", "GPIO"],
-      sourcePath: "HIT_S2/Project",
-      evidence: [
-        {
-          en: "Includes Project/pacman and Project/gpio_toggle_output folders with README/config/source files.",
-          zh: "包含 Project/pacman 和 Project/gpio_toggle_output 目录，以及 README、配置和源码文件。",
-        },
-        {
-          en: "Needs a cleaner public boundary before becoming a featured project.",
-          zh: "在成为精选项目之前，还需要整理更清楚的公开边界。",
-        },
-      ],
     },
   ],
   skills: [
@@ -1357,6 +1447,13 @@ export const profile: PortfolioProfile = {
       labSourceLabel: { en: "Local evidence folder", zh: "本地证据目录" },
       labEvidenceLabel: { en: "Observed evidence", zh: "已观察到的证据" },
       labBackLabel: { en: "Back to portfolio", zh: "返回作品集" },
+      labDetailLabel: { en: "View detail", zh: "查看详情" },
+      labGoalLabel: { en: "Experiment goal", zh: "实验目标" },
+      labWorkLabel: { en: "What I worked on", zh: "做了什么" },
+      labKeyFilesLabel: { en: "Key local files", zh: "关键本地文件" },
+      labLearningLabel: { en: "What it shows", zh: "能说明什么" },
+      labBoundaryLabel: { en: "Public boundary", zh: "公开边界" },
+      labNextLabel: { en: "Next cleanup", zh: "后续整理" },
       contactEyebrow: { en: "Contact", zh: "联系" },
       contactTitle: {
         en: "Open to feedback, collaboration, and practical project ideas.",

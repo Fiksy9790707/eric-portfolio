@@ -1,4 +1,4 @@
-import { ArrowLeft, FolderSearch, FlaskConical } from "lucide-react";
+import { ArrowLeft, ArrowRight, FolderSearch, FlaskConical } from "lucide-react";
 import { text } from "../lib/i18n";
 import type { Language, PortfolioProfile } from "../types/profile";
 import AppLink from "./AppLink";
@@ -87,6 +87,14 @@ export default function ProjectLabPage({ profile, language }: ProjectLabPageProp
                     ))}
                   </ul>
                 </div>
+
+                <AppLink
+                  className="focus-ring mt-6 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
+                  href={`/lab/${experiment.id}`}
+                >
+                  {text(profile.ui.sections.labDetailLabel, language)}
+                  <ArrowRight size={15} />
+                </AppLink>
               </article>
             ))}
           </div>

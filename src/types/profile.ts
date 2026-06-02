@@ -89,6 +89,14 @@ export type LabExperiment = {
   stack: string[];
   sourcePath: string;
   evidence: LocalizedString[];
+  detail: {
+    goal: LocalizedString;
+    work: LocalizedString[];
+    keyFiles: string[];
+    learning: LocalizedString[];
+    boundary: LocalizedString;
+    next: LocalizedString[];
+  };
 };
 
 export type TimelineItem = {
@@ -225,6 +233,13 @@ export type PortfolioProfile = {
       labSourceLabel: LocalizedString;
       labEvidenceLabel: LocalizedString;
       labBackLabel: LocalizedString;
+      labDetailLabel: LocalizedString;
+      labGoalLabel: LocalizedString;
+      labWorkLabel: LocalizedString;
+      labKeyFilesLabel: LocalizedString;
+      labLearningLabel: LocalizedString;
+      labBoundaryLabel: LocalizedString;
+      labNextLabel: LocalizedString;
       contactEyebrow: LocalizedString;
       contactTitle: LocalizedString;
     };

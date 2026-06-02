@@ -63,6 +63,9 @@ The app uses a small custom React router instead of a heavy routing dependency. 
 - `/case-studies/wafer-defect-detection`
 - `/case-studies/silicon-diaries`
 - `/lab`
+- `/lab/machine-learning-labs`
+- `/lab/computer-construction-minirv`
+- `/lab/software-construction-aircraft-war`
 - `/notes/building-ai-campus-assistant`
 - `/notes/yolo-defect-detection-notes`
 - `/notes/local-llms-personal-automation`
@@ -154,8 +157,17 @@ Each lab item supports:
 - `stack`
 - `sourcePath`
 - `evidence`
+- `detail`
 
 The current entries were organized from selected folders under `D:\HIT_study\01_Courses\HIT_S2`. The site displays public-facing folder labels such as `HIT_S2/Machine_Learning` instead of clickable local paths, because local files are not accessible to public visitors.
+
+Keep the public Lab page selective. It currently shows only three higher-signal entries:
+
+- Machine Learning Lab Notes
+- miniRV / Computer Construction Practice
+- Aircraft War Java Coursework
+
+Lower-signal coursework archives can stay on the local machine without being shown publicly.
 
 ## Update Writing Notes
 

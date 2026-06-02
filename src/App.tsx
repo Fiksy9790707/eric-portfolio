@@ -6,6 +6,7 @@ import FeaturedCaseStudies from "./components/FeaturedCaseStudies";
 import Footer from "./components/Footer";
 import GitHubActivity from "./components/GitHubActivity";
 import Hero from "./components/Hero";
+import LabExperimentPage from "./components/LabExperimentPage";
 import Layout from "./components/Layout";
 import Now from "./components/Now";
 import Projects from "./components/Projects";
@@ -47,10 +48,14 @@ export default function App() {
 
   const caseStudyMatch = route.match(/^\/case-studies\/([^/]+)$/);
   const noteMatch = route.match(/^\/notes\/([^/]+)$/);
+  const labMatch = route.match(/^\/lab\/([^/]+)$/);
   const selectedProject = caseStudyMatch
     ? profile.projects.find((project) => project.id === caseStudyMatch[1] && project.caseStudy)
     : null;
   const selectedNote = noteMatch ? profile.blogPosts.find((post) => post.slug === noteMatch[1]) : null;
+  const selectedLabExperiment = labMatch
+    ? profile.labExperiments.find((experiment) => experiment.id === labMatch[1])
+    : null;
 
   return (
     <Layout language={language} onToggleLanguage={toggleLanguage}>
@@ -58,6 +63,8 @@ export default function App() {
         <CaseStudyPage project={selectedProject} profile={profile} language={language} />
       ) : selectedNote ? (
         <NotePage note={selectedNote} profile={profile} language={language} />
+      ) : selectedLabExperiment ? (
+        <LabExperimentPage experiment={selectedLabExperiment} profile={profile} language={language} />
       ) : route === "/lab" ? (
         <ProjectLabPage profile={profile} language={language} />
       ) : (
