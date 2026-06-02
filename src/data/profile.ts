@@ -49,23 +49,8 @@ export const profile: PortfolioProfile = {
       en: "I am less interested in only training a model in isolation, and more interested in turning AI into usable workflows: data, model, interface, deployment, and local delivery.",
       zh: "相比只训练一个孤立模型，我更关注把 AI 做成可用流程：数据、模型、界面、部署和本地交付。",
     },
-    {
-      en: "This site keeps the language intentionally simple. It reflects what I am building and learning now, without overstating experience that is not yet public.",
-      zh: "这个网站会保持真实、简洁、克制，只展示我正在学习和构建的内容，不包装成还没有公开证据的经历。",
-    },
   ],
   currentlyBuilding: [
-    {
-      title: {
-        en: "Portfolio and public writing",
-        zh: "作品集与公开表达",
-      },
-      description: {
-        en: "Turning selected projects into readable case studies, clearer repositories, and a portfolio that can be shared without overclaiming.",
-        zh: "把已公开项目整理成更清楚的案例、仓库说明和可分享的个人作品集，同时保持表达克制。",
-      },
-      tags: ["Portfolio", "Case Studies", "Documentation"],
-    },
     {
       title: {
         en: "Computer vision prototypes",
@@ -130,8 +115,8 @@ export const profile: PortfolioProfile = {
           zh: "晶圆缺陷检测：从模型原型到本地交付流程",
         },
         summary: {
-          en: "A conservative write-up of an industrial-style computer vision prototype. The project explores how YOLOv8, Streamlit, and cloud training can be connected into a workflow that is easier to demo and deliver on a Windows machine.",
-          zh: "这是一个偏工业场景的计算机视觉原型复盘。项目探索如何把 YOLOv8、Streamlit 和云端训练串成一个更容易演示、也更方便在 Windows 本地交付的流程。",
+          en: "An industrial-style computer vision prototype connecting YOLOv8, Streamlit, cloud training, and Windows local delivery.",
+          zh: "一个偏工业场景的计算机视觉原型，连接 YOLOv8、Streamlit、云端训练和 Windows 本地交付。",
         },
         readLabel: {
           en: "Read case study",
@@ -164,8 +149,8 @@ export const profile: PortfolioProfile = {
             label: { en: "Public repository", zh: "公开仓库" },
             status: { en: "Available", zh: "已公开" },
             description: {
-              en: "The portfolio links to the public GitHub repository and keeps the project framed as a prototype.",
-              zh: "作品集链接到公开 GitHub 仓库，并把项目明确表述为原型阶段。",
+              en: "Public GitHub repository for the project.",
+              zh: "项目的公开 GitHub 仓库。",
             },
             href: "https://github.com/Fiksy9790707/Wafer-Defect-Detection-System",
           },
@@ -181,24 +166,24 @@ export const profile: PortfolioProfile = {
             label: { en: "Architecture visual", zh: "架构图" },
             status: { en: "Available", zh: "已公开" },
             description: {
-              en: "The architecture image supports the cloud-training-to-local-demo narrative, without claiming production validation.",
-              zh: "架构图用于支撑从云端训练到本地演示的流程说明，不声称已经完成生产级验证。",
+              en: "Architecture image for the cloud-training-to-local-demo workflow.",
+              zh: "从云端训练到本地演示流程的架构图。",
             },
           },
           {
             label: { en: "Benchmark and dataset notes", zh: "指标与数据说明" },
             status: { en: "TODO", zh: "待补充" },
             description: {
-              en: "Detailed public benchmark numbers and dataset notes are intentionally left as TODO until they can be verified and published cleanly.",
-              zh: "公开 benchmark 和数据集说明暂时保留为 TODO，等指标可验证、内容可公开后再补充。",
+              en: "Benchmark numbers and dataset notes are still being prepared.",
+              zh: "benchmark 和数据集说明仍在整理中。",
             },
           },
           {
             label: { en: "NDA boundary", zh: "保密边界" },
             status: { en: "Explicit", zh: "已说明" },
             description: {
-              en: "Private industrial context is not disclosed. The public page only uses sanitized repository material and portfolio-level explanation.",
-              zh: "不披露私有工业背景，只使用脱敏后的公开仓库素材和作品集层面的说明。",
+              en: "Uses public repository material and sanitized project context.",
+              zh: "使用公开仓库素材和脱敏后的项目背景。",
             },
           },
         ],
@@ -287,8 +272,8 @@ export const profile: PortfolioProfile = {
           {
             title: { en: "Problem", zh: "问题背景" },
             body: {
-              en: "Wafer defect inspection is a useful computer vision scenario because the objects can be small, visually subtle, and sensitive to false negatives. For a student prototype, the goal is not to claim production readiness, but to practice a realistic path from detection model to a usable inspection interface.",
-              zh: "晶圆缺陷检测是一个很适合练习计算机视觉落地的场景：缺陷目标可能很小、视觉差异不明显，而且漏检风险更敏感。这个学生原型不包装成生产系统，而是用来练习从检测模型到可用检测界面的完整路径。",
+              en: "Wafer defect inspection is a useful computer vision scenario because the objects can be small, visually subtle, and sensitive to false negatives. The current focus is moving from detection model to usable inspection interface.",
+              zh: "晶圆缺陷检测是一个很适合练习计算机视觉落地的场景：缺陷目标可能很小、视觉差异不明显，而且漏检风险更敏感。当前重点是从检测模型走向可用检测界面。",
             },
             points: [
               {
@@ -471,8 +456,8 @@ export const profile: PortfolioProfile = {
             label: { en: "Case study write-up", zh: "案例复盘" },
             status: { en: "Available", zh: "已公开" },
             description: {
-              en: "The portfolio describes the monitoring, prompting, generation, and storage loop in a conservative way.",
-              zh: "作品集以克制方式说明了监控、prompt、生成和存储闭环。",
+              en: "The page describes the monitoring, prompting, generation, and storage loop.",
+              zh: "页面说明了监控、prompt、生成和存储闭环。",
             },
           },
           {
@@ -564,7 +549,7 @@ export const profile: PortfolioProfile = {
             },
             caption: {
               en: "A second public visual asset from the repository. It helps communicate the personality of the local diary idea while keeping technical claims modest.",
-              zh: "来自公开仓库的第二张视觉素材，用来表达本地系统日记项目的产品气质，同时保持技术表述克制。",
+              zh: "来自公开仓库的第二张视觉素材，用来表达本地系统日记项目的产品气质。",
             },
             kind: { en: "Project visual", zh: "项目视觉" },
           },
@@ -625,7 +610,7 @@ export const profile: PortfolioProfile = {
               },
               {
                 en: "Shows personality and product sense while staying technically modest.",
-                zh: "在技术表达克制的前提下，体现一点产品感和个性。",
+                zh: "体现一点产品感和个性。",
               },
             ],
           },
@@ -712,8 +697,8 @@ export const profile: PortfolioProfile = {
       course: { en: "Machine Learning", zh: "机器学习" },
       status: { en: "Course lab / learning evidence", zh: "课程实验 / 学习证据" },
       summary: {
-        en: "Notebook-based experiments around classical ML examples and PyTorch MNIST practice. These are learning artifacts, not standalone products.",
-        zh: "围绕传统机器学习样例和 PyTorch MNIST 练习的 notebook 实验。这些是学习过程证据，不包装成独立产品。",
+        en: "Notebook-based experiments around classical ML examples and PyTorch MNIST practice.",
+        zh: "围绕传统机器学习样例和 PyTorch MNIST 练习的 notebook 实验。",
       },
       stack: ["Python", "Jupyter", "scikit-learn", "PyTorch", "MNIST"],
       sourcePath: "HIT_S2/Machine_Learning",
@@ -762,13 +747,13 @@ export const profile: PortfolioProfile = {
             zh: "当数据、预处理和评估路径可见时，模型结果才更容易解释。",
           },
           {
-            en: "Notebook experiments are useful learning evidence, but they need better cleanup before becoming public projects.",
-            zh: "notebook 实验是有价值的学习证据，但在成为公开项目之前还需要进一步整理。",
+            en: "Notebook experiments need clearer structure before becoming standalone public demos.",
+            zh: "notebook 实验还需要更清楚的结构，之后可以整理成独立公开 demo。",
           },
         ],
         boundary: {
-          en: "This is shown as coursework evidence. It does not claim a novel model, public benchmark, or production deployment.",
-          zh: "这里作为课程学习证据展示，不声称新模型、公开 benchmark 或生产部署。",
+          en: "Coursework experiment focused on model workflow practice.",
+          zh: "课程实验，重点是模型工作流练习。",
         },
         next: [
           {
@@ -819,7 +804,7 @@ export const profile: PortfolioProfile = {
           },
           {
             en: "Kept the project framed as foundations for systems thinking, not as a finished processor product.",
-            zh: "把它定位为系统思维基础训练，而不是包装成已完成的处理器产品。",
+            zh: "把它定位为系统思维基础训练。",
           },
         ],
         keyFiles: [
@@ -1205,7 +1190,7 @@ export const profile: PortfolioProfile = {
         },
         {
           en: "Honest TODOs are better than pretending unfinished systems are production-ready.",
-          zh: "诚实的 TODO 比把未完成系统包装成生产级项目更好。",
+          zh: "清楚的 TODO 能帮助后续继续推进。",
         },
       ],
       next: {
@@ -1231,10 +1216,10 @@ export const profile: PortfolioProfile = {
           ],
         },
         {
-          title: { en: "Keep the claims honest", zh: "保持表述诚实" },
+          title: { en: "Track the project boundary", zh: "记录项目边界" },
           body: {
-            en: "A student portfolio does not need to pretend that every prototype is production-grade. Honest boundaries often make the work more credible.",
-            zh: "学生作品集不需要把每个原型都包装成生产级系统。边界说清楚，反而更可信。",
+            en: "Prototype projects are easier to continue when current ability, limitations, and next steps are written down.",
+            zh: "原型项目需要说明当前能力、限制和下一步计划。",
           },
           points: [
             {
@@ -1402,8 +1387,8 @@ export const profile: PortfolioProfile = {
       githubEyebrow: { en: "Public GitHub", zh: "公开 GitHub" },
       githubTitle: { en: "Live public repository snapshot.", zh: "公开仓库动态快照。" },
       githubDescription: {
-        en: "This section reads public GitHub data without a token. If GitHub is unavailable, it falls back to bundled public repository metadata.",
-        zh: "这个区域不使用 token，只读取公开 GitHub 数据。如果 GitHub 不可用，会自动使用本地公开仓库备份数据。",
+        en: "Selected public repositories, languages, and recent updates.",
+        zh: "公开仓库、主要语言和近期更新。",
       },
       skillsEyebrow: { en: "Skills", zh: "技能" },
       skillsTitle: {
@@ -1412,14 +1397,14 @@ export const profile: PortfolioProfile = {
       },
       timelineEyebrow: { en: "Timeline", zh: "时间线" },
       timelineTitle: {
-        en: "A conservative snapshot of the current path.",
-        zh: "对当前路径的保守记录。",
+        en: "Learning, building, and project milestones.",
+        zh: "学习、构建和项目整理节点。",
       },
       blogEyebrow: { en: "Writing / Notes", zh: "写作 / 笔记" },
       blogTitle: { en: "Short notes from projects in progress.", zh: "来自进行中项目的短笔记。" },
       blogDescription: {
-        en: "No CMS yet. This is a lightweight, data-driven notes page for ideas that are useful enough to share before becoming full articles.",
-        zh: "暂时不接 CMS。这里是一个轻量的数据驱动笔记页，用来放那些还没写成长文、但已经值得分享的想法。",
+        en: "Short notes from projects, tools, and learning in progress.",
+        zh: "关于项目、工具和学习过程的短笔记。",
       },
       blogNextLabel: { en: "Next step", zh: "下一步" },
       blogReadLabel: { en: "Read note", zh: "阅读笔记" },
@@ -1432,7 +1417,7 @@ export const profile: PortfolioProfile = {
       },
       evidenceDescription: {
         en: "Each case study separates visible evidence from TODOs and private context, so the project reads honestly instead of sounding inflated.",
-        zh: "每个案例都会区分可见证据、待补充内容和私有边界，让项目更可信，而不是听起来被过度包装。",
+        zh: "每个案例列出可见材料、待补充内容和项目边界。",
       },
       openEvidence: { en: "Open evidence", zh: "打开证据" },
       labEyebrow: { en: "Project Lab / Experiments", zh: "项目实验室 / 实验记录" },
