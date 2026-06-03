@@ -10,6 +10,7 @@ type LabExperimentPageProps = {
 };
 
 export default function LabExperimentPage({ experiment, profile, language }: LabExperimentPageProps) {
+  const visualFlow = experiment.visualFlow;
   const sections = [
     {
       label: profile.ui.sections.labWorkLabel,
@@ -61,6 +62,47 @@ export default function LabExperimentPage({ experiment, profile, language }: Lab
           </div>
         </div>
       </section>
+
+      {visualFlow ? (
+        <section className="border-b border-line">
+          <div className="section-shell reveal">
+            <div className="surface-card overflow-hidden">
+              <div className="border-b border-line p-6">
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyan">Visual Flow</p>
+                <h2 className="mt-3 text-2xl font-semibold text-mint">
+                  {text(visualFlow.title, language)}
+                </h2>
+              </div>
+
+              <div className="bg-[linear-gradient(90deg,rgba(216,243,220,0.055)_1px,transparent_1px),linear-gradient(rgba(216,243,220,0.055)_1px,transparent_1px)] bg-[length:28px_28px] p-6">
+                <div className="grid gap-3 md:grid-cols-5">
+                  {visualFlow.steps.map((step, index) => (
+                    <div key={text(step.label, language)} className="relative">
+                      <div className="min-h-36 rounded-md border border-cyan/25 bg-ink/75 p-4 shadow-[0_0_28px_rgba(94,234,212,0.08)]">
+                        <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-cyan">
+                          {String(index + 1).padStart(2, "0")}
+                        </p>
+                        <h3 className="mt-3 text-base font-semibold text-zinc-100">
+                          {text(step.label, language)}
+                        </h3>
+                        <p className="mt-3 text-sm leading-6 text-zinc-300">
+                          {text(step.detail, language)}
+                        </p>
+                      </div>
+                      {index < visualFlow.steps.length - 1 ? (
+                        <div className="hidden md:block">
+                          <div className="absolute left-[calc(100%+0.1rem)] top-1/2 h-px w-3 -translate-y-1/2 bg-cyan/50" />
+                          <div className="absolute left-[calc(100%+0.75rem)] top-1/2 h-2 w-2 -translate-y-1/2 rotate-45 border-r border-t border-cyan/60" />
+                        </div>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="border-b border-line">
         <div className="section-shell reveal">

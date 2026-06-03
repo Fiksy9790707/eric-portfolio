@@ -112,6 +112,10 @@ export type LabExperiment = {
   stack: string[];
   sourcePath: string;
   evidence: LocalizedString[];
+  visualFlow?: {
+    title: LocalizedString;
+    steps: CaseStudyFlowStep[];
+  };
   detail: {
     goal: LocalizedString;
     work: LocalizedString[];

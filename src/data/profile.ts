@@ -1014,6 +1014,31 @@ export const profile: PortfolioProfile = {
           zh: "lab_3 保留实验 notebook 以及生成的图表和结果文件。",
         },
       ],
+      visualFlow: {
+        title: { en: "ML experiment workflow", zh: "机器学习实验流程" },
+        steps: [
+          {
+            label: { en: "Dataset", zh: "数据集" },
+            detail: { en: "Bank/student examples and MNIST", zh: "Bank/student 示例与 MNIST" },
+          },
+          {
+            label: { en: "Preprocess", zh: "预处理" },
+            detail: { en: "Prepare features, labels, and notebook inputs", zh: "整理特征、标签和 notebook 输入" },
+          },
+          {
+            label: { en: "Model", zh: "模型" },
+            detail: { en: "Classical ML, ID3-style work, and PyTorch MLP", zh: "传统 ML、ID3 风格练习与 PyTorch MLP" },
+          },
+          {
+            label: { en: "Evaluate", zh: "评估" },
+            detail: { en: "Check results, figures, and experiment traces", zh: "检查结果、图表和实验痕迹" },
+          },
+          {
+            label: { en: "Package", zh: "整理" },
+            detail: { en: "Future cleanup into a reproducible demo", zh: "后续整理成可复现 demo" },
+          },
+        ],
+      },
       detail: {
         goal: {
           en: "Use small notebook experiments to practice the path from dataset preparation to model training, evaluation, and result interpretation.",
@@ -1086,6 +1111,31 @@ export const profile: PortfolioProfile = {
           zh: "汇编练习以 .asm 文件保留，用于底层基础训练。",
         },
       ],
+      visualFlow: {
+        title: { en: "RISC-V / miniRV flow", zh: "RISC-V / miniRV 流程" },
+        steps: [
+          {
+            label: { en: "ASM", zh: "汇编" },
+            detail: { en: "RISC-V exercises as low-level inputs", zh: "RISC-V 练习作为底层输入" },
+          },
+          {
+            label: { en: "Modules", zh: "模块" },
+            detail: { en: "Multiplier, ALU, Ctrl, and CPU blocks", zh: "乘法器、ALU、Ctrl 与 CPU 模块" },
+          },
+          {
+            label: { en: "Interface", zh: "接口" },
+            detail: { en: "miniRV / AXI-style project structure", zh: "miniRV / AXI 风格项目结构" },
+          },
+          {
+            label: { en: "Test", zh: "测试" },
+            detail: { en: "Simulation and module-level checks", zh: "仿真与模块级检查" },
+          },
+          {
+            label: { en: "Document", zh: "说明" },
+            detail: { en: "Explain module map and public boundary", zh: "说明模块图和公开边界" },
+          },
+        ],
+      },
       detail: {
         goal: {
           en: "Practice low-level computer organization by connecting assembly exercises, Verilog modules, and a miniRV/AXI-style project structure.",
@@ -1160,6 +1210,31 @@ export const profile: PortfolioProfile = {
           zh: "测试包含 DAO、工厂创建和英雄射击策略相关用例。",
         },
       ],
+      visualFlow: {
+        title: { en: "Java game architecture flow", zh: "Java 游戏架构流程" },
+        steps: [
+          {
+            label: { en: "Entities", zh: "实体" },
+            detail: { en: "Aircraft, enemies, props, and hero objects", zh: "飞机、敌机、道具和英雄对象" },
+          },
+          {
+            label: { en: "Factories", zh: "工厂" },
+            detail: { en: "Create enemies and gameplay objects", zh: "创建敌机和游戏对象" },
+          },
+          {
+            label: { en: "Strategies", zh: "策略" },
+            detail: { en: "Encapsulate shooting and behavior changes", zh: "封装射击与行为变化" },
+          },
+          {
+            label: { en: "Persistence", zh: "持久化" },
+            detail: { en: "DAO layer for score records", zh: "DAO 层处理分数记录" },
+          },
+          {
+            label: { en: "Tests", zh: "测试" },
+            detail: { en: "JUnit checks for DAO, factories, and strategy logic", zh: "JUnit 检查 DAO、工厂和策略逻辑" },
+          },
+        ],
+      },
       detail: {
         goal: {
           en: "Practice object-oriented design and small-game architecture through a Java coursework project with entities, factories, strategies, persistence, and tests.",
