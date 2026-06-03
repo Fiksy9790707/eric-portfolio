@@ -2379,8 +2379,8 @@ export const profile: PortfolioProfile = {
       emailCopied: { en: "Email copied.", zh: "邮箱已复制。" },
       directTitle: { en: "Direct contact", zh: "直接联系" },
       directDescription: {
-        en: "Email is available through the copy button to reduce scraping. GitHub and the resume remain public links.",
-        zh: "邮箱通过复制按钮提供，减少直接抓取。GitHub 和简历保持公开链接。",
+        en: "For feedback, internship opportunities, or project discussion, you can copy my email or reach me through GitHub.",
+        zh: "如果想交流项目、反馈建议或实习机会，可以复制邮箱，或通过 GitHub 联系我。",
       },
       resumeDescription: {
         en: "The public resume focuses on projects, skills, and education background only.",
@@ -2391,8 +2391,8 @@ export const profile: PortfolioProfile = {
       resumeDirect: { en: "Public Resume", zh: "公开版简历" },
       formNoteTitle: { en: "Contact note", zh: "联系说明" },
       formNoteBody: {
-        en: "This first version does not use a fake inbox or database. Email, GitHub, and resume links are enough for public review.",
-        zh: "第一版不做假的收件箱或数据库。邮箱、GitHub 和简历链接已经足够公开审阅。",
+        en: "The email is shown in a masked form on the page. Use the copy button when you need the full address.",
+        zh: "页面只展示遮挡后的邮箱，需要完整地址时点击复制按钮即可。",
       },
       name: { en: "Name", zh: "姓名" },
       email: { en: "Email", zh: "邮箱" },
