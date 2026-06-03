@@ -288,6 +288,35 @@ vercel --prod
 
 Do not commit `.vercel`, `.env`, `node_modules`, or `dist`.
 
+## Domestic / Near-Domestic Static Hosting
+
+For a more stable non-Vercel fallback, this project can also be deployed as a fully static site to Cloudflare Pages, Aliyun OSS, or Tencent COS.
+
+Build once:
+
+```bash
+npm run build
+```
+
+Then upload only:
+
+```text
+dist/
+```
+
+Static deployment notes:
+
+- `public/_redirects` is included for Cloudflare Pages / Netlify-style SPA fallback.
+- On OSS or COS, set the index document to `index.html` and, if supported, set the error document to `index.html`.
+- Static hosting does not run Vercel `/api/*` routes. The GitHub section falls back to bundled public data, and Contact uses email copy / GitHub / public resume links.
+- Do not upload `.env`, `.vercel`, `node_modules`, `src`, `api`, or `tmp`.
+
+See the detailed guide:
+
+```text
+docs/deploy-cn-static.md
+```
+
 ## Static Mirror on GitHub Pages
 
 This repository also includes a GitHub Actions workflow for a static GitHub Pages mirror.
