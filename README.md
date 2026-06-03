@@ -1,6 +1,6 @@
 # Eric Portfolio
 
-Public personal portfolio for Eric / 冯学诚, a Computer Science undergraduate at Harbin Institute of Technology, Shenzhen, focused on Applied AI, Computer Vision, Local LLM, and end-to-end AI applications.
+Public personal portfolio for Eric / 冯学诚, a Computer Science undergraduate at Harbin Institute of Technology, Shenzhen, focused on practical AI systems, local LLM workflows, computer vision prototypes, and full-stack demos.
 
 This first version is intentionally lightweight: React, Vite, TypeScript, Tailwind CSS, and Vercel serverless API routes. It does not use a database, login system, CMS, paid services, analytics scripts, or exposed secrets.
 
@@ -33,7 +33,7 @@ Build for production:
 npm run build
 ```
 
-The Vite dev server does not emulate Vercel serverless functions by itself. On plain `npm run dev`, the GitHub activity section can fall back to bundled public data. The visible contact section uses direct email, GitHub, and resume links. On Vercel, `/api/*` routes are served automatically.
+The Vite dev server does not emulate Vercel serverless functions by itself. On plain `npm run dev`, the GitHub activity section can fall back to bundled public data. The visible contact section uses a masked email copy button, GitHub, and a public resume link. On Vercel, `/api/*` routes are served automatically.
 
 If Vercel CLI is installed and logged in, you can test frontend and API routes together with:
 
@@ -90,17 +90,19 @@ The Project Lab page is also data-driven from `labExperiments`. It summarizes se
 
 Important TODO fields:
 
-- `identity.email`
+- `identity.emailUserParts` and `identity.emailDomainParts`
 - `identity.blogUrl`
-- `contactLinks` entries for Resume and Blog
 - `site.productionUrl`
 - `site.ogImage`
 
-The public resume PDF lives at:
+The public resume lives at:
 
 ```text
+public/resume.md
 public/resume.pdf
 ```
+
+The Markdown resume is the easiest public version to maintain. It intentionally omits phone number, address, full student ID, private accounts, and secret keys.
 
 Project screenshots and visual evidence live at:
 
@@ -323,7 +325,7 @@ To enable the mirror:
 The first version uses only public information visible from the GitHub profile README and public repositories:
 
 - Profile identity and focus: HIT Shenzhen CS undergraduate, Applied AI, YOLO/object detection, Local LLM development.
-- Featured projects: Wafer Defect Detection and Silicon Diaries.
+- Featured projects: AI Campus Assistant, Wafer Defect Detection, and Java Aircraft War coursework.
 - Public repository fallback list: non-fork repositories from the public GitHub API.
 
 Unverified items remain TODO rather than being presented as confirmed experience.

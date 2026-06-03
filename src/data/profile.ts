@@ -1,11 +1,11 @@
-import type { PortfolioProfile } from "../types/profile";
+﻿import type { PortfolioProfile } from "../types/profile";
 
 export const profile: PortfolioProfile = {
   site: {
-    title: "Eric / 冯学诚 - Computer Science Student & Applied AI Builder",
+    title: "Eric Feng | CS Student & Applied AI Builder",
     description:
-      "Personal portfolio of Eric, a CS undergraduate at HIT Shenzhen focused on Applied AI, Computer Vision, and Local LLM applications.",
-    lastUpdated: "2026-06-02",
+      "Portfolio of Eric Feng, a Computer Science undergraduate building practical AI systems with local LLMs, computer vision, and full-stack prototypes.",
+    lastUpdated: "2026-06-03",
     productionUrl: "https://eric-portfolio-weld.vercel.app/",
     ogImage: "https://eric-portfolio-weld.vercel.app/og-image.png",
   },
@@ -13,27 +13,44 @@ export const profile: PortfolioProfile = {
     name: "Eric",
     chineseName: "冯学诚",
     role: {
-      en: "Computer Science Student / Applied AI Builder",
-      zh: "计算机科学本科生 / 应用 AI 构建者",
+      en: "Computer Science Student / Practical AI Systems Builder",
+      zh: "计算机科学本科生 / 实用型 AI 系统构建者",
     },
     tagline: {
-      en: "I build end-to-end AI applications with Computer Vision and Local LLMs.",
-      zh: "我关注用计算机视觉和本地大模型构建端到端 AI 应用。",
+      en: "Computer Science undergraduate focused on practical AI systems, local LLM workflows, computer vision, and full-stack prototypes.",
+      zh: "计算机专业本科生，专注于实用型 AI 系统、本地 LLM 工作流、计算机视觉和全栈原型。",
+    },
+    supporting: {
+      en: "I try to turn messy real-world information into usable tools, such as campus agents, task parsing workflows, and industrial defect detection prototypes.",
+      zh: "我尝试把混乱的现实信息转化成可用工具，例如校园事务智能体、任务解析工作流和工业缺陷检测原型。",
     },
     school: {
       en: "Harbin Institute of Technology, Shenzhen",
       zh: "哈尔滨工业大学（深圳）",
     },
     focus: [
-      { en: "Applied AI", zh: "应用 AI" },
-      { en: "Computer Vision", zh: "计算机视觉" },
-      { en: "Local LLM", zh: "本地大模型" },
-      { en: "End-to-end AI applications", zh: "端到端 AI 应用" },
+      {
+        label: { en: "Applied AI", zh: "应用 AI" },
+        detail: { en: "Campus agent / task parser", zh: "校园智能体 / 任务解析器" },
+      },
+      {
+        label: { en: "Computer Vision", zh: "计算机视觉" },
+        detail: { en: "Wafer defect detection prototype", zh: "晶圆缺陷检测原型" },
+      },
+      {
+        label: { en: "Local LLM", zh: "本地 LLM" },
+        detail: { en: "Personal automation experiments", zh: "个人自动化实验" },
+      },
+      {
+        label: { en: "Full-stack", zh: "全栈" },
+        detail: { en: "Portfolio and project demos", zh: "作品集与项目 Demo" },
+      },
     ],
     githubUsername: "Fiksy9790707",
     githubUrl: "https://github.com/Fiksy9790707",
-    email: "14775369722@163.com",
-    resumeUrl: "resume.pdf",
+    emailUserParts: ["147", "753", "69722"],
+    emailDomainParts: ["163", "com"],
+    resumeUrl: "resume.md",
     blogUrl: null,
   },
   about: [
@@ -42,71 +59,58 @@ export const profile: PortfolioProfile = {
       zh: "我是哈尔滨工业大学（深圳）计算机科学与技术本科生。",
     },
     {
-      en: "My current work is centered on Applied AI, Computer Vision, and Local LLM applications.",
-      zh: "我目前关注应用 AI、计算机视觉和本地大模型应用。",
+      en: "I focus on practical AI, software engineering, and system prototype development.",
+      zh: "我关注实用型 AI、软件工程和系统原型开发。",
     },
     {
-      en: "I am less interested in only training a model in isolation, and more interested in turning AI into usable workflows: data, model, interface, deployment, and local delivery.",
-      zh: "相比只训练一个孤立模型，我更关注把 AI 做成可用流程：数据、模型、界面、部署和本地交付。",
+      en: "My current exploration is around AI agents, local LLM workflows, computer vision prototypes, and the engineering work needed to make demos reproducible.",
+      zh: "目前主要探索 AI Agent、本地 LLM 工作流、计算机视觉原型，以及让 demo 可复现、可展示所需要的工程工作。",
     },
   ],
   currentlyBuilding: [
     {
       title: {
-        en: "Computer vision prototypes",
-        zh: "计算机视觉原型",
+        en: "AI Campus Assistant workflow",
+        zh: "AI 校园助手工作流",
       },
       description: {
-        en: "Continuing the wafer defect detection direction: small-target detection, demo interface, and a more reproducible local delivery flow.",
-        zh: "继续推进晶圆缺陷检测方向：小目标检测、演示界面，以及更容易复现的本地交付流程。",
+        en: "Organizing campus notices, deadlines, and tasks into a safer mock-data workflow before any real campus integration.",
+        zh: "先用 mock 数据整理校园通知、DDL 和任务解析工作流，不直接接入真实校园系统。",
       },
-      tags: ["YOLOv8", "Streamlit", "Industrial AI"],
+      tags: ["LLM", "Workflow", "Structured Output"],
     },
     {
       title: {
-        en: "Local LLM automation",
-        zh: "本地大模型自动化",
+        en: "Computer vision defect prototype",
+        zh: "计算机视觉缺陷检测原型",
       },
       description: {
-        en: "Exploring local models as low-cost personal automation tools for system diaries, campus workflows, and structured information handling.",
-        zh: "探索把本地模型用于低成本个人自动化，包括系统日记、校园信息流和结构化信息整理。",
+        en: "Improving the wafer detection prototype with clearer model workflow, Streamlit UI, screenshots, and local setup notes.",
+        zh: "优化晶圆缺陷检测原型：模型流程、Streamlit 界面、截图和本地运行说明。",
       },
-      tags: ["Ollama", "Local LLM", "Workflow"],
-    },
-  ],
-  homeChoices: [
-    {
-      title: {
-        en: "Code",
-        zh: "代码",
-      },
-      description: {
-        en: "Read engineering snippets from the Wafer and Silicon Diaries case studies.",
-        zh: "查看 Wafer 和 Silicon Diaries 案例里的工程片段。",
-      },
-      href: "/case-studies/wafer-defect-detection#code-highlights",
+      tags: ["YOLOv8", "Streamlit", "Computer Vision"],
     },
     {
       title: {
-        en: "Projects",
-        zh: "项目",
+        en: "CS foundations in practice",
+        zh: "计算机基础实践",
       },
       description: {
-        en: "Selected projects, case studies, repositories, and project boundaries.",
-        zh: "精选项目、案例、仓库与项目边界。",
+        en: "Learning software engineering, machine learning, systems programming, and turning selected coursework into readable evidence.",
+        zh: "学习软件工程、机器学习和系统编程，并把部分课程项目整理成可阅读的学习证据。",
       },
-      href: "/projects",
+      tags: ["Java", "PyTorch", "RISC-V"],
     },
     {
       title: {
-        en: "Writing",
-        zh: "写作",
+        en: "Internship preparation",
+        zh: "实习准备",
       },
       description: {
-        en: "Original notes, Zhihu essays, and project reflections.",
-        zh: "原创随笔、知乎文章和项目复盘。",
+        en: "Looking for AI or software engineering internship opportunities, with public projects kept modest, inspectable, and easy to run.",
+        zh: "寻找 AI / 软件工程方向实习机会，同时让公开项目保持克制、可检查、易运行。",
       },
-      href: "/writing",
+      tags: ["AI", "Software Engineering", "Portfolio"],
     },
   ],
   projects: [
@@ -132,8 +136,21 @@ export const profile: PortfolioProfile = {
         en: "An AI vision project for industrial scenarios, focused on small-target defect detection and the workflow from cloud training to Windows local delivery.",
         zh: "面向工业场景的 AI 视觉检测项目，关注小目标缺陷检测，并尝试完成从云端训练到 Windows 本地交付的流程。",
       },
+      problem: {
+        en: "Industrial-style defect inspection needs a workflow that can move from model training to a usable local demo, not only a notebook result.",
+        zh: "工业风格缺陷检测需要从模型训练走向可用本地演示，而不是只停留在 notebook 结果。",
+      },
+      built: {
+        en: "A YOLOv8 + Streamlit prototype path covering cloud-side training exploration, image upload, detection preview, and CSV export.",
+        zh: "整理了 YOLOv8 + Streamlit 原型路径，覆盖云端训练探索、图像上传、检测预览和 CSV 导出。",
+      },
+      result: {
+        en: "Prototype / local demo direction. Public repo, UI screenshot, architecture visual, and code highlights are available; benchmark notes are still TODO.",
+        zh: "原型 / 本地演示方向。已有公开仓库、界面截图、架构图和代码片段；benchmark 说明仍待补充。",
+      },
       stack: ["YOLOv8", "Streamlit", "Aliyun PAI"],
-      categories: ["AI / ML", "Computer Vision"],
+      categories: ["AI Systems", "Computer Vision"],
+      featured: true,
       githubUrl: "https://github.com/Fiksy9790707/Wafer-Defect-Detection-System",
       linkLabel: {
         en: "View repository",
@@ -485,8 +502,21 @@ export const profile: PortfolioProfile = {
         en: "A local LLM-powered system diary project that monitors CPU, memory, uptime, and other system states, then generates automated first-person diary entries.",
         zh: "本地大模型驱动的系统日记项目，监控 CPU、内存、运行时间等系统状态，并用第一人称生成自动化日记。",
       },
+      problem: {
+        en: "System monitoring scripts are useful but hard to read. The project explores whether local LLMs can turn lightweight machine signals into readable summaries.",
+        zh: "系统监控脚本有用但不容易阅读。这个项目探索本地大模型能否把轻量机器状态转成可读总结。",
+      },
+      built: {
+        en: "A local Python loop using psutil, logging, prompt construction, and Ollama-style local generation.",
+        zh: "用 Python、psutil、logging、prompt 构造和 Ollama 类本地生成搭建了本地闭环。",
+      },
+      result: {
+        en: "Experimental local demo. Public repo and case study are available; sanitized output examples and runtime screenshots remain TODO.",
+        zh: "实验性质本地 demo。已有公开仓库和案例页；脱敏输出样例和运行截图仍待补充。",
+      },
       stack: ["Ollama", "Qwen/Llama", "psutil", "Python Logging"],
-      categories: ["AI / ML", "Local LLM"],
+      categories: ["AI Systems"],
+      featured: false,
       githubUrl: "https://github.com/Fiksy9790707/Silicon-Diaries",
       linkLabel: {
         en: "View repository",
@@ -806,12 +836,155 @@ export const profile: PortfolioProfile = {
         en: "A prototype assistant for organizing campus notices, deadlines, courses, and activity information. The public repository is still TODO.",
         zh: "面向校园通知、DDL、课程和活动信息整理的 AI 助手原型。公开仓库尚未确认，第一版先保留为 TODO。",
       },
+      problem: {
+        en: "Campus information is scattered across notices, deadlines, courses, and activities, which makes it easy to miss context or action items.",
+        zh: "校园信息分散在通知、DDL、课程和活动里，很容易漏掉上下文或待办事项。",
+      },
+      built: {
+        en: "An in-progress workflow concept around LLM extraction, knowledge organization, and structured output.",
+        zh: "正在整理一个围绕 LLM 抽取、知识组织和结构化输出的工作流原型。",
+      },
+      result: {
+        en: "In progress. Public repo and real campus integration are not published yet; first version should use mock notices and local demos.",
+        zh: "进行中。公开仓库和真实校园系统集成尚未发布；第一版应使用 mock 通知和本地 demo。",
+      },
       stack: ["LLM", "Workflow", "Knowledge Base", "Structured Output"],
-      categories: ["AI / ML", "Local LLM"],
+      categories: ["AI Systems"],
+      featured: true,
       githubUrl: null,
       linkLabel: {
         en: "TODO: add repository",
         zh: "TODO：补充仓库",
+      },
+    },
+    {
+      id: "java-aircraft-war",
+      name: {
+        en: "Java Aircraft War",
+        zh: "Java Aircraft War",
+      },
+      subtitle: {
+        en: "Software Construction Coursework",
+        zh: "软件构造课程项目",
+      },
+      type: {
+        en: "Course Project",
+        zh: "课程项目",
+      },
+      status: {
+        en: "Course project",
+        zh: "课程项目",
+      },
+      description: {
+        en: "A Java coursework project with game entities, factories, strategies, DAO tests, and Swing-related practice.",
+        zh: "一个 Java 课程项目，包含游戏实体、工厂、策略、DAO 测试和 Swing 相关练习。",
+      },
+      problem: {
+        en: "A course game can easily become only a visual demo unless its object model, tests, and design boundaries are documented.",
+        zh: "课程小游戏如果不说明对象模型、测试和设计边界，很容易只像一个界面 demo。",
+      },
+      built: {
+        en: "Organized aircraft, enemy, factory, strategy, DAO, prop, and test packages around a small Java game structure.",
+        zh: "围绕小型 Java 游戏结构，整理 aircraft、enemy、factory、strategy、DAO、prop 和测试包。",
+      },
+      result: {
+        en: "Course project / OOP practice. Public lab detail is available; a public repo and screenshot guide are still TODO.",
+        zh: "课程项目 / 面向对象实践。已有公开实验详情页；公开仓库和截图说明仍待补充。",
+      },
+      stack: ["Java", "OOP", "JUnit", "Design Patterns", "Swing"],
+      categories: ["Course / Engineering Projects"],
+      featured: true,
+      githubUrl: null,
+      detailUrl: "/lab/software-construction-aircraft-war",
+      linkLabel: {
+        en: "Open lab detail",
+        zh: "打开实验详情",
+      },
+    },
+    {
+      id: "machine-learning-experiments",
+      name: {
+        en: "MNIST MLP / ID3 Experiments",
+        zh: "MNIST MLP / ID3 机器学习实验",
+      },
+      subtitle: {
+        en: "Machine Learning Lab",
+        zh: "机器学习实验",
+      },
+      type: {
+        en: "Lab Experiment",
+        zh: "实验记录",
+      },
+      status: {
+        en: "Course lab",
+        zh: "课程实验",
+      },
+      description: {
+        en: "Notebook-based experiments around classical ML examples and PyTorch MNIST practice.",
+        zh: "围绕传统机器学习样例和 PyTorch MNIST 练习的 notebook 实验。",
+      },
+      problem: {
+        en: "Model exercises need visible data, training, evaluation, and interpretation steps before they become useful public evidence.",
+        zh: "模型练习需要把数据、训练、评估和解释路径展示出来，才适合作为公开学习证据。",
+      },
+      built: {
+        en: "Ran sklearn-style classical ML examples and PyTorch MNIST notebooks, keeping figures and results for later review.",
+        zh: "运行 sklearn 风格传统机器学习样例和 PyTorch MNIST notebook，并保留图表与结果用于复盘。",
+      },
+      result: {
+        en: "Course lab / learning evidence. A clean reproducible public demo is a future cleanup task.",
+        zh: "课程实验 / 学习证据。后续可整理成一个干净、可复现的公开 demo。",
+      },
+      stack: ["Python", "Jupyter", "scikit-learn", "PyTorch", "MNIST"],
+      categories: ["Course / Engineering Projects", "Lab Experiments"],
+      githubUrl: null,
+      detailUrl: "/lab/machine-learning-labs",
+      linkLabel: {
+        en: "Open lab detail",
+        zh: "打开实验详情",
+      },
+    },
+    {
+      id: "riscv-embedded-experiments",
+      name: {
+        en: "RISC-V / Embedded Systems Experiments",
+        zh: "RISC-V / 嵌入式系统实验",
+      },
+      subtitle: {
+        en: "Computer Construction Practice",
+        zh: "计算机组成实践",
+      },
+      type: {
+        en: "Lab Experiment",
+        zh: "实验记录",
+      },
+      status: {
+        en: "Course lab",
+        zh: "课程实验",
+      },
+      description: {
+        en: "Verilog and RISC-V assembly practice around multiplier modules, miniRV/AXI files, and CPU-related components.",
+        zh: "围绕乘法器、miniRV/AXI 文件和 CPU 相关模块的 Verilog 与 RISC-V 汇编练习。",
+      },
+      problem: {
+        en: "Low-level course artifacts are hard to read unless modules, interfaces, and test traces are summarized together.",
+        zh: "底层课程产物如果不把模块、接口和测试痕迹放在一起说明，外部访客很难阅读。",
+      },
+      built: {
+        en: "Worked with Verilog modules, RISC-V assembly exercises, miniRV/AXI project structure, and CPU-related files.",
+        zh: "整理 Verilog 模块、RISC-V 汇编练习、miniRV/AXI 项目结构和 CPU 相关文件。",
+      },
+      result: {
+        en: "Course lab / systems foundation. It supports CS depth rather than claiming a polished CPU product.",
+        zh: "课程实验 / 系统基础训练。用于展示计算机基础，不声称成熟 CPU 产品。",
+      },
+      stack: ["Verilog", "RISC-V ASM", "AXI", "Vivado"],
+      categories: ["Course / Engineering Projects", "Lab Experiments"],
+      githubUrl: null,
+      detailUrl: "/lab/computer-construction-minirv",
+      linkLabel: {
+        en: "Open lab detail",
+        zh: "打开实验详情",
       },
     },
   ],
@@ -1041,24 +1214,24 @@ export const profile: PortfolioProfile = {
   ],
   skills: [
     {
-      title: { en: "Languages", zh: "编程语言" },
-      tone: { en: "Learning", zh: "学习中" },
-      items: ["Python", "C++", "TypeScript", "JavaScript"],
-    },
-    {
       title: { en: "AI / ML", zh: "AI / 机器学习" },
       tone: { en: "Building", zh: "构建中" },
-      items: ["PyTorch", "YOLO", "OpenCV", "Local LLM", "Ollama"],
+      items: ["Python", "PyTorch", "YOLOv8", "scikit-learn", "RAG", "LLM workflows"],
     },
     {
-      title: { en: "Application", zh: "应用构建" },
+      title: { en: "Frontend / Product", zh: "前端 / 产品原型" },
       tone: { en: "Building", zh: "构建中" },
-      items: ["Streamlit", "Python Logging", "psutil", "API Integration"],
+      items: ["React", "Vite", "Tailwind CSS", "Streamlit"],
+    },
+    {
+      title: { en: "Systems / Engineering", zh: "系统 / 工程" },
+      tone: { en: "Learning", zh: "学习中" },
+      items: ["Java", "C/C++", "RISC-V", "Linux", "Git"],
     },
     {
       title: { en: "Tools", zh: "工具" },
       tone: { en: "Exploring", zh: "探索中" },
-      items: ["Linux", "Git", "Vite", "Vercel", "Aliyun PAI"],
+      items: ["Vercel", "GitHub", "Obsidian", "WSL"],
     },
   ],
   timeline: [
@@ -1897,13 +2070,13 @@ export const profile: PortfolioProfile = {
     },
     {
       label: { en: "Email", zh: "邮箱" },
-      value: "14775369722@163.com",
-      href: "mailto:14775369722@163.com",
+      value: "Available via copy button",
+      href: null,
     },
     {
       label: { en: "Resume", zh: "简历" },
-      value: "Resume PDF",
-      href: "resume.pdf",
+      value: "Public Resume",
+      href: "resume.md",
     },
     {
       label: { en: "Blog", zh: "博客" },
@@ -1997,53 +2170,45 @@ export const profile: PortfolioProfile = {
     },
     languageToggle: { en: "中文", zh: "EN" },
     hero: {
-      eyebrow: { en: "Portfolio / Applied AI", zh: "作品集 / 应用 AI" },
+      eyebrow: { en: "Portfolio / Practical AI Systems", zh: "作品集 / 实用型 AI 系统" },
       viewProjects: { en: "View Projects", zh: "查看项目" },
       githubProfile: { en: "GitHub Profile", zh: "GitHub 主页" },
       currentFocus: { en: "Current Focus", zh: "当前关注" },
-      focusTitle: { en: "End-to-end AI prototypes", zh: "端到端 AI 原型" },
-      building: { en: "Building", zh: "构建中" },
+      focusTitle: { en: "Practical directions, not inflated claims", zh: "具体方向，而不是夸大包装" },
     },
     sections: {
       aboutEyebrow: { en: "About Me", zh: "关于我" },
       aboutTitle: {
-        en: "Computer science, applied AI, and practical systems.",
-        zh: "计算机基础、应用 AI 与实用系统。",
+        en: "CS foundations with practical AI system building.",
+        zh: "计算机基础与实用型 AI 系统构建。",
       },
       baseLabel: { en: "Base", zh: "基础身份" },
       schoolLine: {
-        en: "Computer Science and Technology undergraduate.",
-        zh: "计算机科学与技术本科生。",
+        en: "Computer Science and Technology, B.S. candidate. Expected graduation: 2027.",
+        zh: "计算机科学与技术，本科。预计 2027 年毕业。",
       },
-      indexEyebrow: { en: "Technical Index", zh: "技术入口" },
-      indexTitle: { en: "Code, projects, writing.", zh: "代码、项目、写作。" },
-      indexDescription: {
-        en: "A compact path into implementation details, project context, and technical notes.",
-        zh: "用更短的路径进入实现细节、项目上下文和技术笔记。",
-      },
-      indexOpenLabel: { en: "Open", zh: "打开" },
-      featuredEyebrow: { en: "Featured Case Studies", zh: "精选案例" },
+      featuredEyebrow: { en: "Featured Projects", zh: "精选项目" },
       featuredTitle: {
-        en: "Featured case studies.",
-        zh: "精选案例。",
+        en: "Featured projects with visible engineering work.",
+        zh: "有工程痕迹的精选项目。",
       },
       featuredDescription: {
-        en: "Wafer Defect Detection and Silicon Diaries.",
-        zh: "Wafer Defect Detection 与 Silicon Diaries。",
+        en: "Three stronger entry points for visitors who want to inspect practical AI, vision, and course engineering work first.",
+        zh: "给想先看重点项目的访客三个入口：实用 AI、视觉原型和课程工程实践。",
       },
       nowEyebrow: { en: "Now", zh: "现在" },
       nowTitle: {
-        en: "Currently building.",
-        zh: "当前在做。",
+        en: "What I am working on now.",
+        zh: "我现在正在做什么。",
       },
       nowDescription: {
-        en: "Applied AI, computer vision, local LLM, and public project writing.",
-        zh: "应用 AI、计算机视觉、本地大模型与公开项目整理。",
+        en: "Current work is about making prototypes usable, reviewable, and honest about their limits.",
+        zh: "当前重点是让原型可用、可检查，并诚实说明边界。",
       },
       projectsEyebrow: { en: "Projects", zh: "项目" },
       projectsTitle: {
-        en: "Selected projects.",
-        zh: "精选项目。",
+        en: "Projects by problem, build, stack, and result.",
+        zh: "按问题、构建、技术栈和结果展示项目。",
       },
       githubEyebrow: { en: "Public GitHub", zh: "公开 GitHub" },
       githubTitle: { en: "Public repositories.", zh: "公开仓库。" },
@@ -2053,8 +2218,8 @@ export const profile: PortfolioProfile = {
       },
       skillsEyebrow: { en: "Skills", zh: "技能" },
       skillsTitle: {
-        en: "Skills and tools.",
-        zh: "技能与工具。",
+        en: "Skills grouped by what they help me build.",
+        zh: "按能力方向组织的技能。",
       },
       timelineEyebrow: { en: "Timeline", zh: "时间线" },
       timelineTitle: {
@@ -2064,8 +2229,8 @@ export const profile: PortfolioProfile = {
       blogEyebrow: { en: "Writing / Notes", zh: "写作 / 笔记" },
       blogTitle: { en: "Writing", zh: "写作" },
       blogDescription: {
-        en: "Recent essays and project notes.",
-        zh: "最近的随笔和项目笔记。",
+        en: "A small supporting section for project notes and published essays.",
+        zh: "作为辅助区块展示项目笔记和已发布文章。",
       },
       blogNextLabel: { en: "Next step", zh: "下一步" },
       blogReadLabel: { en: "Read note", zh: "阅读笔记" },
@@ -2116,8 +2281,8 @@ export const profile: PortfolioProfile = {
       labNextLabel: { en: "Next cleanup", zh: "后续整理" },
       contactEyebrow: { en: "Contact", zh: "联系" },
       contactTitle: {
-        en: "Open to feedback, collaboration, and practical project ideas.",
-        zh: "欢迎交流反馈、协作机会和具体项目想法。",
+        en: "Contact for feedback, internships, or project discussion.",
+        zh: "欢迎就反馈、实习机会或项目讨论联系。",
       },
     },
     github: {
@@ -2139,16 +2304,20 @@ export const profile: PortfolioProfile = {
       emailCopied: { en: "Email copied.", zh: "邮箱已复制。" },
       directTitle: { en: "Direct contact", zh: "直接联系" },
       directDescription: {
-        en: "The cleanest way to reach me right now is email or GitHub. The resume link points to a simple public PDF generated from the same verified portfolio content.",
-        zh: "目前最直接的联系渠道是邮箱或 GitHub。简历链接指向一份基于当前公开作品集内容生成的 PDF。",
+        en: "Email is available through the copy button to reduce scraping. GitHub and the resume remain public links.",
+        zh: "邮箱通过复制按钮提供，减少直接抓取。GitHub 和简历保持公开链接。",
       },
-      emailDirect: { en: "Email me", zh: "发送邮件" },
+      resumeDescription: {
+        en: "The public resume focuses on projects, skills, and education background only.",
+        zh: "公开版简历，主要展示项目、技能和教育背景。",
+      },
+      emailDirect: { en: "Copy email", zh: "复制邮箱" },
       githubDirect: { en: "Open GitHub", zh: "打开 GitHub" },
-      resumeDirect: { en: "Open resume", zh: "打开简历" },
+      resumeDirect: { en: "Public Resume", zh: "公开版简历" },
       formNoteTitle: { en: "Contact note", zh: "联系说明" },
       formNoteBody: {
-        en: "Email and GitHub are the primary contact channels for now. A real mail provider can be connected later if the site needs form submission.",
-        zh: "目前主要通过邮箱和 GitHub 联系。后续如果需要表单提交，可以再接入真实邮件服务。",
+        en: "This first version does not use a fake inbox or database. Email, GitHub, and resume links are enough for public review.",
+        zh: "第一版不做假的收件箱或数据库。邮箱、GitHub 和简历链接已经足够公开审阅。",
       },
       name: { en: "Name", zh: "姓名" },
       email: { en: "Email", zh: "邮箱" },

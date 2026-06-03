@@ -77,7 +77,7 @@ export default function NotePage({ note, profile, language }: NotePageProps) {
                   className="focus-ring mt-5 inline-flex items-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-semibold text-cyan transition hover:border-cyan/50 hover:text-mint"
                   href={note.externalUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   {text(note.externalLabel ?? { en: "Read original", zh: "阅读原文" }, language)}
                   <ExternalLink size={14} />

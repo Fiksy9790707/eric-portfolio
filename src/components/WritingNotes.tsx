@@ -53,7 +53,7 @@ export default function WritingNotes({ posts, language, mode = "latest" }: Writi
             </p>
             <h2 className="section-title">{text(profile.ui.sections.blogTitle, language)}</h2>
           </div>
-          <p className="max-w-md text-sm leading-6 text-zinc-400">
+          <p className="max-w-md text-sm leading-6 text-zinc-300">
             {text(isArchive ? profile.ui.sections.blogArchiveDescription : profile.ui.sections.blogDescription, language)}
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function WritingNotes({ posts, language, mode = "latest" }: Writi
 
         <div className="mt-9 grid gap-5 lg:grid-cols-3">
           {visiblePosts.map((post) => (
-            <article key={text(post.title, language)} className="surface-card overflow-hidden">
+            <article key={text(post.title, language)} className="surface-card flex h-full flex-col overflow-hidden">
               {post.coverImage ? (
                 <img
                   className="h-48 w-full border-b border-line object-cover"
@@ -92,7 +92,7 @@ export default function WritingNotes({ posts, language, mode = "latest" }: Writi
                 />
               ) : null}
 
-              <div className="p-6">
+              <div className="flex flex-1 flex-col p-6">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-cyan">
                     <NotebookText size={14} />
@@ -104,10 +104,10 @@ export default function WritingNotes({ posts, language, mode = "latest" }: Writi
                 <h3 className="mt-5 text-xl font-semibold leading-7 text-mint">
                   {text(post.title, language)}
                 </h3>
-                <p className="mt-4 text-sm leading-7 text-zinc-300">{text(post.summary, language)}</p>
+                <p className="mt-4 flex-1 text-sm leading-7 text-zinc-300">{text(post.summary, language)}</p>
 
                 <div className="mt-5 flex flex-wrap gap-2">
-                  {post.tags.slice(0, 4).map((tag) => (
+                  {post.tags.slice(0, 3).map((tag) => (
                     <span className="tag" key={tag}>
                       {tag}
                     </span>

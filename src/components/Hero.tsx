@@ -23,6 +23,9 @@ export default function Hero({ profile, language }: HeroProps) {
           <p className="mt-7 max-w-2xl text-xl leading-8 text-zinc-200 sm:text-2xl">
             {text(profile.identity.tagline, language)}
           </p>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300">
+            {text(profile.identity.supporting, language)}
+          </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <AppLink
               className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-mint px-5 py-3 text-sm font-semibold text-ink transition hover:bg-cyan"
@@ -35,7 +38,7 @@ export default function Hero({ profile, language }: HeroProps) {
               className="focus-ring inline-flex items-center justify-center gap-2 rounded-md border border-line px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:border-cyan/50 hover:text-cyan"
               href={profile.identity.githubUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <Github size={17} />
               {text(profile.ui.hero.githubProfile, language)}
@@ -58,13 +61,11 @@ export default function Hero({ profile, language }: HeroProps) {
             <div className="mt-5 grid gap-3">
               {profile.identity.focus.map((item) => (
                 <div
-                  key={text(item, language)}
-                  className="flex items-center justify-between gap-4 rounded-md bg-white/[0.045] px-4 py-3"
+                  key={text(item.label, language)}
+                  className="grid gap-1 rounded-md bg-white/[0.045] px-4 py-3"
                 >
-                  <span className="text-sm text-zinc-200">{text(item, language)}</span>
-                  <span className="font-mono text-xs text-zinc-500">
-                    {text(profile.ui.hero.building, language)}
-                  </span>
+                  <span className="text-sm font-semibold text-zinc-100">{text(item.label, language)}</span>
+                  <span className="text-sm leading-6 text-zinc-300">{text(item.detail, language)}</span>
                 </div>
               ))}
             </div>

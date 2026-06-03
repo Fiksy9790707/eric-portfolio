@@ -5,7 +5,16 @@ export type LocalizedString = {
   zh: string;
 };
 
-export type ProjectCategory = "AI / ML" | "Local LLM" | "Computer Vision";
+export type ProjectCategory =
+  | "AI Systems"
+  | "Computer Vision"
+  | "Course / Engineering Projects"
+  | "Lab Experiments";
+
+export type FocusItem = {
+  label: LocalizedString;
+  detail: LocalizedString;
+};
 
 export type Project = {
   id: string;
@@ -14,10 +23,15 @@ export type Project = {
   type: LocalizedString;
   status: LocalizedString;
   description: LocalizedString;
+  problem: LocalizedString;
+  built: LocalizedString;
+  result: LocalizedString;
   stack: string[];
   categories: ProjectCategory[];
+  featured?: boolean;
   githubUrl: string | null;
   linkLabel: LocalizedString;
+  detailUrl?: string;
   caseStudy?: CaseStudy;
 };
 
@@ -87,12 +101,6 @@ export type CurrentlyBuildingItem = {
   title: LocalizedString;
   description: LocalizedString;
   tags: string[];
-};
-
-export type HomeChoice = {
-  title: LocalizedString;
-  description: LocalizedString;
-  href: string;
 };
 
 export type LabExperiment = {
@@ -190,17 +198,18 @@ export type PortfolioProfile = {
     chineseName: string;
     role: LocalizedString;
     tagline: LocalizedString;
+    supporting: LocalizedString;
     school: LocalizedString;
-    focus: LocalizedString[];
+    focus: FocusItem[];
     githubUsername: string;
     githubUrl: string;
-    email: string;
+    emailUserParts: string[];
+    emailDomainParts: string[];
     resumeUrl: string | null;
     blogUrl: string | null;
   };
   about: LocalizedString[];
   currentlyBuilding: CurrentlyBuildingItem[];
-  homeChoices: HomeChoice[];
   projects: Project[];
   labExperiments: LabExperiment[];
   skills: SkillGroup[];
@@ -225,17 +234,12 @@ export type PortfolioProfile = {
       githubProfile: LocalizedString;
       currentFocus: LocalizedString;
       focusTitle: LocalizedString;
-      building: LocalizedString;
     };
     sections: {
       aboutEyebrow: LocalizedString;
       aboutTitle: LocalizedString;
       baseLabel: LocalizedString;
       schoolLine: LocalizedString;
-      indexEyebrow: LocalizedString;
-      indexTitle: LocalizedString;
-      indexDescription: LocalizedString;
-      indexOpenLabel: LocalizedString;
       featuredEyebrow: LocalizedString;
       featuredTitle: LocalizedString;
       featuredDescription: LocalizedString;
@@ -302,6 +306,7 @@ export type PortfolioProfile = {
       emailCopied: LocalizedString;
       directTitle: LocalizedString;
       directDescription: LocalizedString;
+      resumeDescription: LocalizedString;
       emailDirect: LocalizedString;
       githubDirect: LocalizedString;
       resumeDirect: LocalizedString;

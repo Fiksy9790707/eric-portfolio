@@ -53,7 +53,7 @@ export default function CaseStudyPage({ project, profile, language }: CaseStudyP
                   className="focus-ring mt-5 inline-flex items-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-semibold text-cyan transition hover:border-cyan/50 hover:text-mint"
                   href={project.githubUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   {text(profile.ui.sections.openRepository, language)}
                   <ExternalLink size={15} />
@@ -94,7 +94,7 @@ export default function CaseStudyPage({ project, profile, language }: CaseStudyP
                     className="focus-ring mt-5 inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
                     href={item.href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                   >
                     {text(profile.ui.sections.openEvidence, language)}
                     <ExternalLink size={14} />

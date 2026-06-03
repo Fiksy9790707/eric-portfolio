@@ -17,14 +17,14 @@ export default function Now({ items, profile, language }: NowProps) {
             <p className="eyebrow">{text(profile.ui.sections.nowEyebrow, language)}</p>
             <h2 className="section-title">{text(profile.ui.sections.nowTitle, language)}</h2>
           </div>
-          <p className="max-w-md text-sm leading-6 text-zinc-400">
+          <p className="max-w-md text-sm leading-6 text-zinc-300">
             {text(profile.ui.sections.nowDescription, language)}
           </p>
         </div>
 
-        <div className="mt-9 grid gap-5 lg:grid-cols-3">
+        <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {items.map((item) => (
-            <article key={text(item.title, language)} className="surface-card min-h-64 p-6">
+            <article key={text(item.title, language)} className="surface-card min-h-60 p-6">
               <div className="flex items-start justify-between gap-4">
                 <h3 className="text-xl font-semibold leading-7 text-mint">{text(item.title, language)}</h3>
                 <ArrowUpRight className="mt-1 text-cyan" size={18} aria-hidden="true" />

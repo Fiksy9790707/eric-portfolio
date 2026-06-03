@@ -1,4 +1,4 @@
-import { BookOpen, ExternalLink } from "lucide-react";
+import { ArrowRight, BookOpen, ExternalLink } from "lucide-react";
 import { useMemo, useState } from "react";
 import { profile } from "../data/profile";
 import { text } from "../lib/i18n";
@@ -12,10 +12,22 @@ type ProjectsProps = {
 
 type Filter = "All" | ProjectCategory;
 
-const filters: Filter[] = ["All", "AI / ML", "Local LLM", "Computer Vision"];
+const filters: Filter[] = [
+  "All",
+  "AI Systems",
+  "Computer Vision",
+  "Course / Engineering Projects",
+  "Lab Experiments",
+];
 
 export default function Projects({ projects, language }: ProjectsProps) {
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
+  const labels = {
+    problem: language === "zh" ? "问题" : "Problem",
+    built: language === "zh" ? "构建" : "Built",
+    result: language === "zh" ? "结果" : "Result",
+    stack: language === "zh" ? "技术栈" : "Stack",
+  };
   const filteredProjects = useMemo(
     () =>
       activeFilter === "All"
@@ -51,22 +63,46 @@ export default function Projects({ projects, language }: ProjectsProps) {
         </div>
         <div className="mt-9 grid gap-5 lg:grid-cols-3">
           {filteredProjects.map((project) => (
-            <article key={project.id} className="surface-card flex min-h-[25rem] flex-col p-6">
+            <article key={project.id} className="surface-card flex min-h-[34rem] flex-col p-6">
               <div className="flex items-start justify-between gap-4">
                 <p className="tag">{text(project.status, language)}</p>
                 <span className="font-mono text-xs text-zinc-500">{text(project.type, language)}</span>
               </div>
               <h3 className="mt-6 text-xl font-semibold leading-7 text-mint">{text(project.name, language)}</h3>
               <p className="mt-2 text-sm text-amber">{text(project.subtitle, language)}</p>
-              <p className="mt-5 flex-1 text-sm leading-7 text-zinc-300">
-                {text(project.description, language)}
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2">
+
+              <div className="mt-6 grid flex-1 gap-4">
+                <div>
+                  <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-cyan">
+                    {labels.problem}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-zinc-300">{text(project.problem, language)}</p>
+                </div>
+                <div>
+                  <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-cyan">
+                    {labels.built}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-zinc-300">{text(project.built, language)}</p>
+                </div>
+                <div>
+                  <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-cyan">
+                    {labels.result}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-zinc-300">{text(project.result, language)}</p>
+                </div>
+              </div>
+
+              <div className="mt-6 border-t border-line pt-5">
+                <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-zinc-500">
+                  {labels.stack}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
                 {project.stack.map((item) => (
                   <span className="tag" key={item}>
                     {item}
                   </span>
                 ))}
+                </div>
               </div>
               <div className="mt-7 flex flex-wrap items-center gap-4">
                 {project.caseStudy ? (
@@ -78,21 +114,30 @@ export default function Projects({ projects, language }: ProjectsProps) {
                     <BookOpen size={15} />
                   </AppLink>
                 ) : null}
+                {project.detailUrl ? (
+                  <AppLink
+                    className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
+                    href={project.detailUrl}
+                  >
+                    {text(project.linkLabel, language)}
+                    <ArrowRight size={15} />
+                  </AppLink>
+                ) : null}
                 {project.githubUrl ? (
                   <a
                     className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
                     href={project.githubUrl}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                   >
                     {text(project.linkLabel, language)}
                     <ExternalLink size={15} />
                   </a>
-                ) : (
+                ) : !project.detailUrl ? (
                   <span className="inline-flex rounded-md border border-dashed border-line px-3 py-2 text-sm text-zinc-500">
                     {text(project.linkLabel, language)}
                   </span>
-                )}
+                ) : null}
               </div>
             </article>
           ))}

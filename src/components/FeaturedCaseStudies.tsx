@@ -1,5 +1,4 @@
-import { ArrowRight } from "lucide-react";
-import { assetPath } from "../lib/assets";
+import { ArrowRight, BookOpen, ExternalLink } from "lucide-react";
 import { text } from "../lib/i18n";
 import type { Language, PortfolioProfile, Project } from "../types/profile";
 import AppLink from "./AppLink";
@@ -11,7 +10,17 @@ type FeaturedCaseStudiesProps = {
 };
 
 export default function FeaturedCaseStudies({ projects, profile, language }: FeaturedCaseStudiesProps) {
-  const featuredProjects = projects.filter((project) => project.caseStudy);
+  const featuredOrder = ["ai-campus-assistant", "wafer-defect-detection", "java-aircraft-war"];
+  const featuredProjects = projects
+    .filter((project) => project.featured)
+    .sort((a, b) => featuredOrder.indexOf(a.id) - featuredOrder.indexOf(b.id))
+    .slice(0, 3);
+  const labels = {
+    problem: language === "zh" ? "问题" : "Problem",
+    built: language === "zh" ? "构建" : "Built",
+    result: language === "zh" ? "结果" : "Result",
+    stack: language === "zh" ? "技术栈" : "Stack",
+  };
 
   return (
     <section className="border-b border-line">
@@ -21,55 +30,119 @@ export default function FeaturedCaseStudies({ projects, profile, language }: Fea
             <p className="eyebrow">{text(profile.ui.sections.featuredEyebrow, language)}</p>
             <h2 className="section-title">{text(profile.ui.sections.featuredTitle, language)}</h2>
           </div>
-          <p className="max-w-md text-sm leading-6 text-zinc-400">
+          <p className="max-w-md text-sm leading-6 text-zinc-300">
             {text(profile.ui.sections.featuredDescription, language)}
           </p>
         </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          {featuredProjects.map((project) => {
-            const media = project.caseStudy?.media?.[0];
+        <div className="mt-8 grid gap-5 lg:grid-cols-3">
+          {featuredProjects.map((project) => (
+            <article key={project.id} className="surface-card flex min-h-[32rem] flex-col p-6">
+              <div className="flex items-start justify-between gap-4">
+                <span className="tag">{text(project.status, language)}</span>
+                <span className="font-mono text-xs text-zinc-500">{text(project.type, language)}</span>
+              </div>
 
-            return (
-              <AppLink
-                key={project.id}
-                className="surface-card group grid overflow-hidden focus-ring md:grid-cols-[0.95fr_1.05fr]"
-                href={`/case-studies/${project.id}`}
+              <h3 className="mt-6 text-2xl font-semibold leading-8 text-mint">{text(project.name, language)}</h3>
+              <p className="mt-2 text-sm text-amber">{text(project.subtitle, language)}</p>
+
+              <div
+                className="mt-6 rounded-md border border-line bg-ink/55 p-4"
+                aria-label={`${text(project.name, language)} workflow preview`}
               >
-                <div className="relative min-h-56 overflow-hidden border-b border-line md:border-b-0 md:border-r">
-                  {media ? (
-                    <img
-                      className="h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
-                      src={assetPath(media.src)}
-                      alt={text(media.alt, language)}
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="h-full w-full bg-white/[0.04]" />
-                  )}
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/60 to-transparent p-4">
-                    <span className="tag">{media ? text(media.kind, language) : text(project.status, language)}</span>
-                  </div>
+                <div className="grid grid-cols-3 gap-2">
+                  {[labels.problem, labels.built, labels.result].map((label, index) => (
+                    <div key={label} className="rounded-md border border-cyan/20 bg-cyan/[0.06] p-3">
+                      <p className="font-mono text-[0.62rem] uppercase tracking-[0.14em] text-cyan">
+                        0{index + 1}
+                      </p>
+                      <p className="mt-2 text-xs font-semibold text-zinc-100">{label}</p>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex min-h-56 flex-col p-6">
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-amber">
-                    {text(project.subtitle, language)}
+                <div className="mt-3 h-px bg-gradient-to-r from-cyan/70 via-mint/40 to-transparent" />
+              </div>
+
+              <div className="mt-6 grid flex-1 gap-4">
+                <div>
+                  <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-cyan">
+                    {labels.problem}
                   </p>
-                  <h3 className="mt-4 text-2xl font-semibold leading-8 text-mint">
-                    {text(project.name, language)}
-                  </h3>
-                  <p className="mt-4 flex-1 text-sm leading-7 text-zinc-300">
-                    {text(project.caseStudy?.summary ?? project.description, language)}
-                  </p>
-                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan">
-                    {text(project.caseStudy?.readLabel ?? project.linkLabel, language)}
-                    <ArrowRight size={16} />
-                  </div>
+                  <p className="mt-2 text-sm leading-6 text-zinc-300">{text(project.problem, language)}</p>
                 </div>
-              </AppLink>
-            );
-          })}
+                <div>
+                  <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-cyan">
+                    {labels.built}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-zinc-300">{text(project.built, language)}</p>
+                </div>
+                <div>
+                  <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-cyan">
+                    {labels.result}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-zinc-300">{text(project.result, language)}</p>
+                </div>
+              </div>
+
+              <div className="mt-6 border-t border-line pt-5">
+                <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-zinc-500">
+                  {labels.stack}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {project.stack.slice(0, 4).map((item) => (
+                    <span className="tag" key={item}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-7 flex flex-wrap items-center gap-4">
+                {project.caseStudy ? (
+                  <AppLink
+                    className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
+                    href={`/case-studies/${project.id}`}
+                  >
+                    {text(project.caseStudy.readLabel, language)}
+                    <BookOpen size={15} />
+                  </AppLink>
+                ) : null}
+                {project.detailUrl ? (
+                  <AppLink
+                    className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
+                    href={project.detailUrl}
+                  >
+                    {text(project.linkLabel, language)}
+                    <ArrowRight size={15} />
+                  </AppLink>
+                ) : null}
+                {project.githubUrl ? (
+                  <a
+                    className="focus-ring inline-flex items-center gap-2 rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {text(project.linkLabel, language)}
+                    <ExternalLink size={15} />
+                  </a>
+                ) : !project.caseStudy && !project.detailUrl ? (
+                  <span className="inline-flex rounded-md border border-dashed border-line px-3 py-2 text-sm text-zinc-500">
+                    {text(project.linkLabel, language)}
+                  </span>
+                ) : null}
+              </div>
+            </article>
+          ))}
         </div>
+
+        <AppLink
+          className="focus-ring mt-8 inline-flex items-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-semibold text-cyan transition hover:border-cyan/50 hover:text-mint"
+          href="/projects"
+        >
+          {text(profile.ui.hero.viewProjects, language)}
+          <ArrowRight size={15} />
+        </AppLink>
       </div>
     </section>
   );

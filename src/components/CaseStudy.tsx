@@ -68,7 +68,7 @@ export default function CaseStudy({ project, language }: CaseStudyProps) {
                 className="focus-ring mt-7 inline-flex items-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-semibold text-cyan transition hover:border-cyan/50 hover:text-mint"
                 href={project.githubUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 {text(caseStudy.repositoryLabel, language)}
                 <ExternalLink size={15} />

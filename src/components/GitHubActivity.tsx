@@ -104,7 +104,7 @@ export default function GitHubActivity({ fallbackRepositories, language }: GitHu
                     className="focus-ring rounded-md text-base font-semibold text-mint transition hover:text-cyan"
                     href={repo.url}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                   >
                     {repo.name}
                   </a>

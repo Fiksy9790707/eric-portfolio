@@ -1,5 +1,6 @@
-import { Copy, ExternalLink, Github, Mail, ShieldCheck } from "lucide-react";
+import { Copy, ExternalLink, Github, ShieldCheck } from "lucide-react";
 import { useState } from "react";
+import { getContactEmail, getMaskedEmail } from "../lib/contact";
 import { text } from "../lib/i18n";
 import type { Language, PortfolioProfile } from "../types/profile";
 import AppLink from "./AppLink";
@@ -11,7 +12,7 @@ type ContactProps = {
 
 export default function Contact({ profile, language }: ContactProps) {
   const [status, setStatus] = useState<string | null>(null);
-  const hasEmail = profile.identity.email !== "TODO";
+  const hasEmail = Boolean(profile.identity.emailUserParts.length && profile.identity.emailDomainParts.length);
   const resumeLink = profile.contactLinks.find((link) => text(link.label, "en") === "Resume");
 
   const copyEmail = async () => {
@@ -20,7 +21,7 @@ export default function Contact({ profile, language }: ContactProps) {
       return;
     }
 
-    await navigator.clipboard.writeText(profile.identity.email);
+    await navigator.clipboard.writeText(getContactEmail(profile));
     setStatus(text(profile.ui.contact.emailCopied, language));
   };
 
@@ -41,22 +42,26 @@ export default function Contact({ profile, language }: ContactProps) {
             <p className="mt-4 text-sm leading-7 text-zinc-300">
               {text(profile.ui.contact.directDescription, language)}
             </p>
+            <p className="mt-3 text-sm leading-6 text-zinc-300">
+              {text(profile.ui.contact.resumeDescription, language)}
+            </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
               {hasEmail ? (
-                <a
+                <button
                   className="focus-ring inline-flex items-center gap-2 rounded-md bg-mint px-4 py-3 text-sm font-semibold text-ink transition hover:bg-cyan"
-                  href={`mailto:${profile.identity.email}`}
+                  type="button"
+                  onClick={copyEmail}
                 >
-                  <Mail size={16} />
+                  <Copy size={16} />
                   {text(profile.ui.contact.emailDirect, language)}
-                </a>
+                </button>
               ) : null}
               <a
                 className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-semibold text-zinc-100 transition hover:border-cyan/50 hover:text-cyan"
                 href={profile.identity.githubUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 <Github size={16} />
                 {text(profile.ui.contact.githubDirect, language)}
@@ -66,7 +71,7 @@ export default function Contact({ profile, language }: ContactProps) {
                   className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-semibold text-zinc-100 transition hover:border-cyan/50 hover:text-cyan"
                   href={resumeLink.href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <ExternalLink size={16} />
                   {text(profile.ui.contact.resumeDirect, language)}
@@ -74,14 +79,6 @@ export default function Contact({ profile, language }: ContactProps) {
               ) : null}
             </div>
 
-            <button
-              className="focus-ring mt-5 inline-flex items-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-semibold text-zinc-100 transition hover:border-cyan/50 hover:text-cyan"
-              type="button"
-              onClick={copyEmail}
-            >
-              <Copy size={16} />
-              {text(profile.ui.contact.copyEmail, language)}
-            </button>
             {status ? <p className="mt-4 text-sm leading-6 text-zinc-300">{status}</p> : null}
           </div>
 
@@ -110,7 +107,9 @@ export default function Contact({ profile, language }: ContactProps) {
                     <p className="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">
                       {text(link.label, language)}
                     </p>
-                    <p className="mt-1 text-sm text-zinc-200">{link.value}</p>
+                    <p className="mt-1 text-sm text-zinc-200">
+                      {text(link.label, "en") === "Email" && hasEmail ? getMaskedEmail(profile) : link.value}
+                    </p>
                   </div>
                   {link.href && (link.href.startsWith("#") || link.href.startsWith("/")) ? (
                     <AppLink
@@ -124,7 +123,7 @@ export default function Contact({ profile, language }: ContactProps) {
                       className="focus-ring rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
                       href={link.href}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
                       {text(profile.ui.contact.open, language)}
                     </a>
