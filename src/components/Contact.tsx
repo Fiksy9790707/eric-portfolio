@@ -111,7 +111,15 @@ export default function Contact({ profile, language }: ContactProps) {
                       {text(link.label, "en") === "Email" && hasEmail ? getMaskedEmail(profile) : link.value}
                     </p>
                   </div>
-                  {link.href && (link.href.startsWith("#") || link.href.startsWith("/")) ? (
+                  {text(link.label, "en") === "Email" && hasEmail ? (
+                    <button
+                      className="focus-ring rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
+                      type="button"
+                      onClick={copyEmail}
+                    >
+                      {text(profile.ui.contact.copyEmail, language)}
+                    </button>
+                  ) : link.href && (link.href.startsWith("#") || link.href.startsWith("/")) ? (
                     <AppLink
                       className="focus-ring rounded-md text-sm font-semibold text-cyan transition hover:text-mint"
                       href={link.href}
