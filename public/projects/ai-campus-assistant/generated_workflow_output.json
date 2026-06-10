@@ -1,0 +1,41 @@
+{
+  "input": "请同学们在本周五 18:00 前完成课程实验报告提交，提交入口为课程平台。",
+  "task": {
+    "title": "课程实验报告提交",
+    "deadline": "本周五 18:00",
+    "location": null,
+    "source": "课程平台",
+    "action_required": "完成课程实验报告提交",
+    "confidence": "medium",
+    "notes": "Relative date needs conversion based on message date."
+  },
+  "validation": {
+    "ok": true,
+    "errors": []
+  },
+  "retrieval_query": "课程实验报告提交 完成课程实验报告提交 课程平台",
+  "retrieval": {
+    "query": "课程实验报告提交 完成课程实验报告提交 课程平台",
+    "answer": "根据知识库：课程实验报告一般通过课程平台提交。提交前应确认课程名称、实验编号、附件格式和截止时间。",
+    "contexts": [
+      {
+        "source": "sample_faq.md",
+        "index": 2,
+        "text": "课程实验报告一般通过课程平台提交。提交前应确认课程名称、实验编号、附件格式和截止时间。",
+        "score": 14
+      },
+      {
+        "source": "sample_faq.md",
+        "index": 1,
+        "text": "课程实验报告提交",
+        "score": 14
+      }
+    ]
+  },
+  "next_actions": [
+    "确认并处理：完成课程实验报告提交",
+    "记录截止时间：本周五 18:00"
+  ],
+  "llm_prompt_draft": "You are a campus assistant. Use only the extracted task and retrieved context. Return a concise reminder and list any missing information.\n\nOriginal message:\n请同学们在本周五 18:00 前完成课程实验报告提交，提交入口为课程平台。\n\nExtracted task:\n{\n  \"title\": \"课程实验报告提交\",\n  \"deadline\": \"本周五 18:00\",\n  \"location\": null,\n  \"source\": \"课程平台\",\n  \"action_required\": \"完成课程实验报告提交\",\n  \"confidence\": \"medium\",\n  \"notes\": \"Relative date needs conversion based on message date.\"\n}\n\nRetrieved context:\n- sample_faq.md#2: 课程实验报告一般通过课程平台提交。提交前应确认课程名称、实验编号、附件格式和截止时间。\n- sample_faq.md#1: 课程实验报告提交\n",
+  "status": "local deterministic workflow; LLM API adapter not configured"
+}
