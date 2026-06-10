@@ -13,7 +13,7 @@ The portfolio is intentionally kept conservative. Project descriptions should be
 
 ## Current Evidence Summary
 
-- **AI Campus Assistant**: local publish-ready package prepared with structured extraction, schema validation, and minimal FAQ retrieval; public GitHub repository still planned.
+- **AI Campus Assistant**: local publish-ready package prepared with structured extraction, schema validation, minimal FAQ retrieval, and deterministic workflow output; public GitHub repository still planned.
 - **Wafer Defect Detection System**: public repository, UI / architecture assets, toy post-processing example, and public evidence boundary.
 - **Second-Brain-Local**: public minimal retrieval baseline with demo, examples, tests, optional Ollama fallback adapter, and limitations.
 - **Family Health AI**: public local-first prototype with safety boundary and usage documentation.
