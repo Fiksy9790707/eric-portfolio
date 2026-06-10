@@ -8,18 +8,22 @@ Status: local demo prepared, public repository planned.
 
 Visible evidence currently prepared locally:
 
-- `demo.py`: local structured extraction demo
+- `demo.py`: local structured extraction and FAQ retrieval demo
 - `src/campus_assistant/extract.py`: rule-based extraction baseline
+- `src/campus_assistant/validate.py`: local schema-shape validator
+- `src/campus_assistant/retrieve.py`: keyword retrieval baseline for sanitized Markdown FAQ snippets
+- `knowledge_base/sample_faq.md`: sanitized sample campus FAQ content
 - `schema/task_record.schema.json`: structured output fields
-- `examples/generated_output.json`: sample output
+- `examples/generated_output.json`: sample extraction output
+- `examples/generated_retrieval_output.json`: sample retrieval output
 - `prompts/ddl_extraction_prompt.md`: prompt direction
 - `docs/workflow.md`: workflow plan
-- `docs/rag_plan.md`: planned RAG direction
-- `scripts/smoke_check.py`: local smoke verification
+- `docs/rag_plan.md`: current retrieval baseline and next steps
+- `scripts/smoke_check.py` and `scripts/run_checks.py`: local verification
 
-Safe public claim: work-in-progress campus information extraction prototype with a local structured-output baseline.
+Safe public claim: work-in-progress campus information extraction prototype with a local structured-output baseline, schema validation, and minimal FAQ retrieval baseline.
 
-Avoid claiming: completed LLM agent, production RAG system, measured extraction accuracy, online deployment.
+Avoid claiming: completed LLM agent, production RAG system, measured extraction accuracy, online deployment, public repository availability before the repo exists.
 
 ## Wafer Defect Detection System
 
@@ -86,6 +90,7 @@ Avoid claiming: stable productivity tool, private-data-safe publication of raw l
 ## Current Portfolio Priority
 
 1. Publish `AI-Campus-Assistant` as a public GitHub repository.
-2. Add ChromaDB persistence or a small UI to `Second-Brain-Local` after the current Ollama fallback adapter.
-3. Add a sanitized visual example or GIF to `Wafer Defect Detection System`.
-4. Keep public resume and GitHub profile aligned with repository evidence.
+2. Add an optional LLM adapter to `AI-Campus-Assistant` after the deterministic extraction and retrieval baseline.
+3. Add ChromaDB persistence or a small UI to `Second-Brain-Local` after the current Ollama fallback adapter.
+4. Add a sanitized visual example or GIF to `Wafer Defect Detection System`.
+5. Keep public resume and GitHub profile aligned with repository evidence.
