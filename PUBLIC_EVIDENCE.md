@@ -15,7 +15,7 @@ The portfolio is intentionally kept conservative. Project descriptions should be
 
 - **AI Campus Assistant**: local publish-ready package prepared; public GitHub repository still planned.
 - **Wafer Defect Detection System**: public repository, UI / architecture assets, toy post-processing example, and public evidence boundary.
-- **Second-Brain-Local**: public minimal retrieval baseline with demo, examples, tests, and limitations.
+- **Second-Brain-Local**: public minimal retrieval baseline with demo, examples, tests, optional Ollama fallback adapter, and limitations.
 - **Family Health AI**: public local-first prototype with safety boundary and usage documentation.
 - **Silicon Diaries**: public experimental local LLM automation prototype.
 
