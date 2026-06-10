@@ -42,15 +42,16 @@ Repository: https://github.com/Fiksy9790707/Second-Brain-Local
 
 Visible evidence:
 
-- `demo.py`: minimal local retrieval demo
+- `demo.py`: minimal local retrieval demo with optional `--use-ollama` path
 - `src/second_brain_local/retrieval.py`: Markdown loading, chunking, keyword scoring, JSON answer shape
+- `src/second_brain_local/ollama_client.py`: optional Ollama generation adapter with fallback handling
 - `examples/sample_notes.md`: sample notes
-- `tests/test_retrieval.py`: retrieval smoke tests
+- `tests/test_retrieval.py`: retrieval and prompt-assembly smoke tests
 - README with current limitations and roadmap
 
-Safe public claim: minimal local retrieval baseline for a personal knowledge-base / RAG workflow.
+Safe public claim: minimal local retrieval baseline for a personal knowledge-base / RAG workflow, with an optional Ollama adapter and fallback behavior.
 
-Avoid claiming: completed Ollama generation, ChromaDB persistence, full RAG product.
+Avoid claiming: ChromaDB persistence, production retrieval quality, full RAG product, always-on local LLM service.
 
 ## Family Health AI
 
@@ -85,6 +86,6 @@ Avoid claiming: stable productivity tool, private-data-safe publication of raw l
 ## Current Portfolio Priority
 
 1. Publish `AI-Campus-Assistant` as a public GitHub repository.
-2. Add optional Ollama generation to `Second-Brain-Local` with fallback behavior.
+2. Add ChromaDB persistence or a small UI to `Second-Brain-Local` after the current Ollama fallback adapter.
 3. Add a sanitized visual example or GIF to `Wafer Defect Detection System`.
 4. Keep public resume and GitHub profile aligned with repository evidence.
