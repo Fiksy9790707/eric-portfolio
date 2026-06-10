@@ -19,10 +19,10 @@ Relevant coursework: Data Structures, Algorithm Analysis, Digital Logic, Probabi
 ### AI Campus Assistant
 
 - Problem: campus notices, deadlines, courses, and activities are scattered and hard to turn into action items.
-- Built: a work-in-progress local workflow for extracting task title, deadline, location, source, action item, confidence, and notes from campus messages.
-- Evidence: local demo, JSON schema, sample messages, generated output, prompt draft, workflow docs, smoke check, and publish-ready package prepared.
+- Built: a work-in-progress local workflow for extracting task title, deadline, location, source, action item, confidence, and notes from campus messages, plus a minimal FAQ retrieval baseline.
+- Evidence: local demo, JSON schema, schema-shape validator, sample messages, generated extraction and retrieval outputs, prompt draft, workflow docs, smoke checks, and publish-ready package prepared.
 - Status: local demo prepared; GitHub repository planned as `AI-Campus-Assistant`.
-- Stack: Python, LLM workflow design, prompt engineering, structured output, planned RAG.
+- Stack: Python, prompt engineering, structured output, local FAQ retrieval, RAG workflow planning.
 
 ### Wafer Defect Detection System
 
