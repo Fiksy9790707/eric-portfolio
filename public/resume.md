@@ -37,10 +37,10 @@ Repository: https://github.com/Fiksy9790707/Wafer-Defect-Detection-System
 ### Second-Brain-Local
 
 - Problem: personal notes need a local, privacy-friendly retrieval workflow before becoming a useful local LLM assistant.
-- Built: a minimal retrieval baseline that loads Markdown notes, chunks content, scores keyword overlap, and returns JSON with query, draft answer, and retrieved contexts.
-- Evidence: public repository with `demo.py`, `src/second_brain_local/retrieval.py`, examples, tests, and an honest README.
-- Status: experimental / minimal demo. Ollama generation, ChromaDB persistence, and Streamlit UI are next steps.
-- Stack: Python, local retrieval baseline, RAG workflow.
+- Built: a minimal retrieval baseline that loads Markdown notes, chunks content, scores keyword overlap, and returns JSON with query, draft answer, retrieved contexts, and optional Ollama fallback metadata.
+- Evidence: public repository with `demo.py`, `src/second_brain_local/retrieval.py`, `src/second_brain_local/ollama_client.py`, examples, tests, and an honest README.
+- Status: experimental / minimal demo. Optional Ollama generation adapter is implemented with fallback behavior; ChromaDB persistence and Streamlit UI are next steps.
+- Stack: Python, local retrieval baseline, optional Ollama adapter, RAG workflow.
 
 Repository: https://github.com/Fiksy9790707/Second-Brain-Local
 
