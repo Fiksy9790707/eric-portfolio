@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CampusTaskRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "deadline",
+    "location",
+    "source",
+    "action_required",
+    "confidence",
+    "notes"
+  ],
+  "properties": {
+    "title": {
+      "type": ["string", "null"],
+      "description": "Short task or event title extracted from the message."
+    },
+    "deadline": {
+      "type": ["string", "null"],
+      "description": "Deadline or event time as mentioned in the original message."
+    },
+    "location": {
+      "type": ["string", "null"],
+      "description": "Classroom, building, or meeting location."
+    },
+    "source": {
+      "type": ["string", "null"],
+      "description": "Mentioned source channel, platform, or submission entry."
+    },
+    "action_required": {
+      "type": ["string", "null"],
+      "description": "Concrete action the student may need to take."
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Caveats such as relative dates or missing channels."
+    }
+  }
+}
