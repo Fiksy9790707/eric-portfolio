@@ -14,6 +14,9 @@ The local package currently contains a deterministic workflow that can:
 
 ## Current Public Evidence
 
+- `source_excerpt.py`: compact implementation excerpt for extraction, validation, retrieval, workflow orchestration, next actions, and prompt draft assembly.
+- `task_record.schema.json`: structured output shape used by the validator.
+- `source_manifest.md`: what is mirrored here versus what remains in the local publish-ready package.
 - `generated_workflow_output.json`: saved output from the end-to-end local workflow.
 - `verification.md`: local verification commands and observed results.
 
@@ -21,7 +24,7 @@ The local package currently contains a deterministic workflow that can:
 
 A safe public claim is:
 
-> Built a work-in-progress campus information workflow prototype with local structured extraction, schema validation, FAQ retrieval, deterministic next actions, and a prompt draft for a future optional LLM adapter.
+> Built a work-in-progress campus information workflow prototype with local structured extraction, schema validation, FAQ retrieval, deterministic next actions, source-code evidence, and a prompt draft for a future optional LLM adapter.
 
 ## Boundary
 
