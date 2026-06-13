@@ -4,11 +4,14 @@ This page maps portfolio and resume claims to visible public evidence. It is int
 
 ## AI Campus Assistant
 
-Status: local demo prepared, public portfolio evidence artifact available, standalone repository planned.
+Status: local demo prepared, public portfolio evidence artifact with source excerpt available, standalone repository planned.
 
 Visible evidence currently prepared locally and mirrored as a public artifact:
 
 - `public/projects/ai-campus-assistant/README.md`: public evidence summary and boundary
+- `public/projects/ai-campus-assistant/source_excerpt.py`: compact source excerpt for extraction, validation, retrieval, workflow orchestration, next actions, and prompt draft assembly
+- `public/projects/ai-campus-assistant/task_record.schema.json`: structured output schema artifact
+- `public/projects/ai-campus-assistant/source_manifest.md`: public-vs-local source manifest
 - `public/projects/ai-campus-assistant/generated_workflow_output.json`: saved workflow output
 - `public/projects/ai-campus-assistant/verification.md`: verification commands and observed results
 - local `demo.py`: structured extraction, FAQ retrieval, and full workflow demo
@@ -20,7 +23,7 @@ Visible evidence currently prepared locally and mirrored as a public artifact:
 - local `schema/task_record.schema.json`: structured output fields
 - local `scripts/smoke_check.py` and `scripts/run_checks.py`: verification
 
-Safe public claim: work-in-progress campus information extraction prototype with a local structured-output baseline, schema validation, minimal FAQ retrieval, deterministic workflow output, and public portfolio evidence artifact.
+Safe public claim: work-in-progress campus information extraction prototype with a local structured-output baseline, schema validation, minimal FAQ retrieval, deterministic workflow output, public source-code evidence, and public portfolio evidence artifact.
 
 Avoid claiming: completed LLM agent, autonomous agent, production RAG system, measured extraction accuracy, online deployment, or standalone public repository availability before the repo exists.
 
